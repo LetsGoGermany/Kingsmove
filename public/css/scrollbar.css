@@ -1,0 +1,23 @@
+/* 1. Die gesamte Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;           /* Breite für vertikale Scrollbars */
+  height: 12px;          /* Höhe für horizontale Scrollbars */
+}
+
+/* 2. Die "Spur" – also der Hintergrund */
+::-webkit-scrollbar-track {
+  background: #1e1e1e;   /* Hintergrundfarbe */
+  border-radius: 10px;
+}
+
+/* 3. Der Scrollbalken selbst */
+::-webkit-scrollbar-thumb {
+  background: #999;      /* Farbe des "Daumens" */
+  border-radius: 10px;
+}
+
+/* 4. Wenn man drüber hovert */
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+

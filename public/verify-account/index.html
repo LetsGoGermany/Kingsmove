@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+       <link rel="stylesheet" href="/css/colors.css">
+       <link rel="stylesheet" href="style.css">
+    
+
+       <script src="/socket.io/socket.io.js"></script>
+
+       <script src="index.js" defer></script>
+
+</head>
+<body>
+    <main class="main">
+                    <h1 class="verify-headline">Verify Account</h1>
+         <section class="input-section">
+            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" oninput="editVerifyInput(this)" />
+            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" oninput="editVerifyInput(this)" />
+            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" oninput="editVerifyInput(this)" />
+            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" oninput="editVerifyInput(this)" />
+            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" oninput="editVerifyInput(this)" />
+            <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" oninput="editVerifyInput(this)" />
+        </section>
+
+        <p id="loginErrorOutput" class="login-error-output"></p>
+
+         <div class="confirm-button-container">
+                <button class="confirm-button" id="verifyConfirmButton">Register</button>
+                </div>
+    </main>
+</body>
+</html>

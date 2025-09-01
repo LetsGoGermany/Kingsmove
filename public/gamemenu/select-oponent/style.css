@@ -1,0 +1,73 @@
+.select-button {
+    height: 22dvh;
+    width: auto;
+    aspect-ratio: 1/1;
+    border-radius: 15px;
+    border: solid 0.1rem var(--primary-border-color);
+    background-color: var(--secondary-gray);
+    cursor: pointer;
+    font-size: 2.3vh;
+
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    color: #ececec;
+
+    margin-bottom: 9dvh;
+    padding: 0;
+    margin: 0;
+
+}
+
+ .select-button:hover {
+    background-color: var(--primary-button-color);
+}
+
+.select-button:disabled {
+    opacity: 0.5;
+} 
+
+.select-button:disabled:hover {
+   background-color: var(--secondary-gray);
+   cursor: default;
+}
+
+.select-button img {
+    height: 100%;
+    aspect-ratio: 1/1;
+    width: auto;
+}
+
+.select-queue {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5dvh;
+    margin-top: -10dvh;
+} 
+
+.headline {
+    color: var(--primary-font-color);
+    font-size: 7dvh;
+}
+
+.select-button-div {
+    display: flex;
+    gap: 2dvh;
+}
+
+.select-option-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1dvh;
+}
+
+.option-text {
+      color: var(--primary-font-color);
+      font-size: 2.4dvh;
+      text-align: center;
+} 
+
+

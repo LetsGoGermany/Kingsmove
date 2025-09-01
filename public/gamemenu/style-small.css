@@ -1,0 +1,14 @@
+.all-time-option-wrapper {
+    margin-top: 10dvh;
+    height: 40dvh;
+    width: 100%;
+    overflow: auto;
+}
+
+.time-class-button  {
+    width: 25vw;
+}
+
+.continue-button {
+    width: 50vw;
+}

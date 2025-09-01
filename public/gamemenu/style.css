@@ -1,0 +1,118 @@
+.time-selection-form {
+    /* entire form*/
+    aspect-ratio: 30/100;
+    height: 100dvh;
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.new-game-title {
+    /* title of entire form*/
+    font-size: 5dvh;
+    color: var(--primary-font-color);
+    display: flex;
+}
+
+.time-class-section {
+    /*Single time mode section*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 1dvh;
+}
+
+.time-class-title {
+    /*Title of time class*/
+    font-size: 3dvh;
+    height: 3dvh;
+    display: flex;
+    gap: 1dvh;
+    width: 100%;
+    text-align: start;
+    color: var(--primary-font-color);
+}
+
+.time-class-title img {
+    /*icon auf title*/
+    height: 80%;
+    aspect-ratio: 1/1;
+    width: auto;
+}
+
+
+.timemode-select-time {
+    /*container for differnt time buttons*/
+    width: 100%;
+    display: flex;
+    height: 9dvh;
+    justify-content: center;
+    gap: 3dvh;
+}
+
+.time-class-button {
+    /*button to select time*/
+    height: 6dvh;
+    width: auto;
+    aspect-ratio: 9/3;
+    border-radius: 15px;
+    border: solid 0.1rem var(--primary-border-color);
+    background-color: var(--secondary-gray);
+    cursor: pointer;
+    font-size: 2.3vh;
+
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    color: var(--primary-font-color);
+
+    max-width: 90%;
+
+    margin-top: auto;
+    margin-bottom: 9dvh;
+}
+
+.time-class-button:hover {
+    /*button hover effect*/
+    background-color: var(--button-gray);
+}
+
+.select-color-button {
+    aspect-ratio: 1/1;
+    height: 12dvh;
+}
+
+.select-color-button img {
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.continue-button {
+    margin-top: 10dvh;
+    height: 14dvh;
+}
+
+.continue-button:disabled {
+    opacity: 0.5;
+}
+
+.continue-button:disabled:hover {
+    background-color: var(--secondary-gray);
+    cursor: default;
+}
+
+.active {
+    border: solid 0.15rem #106e0E;
+}
+
+.all-time-option-wrapper {
+    height: 60dvh;
+    width: 100%;
+    overflow: auto;
+}

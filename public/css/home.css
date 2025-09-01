@@ -1,0 +1,45 @@
+.result-screen-title {
+    color: var(--primary-font-color);
+    font-family: var(--primary-font);
+    font-size: 3dvh;
+    width: 90%;
+    text-align: center;
+    margin: 1dvh;
+}
+
+.button-section {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    gap: 1dvh;
+}
+
+.result-screen-button {
+    width: 50%;
+    aspect-ratio: 7/2;
+    background-color: var(--button-gray);
+    border: solid 0.1rem var(--primary-border-color);
+    outline: none;
+    border-radius: 0.5rem;
+}
+
+.result-screen-button-text {
+    font-size: 2.5dvh;
+    font-family: var(--primary-font);
+    color: var(--primary-font-color);
+    text-decoration: none;
+}
+
+.result-screen-button:hover {
+    background-color: var(--button-hover);
+}
+
+.close-icon {
+    font-size: 2dvh;
+    height: 1dvh;
+    font-family: var(--primary-font);
+    color: var(--primary-font-color);
+    cursor: pointer;
+    text-align: right;
+    width: 98%;
+}

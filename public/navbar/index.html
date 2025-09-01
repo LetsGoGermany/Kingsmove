@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&display=swap');
+  </style>
+</head>
+
+<link rel="stylesheet" href="/css/colors.css">
+<link rel="stylesheet" href="/css/navbar.css">
+<link rel="stylesheet" href="/css/navbar-small.css" media="(max-aspect-ratio: 1/1)">
+
+<body>
+
+  <div id="navWrapper">
+    <a href="/" class="index-link" id="homeButtonLink"> <!--Home-icon -->
+      <img src="/gamedesign/logo.png" style=" max-height: 10dvh;">
+    </a>
+
+
+    <a href="/settings/" class="index-link"> <!--Settings icon-->
+      <div class="menu-wrapper">
+        <img src="/gamedesign/navabar_logo/settings.png" style=" max-height: 5dvh;">
+        <p class="menu-link-text">Settings</p>
+      </div>
+    </a>
+
+    <a href="/friends/" class="index-link"> <!--Friends icon-->
+      <div class="menu-wrapper">
+        <img src="/gamedesign/navabar_logo/friends.png" style=" max-height: 5dvh;">
+        <p class="menu-link-text">Social</p>
+      </div>
+    </a>
+
+
+    <div class="index-link play-big" id="gameButtonCover"> <!--Game Button Big -->
+      <div class="menu-wrapper">
+        <img src="/gamedesign/navabar_logo/play.png" style=" max-height: 5dvh;">
+        <a class="menu-link-text" href="/gamemenu">Play</a>
+      </div>
+      <div class="dropdown-wrapper">
+      <a class="dropton-option" href="/gamemenu">Create</a>
+      <a class="dropton-option" href="/gamemenu/join-game">Join</a>
+     </div>
+    </div>
+
+    <a href="/game-history/" class="index-link">
+      <div class="menu-wrapper">
+        <img src="/gamedesign/navabar_logo/game_history.png" style=" max-height: 5dvh;">
+        <p class="menu-link-text history-navbar-text">History</p>
+      </div>
+    </a>
+
+    <article class="toggle-darkmode-container">
+      <div class="toggle-darkmode-wrapper"  onclick="toggleDarkmode()">
+        <button class="darkmode-toggle-button"></button>
+      </div>
+    </article>
+
+    <a href="/login/" class="index-link" id="loginButtonLink">
+      <div class="menu-wrapper login-menu-wrapper">
+        <img src="/gamedesign/navabar_logo/login.png" style=" max-height: 5dvh;" id="loginIMG">
+        <p class="menu-link-text" id="loginStatusText"> Login </p>
+      </div>
+    </a>
+  </div>
+</body>
+
+</html>

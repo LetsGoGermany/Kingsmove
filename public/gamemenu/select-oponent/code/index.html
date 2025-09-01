@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Kingsmove - Code</title>
+
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/index.js"></script>
+
+  <script src="/navbar/navbar.js" defer></script>
+
+  <script src="index.js" defer></script>
+
+  <link rel="stylesheet" href="/css/colors.css">
+
+  <link rel="icon" type="image/x-icon" href="/gamedesign/favicon.ico">
+  <link rel="stylesheet" href="/css/board.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+        <nav id="navbar" class="navbar"></nav>
+        <main>
+            <section class="wrapper">
+            <p class="fieldInput" id="input">592801</p>
+            <button class="select-button" onclick="copyLink()"><img src="/gamedesign/navabar_logo/create-link.png"></button>
+            <button class="select-button" onclick="copyCode()"><img src="/gamedesign/navabar_logo/copy.png" alt=""></button>
+            </section>
+            <p class="feedback-field" id="feedbackField"></p>
+        </main>
+
+</body>
+</html>

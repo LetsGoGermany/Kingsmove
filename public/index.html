@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingsmove - Home</title>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="/js/index.js" defer></script>
+    <script src="/js/design.js" defer></script>
+    <script src="/js/generateBoard.js" defer></script>
+    <script src="/navbar/navbar.js" defer></script>
+    <script src="/js/home.js" defer></script>
+    <script src="/js/standartBoard.js"></script>
+
+    <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="/css/board-small.css" media="(max-aspect-ratio: 1/1)">
+
+    <link rel="icon" type="image/x-icon" href="/gamedesign/favicon.ico">
+
+    <link rel="stylesheet" href="/css/popup.css">
+    <link rel="stylesheet" href="/css/home.css">
+
+</head>
+
+
+<nav class="navbar" id="navbar"></nav>
+<main>
+
+    <article class="main-board-total">
+        <!-- Upper Section -->
+        <section class="profile-info-section upper-section">
+            <h2 class="profile-info-name">LetsGoGermany</h2>
+            <div class="profile-info-time" >10:00</div>
+        </section>
+        <!-- Board -->
+        <div id="chessboard" class="chessboard"></div>
+        <!-- Lower Section -->
+        <section class="profile-info-section lower-section">
+            <h2 class="profile-info-name">ggHannesGamer10k</h2>
+            <div class="profile-info-time">10:00</div>
+        </section>
+
+    </article>
+
+    <!-- Result Screen -->
+    <dialog class="result-dialog" id="resultDialog">
+        <article class="dialog-overlay">
+            <i class="close-icon" onclick="resultDialog.close()">x</i>
+            <h1 class="result-screen-title">White has won the game by Mate</h1>
+
+            <section class="button-section">
+                <button class="result-screen-button"><a href="/gamemenu" class="result-screen-button-text">Start a new
+                        Game</a></button>
+                <button class="result-screen-button"><a href="/game-history" class="result-screen-button-text">Review
+                        Game</a></button>
+            </section>
+        </article>
+
+    </dialog>
+</main>
+
+<section class="pawn-convert-menu">
+    <img src="gamedesign/pieces/classic/white-bishop.png" class="pawn-convert-option"
+        onclick="askToConvertPawn('bishop',this)">
+    <img src="gamedesign/pieces/classic/white-knight.png" class="pawn-convert-option"
+        onclick="askToConvertPawn('knight',this)">
+    <img src="gamedesign/pieces/classic/white-queen.png" class="pawn-convert-option"
+        onclick="askToConvertPawn('queen',this)">
+    <img src="gamedesign/pieces/classic/white-rook.png" class="pawn-convert-option"
+        onclick="askToConvertPawn('rook',this)">
+</section>
+
+</body>
+
+</html>

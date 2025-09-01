@@ -1,0 +1,162 @@
+@import url("/css/navbar-small.css") (max-aspect-ratio: 1/1); /*Für die kleinere navbar*/
+
+#navWrapper  {
+    background-color: var(--tertiary-gray);
+    width: auto;
+    aspect-ratio: 1/4;
+    height: 100dvh;
+    color: var(--primary-font-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+}
+
+.index-link {
+    color: var(--primary-font-color);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.5vw;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    font-family: var(--primary-font);
+}
+
+#gameButtonCover a {
+    color: var(--primary-font-color);
+    text-decoration: none;
+    width: 100%;
+}
+
+#gameButtonCover:hover {
+     background-color:  var(--tertiary-gray);
+}
+
+
+#gameButtonCover:hover .dropton-option {
+    display: flex;
+    width: 95%;
+   
+}
+
+.dropton-option {
+    display: none;
+    background-color: var(--tertiary-gray);
+    padding-left: 5%;
+    color: var(--primary-font-color);
+    text-decoration: none;
+    font-size: 1.3vw;
+}
+
+.dropton-option:hover {
+     background-color: var(--dark-gray);
+}
+
+#homeButtonLink {
+    height: 10%;
+    width: fit-content;
+    border-radius: 50%;
+    margin-right: auto;
+    padding-left: 0;
+}
+
+#homeButtonLink  img{
+    height: 100%;
+}
+
+#homeButtonLink:hover {
+    background-color: var(--tertiary-gray);
+}
+
+.index-link:hover {
+    background-color: var(--dark-gray)
+}
+
+.index-link img {
+    height: 90%;
+    aspect-ratio: 1/1;
+
+}
+
+.title-text {
+    font-size: 15px;
+}
+
+.menu-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 5%;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10%;
+}
+
+.toggle-darkmode-wrapper {
+    width: 40%;
+    height: 5dvh;
+    background-color: var(--primary-gray);
+    border-radius: 2dvh;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.darkmode-toggle-button {
+    cursor: pointer;
+    position: relative;
+    height: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-image: url("/gamedesign/navabar_logo/dark-mode.png");
+    background-size: cover;
+    background-color: var(--secondary-gray);
+    left: 5%;
+    transition: left 0.5s;
+}
+
+.toggle-darkmode-container {
+    width: 100%;
+    margin-left: 20%;
+    margin-top: auto;
+}
+
+body.lightmode .darkmode-toggle-button {
+   background-image: url("/gamedesign/navabar_logo/light-mode.png");
+   left: calc(100% - 5% - 4dvh);
+}
+
+.dropdown-wrapper {
+    width: 100%;
+}
+
+.menu-link-text  {
+    position: relative;
+}
+
+.history-navbar-text::before {
+    content: attr(data-value);
+    position: absolute;
+    font-size: 60%;
+    font-weight: 800;
+    top: 0;
+    right: 0;
+    background-color: red;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.3dvh;
+    aspect-ratio: 1/1;
+    transform: translate(100%,-25%);
+}
+
+.hide-before::before {
+    display: none;
+}

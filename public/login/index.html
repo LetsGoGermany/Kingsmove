@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingsmove - Settings</title>
+
+    <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/board.css">
+    
+    <link rel="icon" type="image/x-icon" href="/gamedesign/favicon.ico">
+
+
+      <script src="/socket.io/socket.io.js"></script> 
+      <script defer>const socket = io()</script>
+
+    <script src="/js/customCheckBox.js" defer></script>
+    <script src="index.js" defer></script>
+
+    <style>@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&display=swap');</style>
+</head>
+<body>
+
+        <a id="title" class="title" href="/index.html">
+            <img src="/gamedesign/logo.png" alt="">
+        </a>
+       <main class="main" id="main">
+
+                <h1>Login</h1>
+
+
+                <section class="input-section">
+                    <input type="email" placeholder="Email" id="emailInput">
+                    <input type="password" placeholder="Password" id="passwordInput">
+                </section>      
+                             
+                    <p id="loginErrorOutput" class="login-error-output"></p>
+
+                <div class="confirm-button-container">
+                <button class="confirm-button" onclick="tryToLogIn()">Login</button>
+                </div>
+
+
+             <a class="terms-text login-switch" href="/sign-up/index.html">You are new? Click here</a>
+
+       </main>
+
+
+</body>
+</html>

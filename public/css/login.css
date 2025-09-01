@@ -1,0 +1,168 @@
+.main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    max-width: 90%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 80dvh;
+    aspect-ratio: 5/7;
+    background-color: #161614;
+    border-radius: 36px;
+    flex-direction: column;
+    padding: 3%;
+}
+
+* {
+    user-select: none;
+}
+
+
+.title {
+    aspect-ratio: 1/1;
+    height: 10dvh;
+    font-size: 3rem;
+    z-index: 1;
+}
+
+.title img {
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.title-text {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.main h1 {
+    margin: 3%;
+    color: white;
+    font-size: 7dvh
+}
+
+.input-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2dvh;
+    margin-top: 5%;
+    margin-bottom: 2dvh;
+}
+
+.input-section input {
+    width: 90%;
+    aspect-ratio: 11/1;
+    /* TODO: */
+    background-color: var(--secondary-gray); 
+    border-radius: 15px;
+    outline: none;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+    padding: 1%;
+    border: solid 0.1rem #10100E;
+    color: #FDFCFD;
+    font-size: 2dvh;
+    padding-left: 10px; /* oder mehr, je nach Geschmack */
+
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.custom-input {
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1/1;
+    background-color: var(--secondary-gray);
+    border: solid 0.1rem var(--primary-border-color);
+    color: var(--secondary-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-input.checked {
+    color: var(--primary-font-color);
+}
+
+.terms-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3%;
+    width: 100%;
+    gap: 5%;
+}
+
+
+
+.terms-text {
+    color: var(--primary-font-color);
+    font-size: 1.7vh;
+}
+
+.terms-text a {
+    color: var(--primary-font-color);
+}
+
+.confirm-button-container {
+     width: 100%;
+     height: auto;
+     flex-grow: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.confirm-button {
+    height: 8dvh;
+    width: auto;
+    aspect-ratio: 9/3;
+    border-radius: 15px;
+    border: solid 0.1rem #10100E;
+    background-color: var(--secondary-gray);
+    cursor: pointer;
+    font-size: 2.3vh;
+
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    color: var(--button-gray);
+
+    max-width: 90%;
+
+    margin-top: auto;
+    margin-bottom: 9dvh;
+}
+
+.confirm-button:hover {
+    background-color: var(--button-hover);
+}
+
+.login-switch {
+    margin-bottom: 5%;
+    text-decoration: none;
+}
+
+.login-error-output {
+    margin-top: 2%;
+    height: 5%;
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-size: 2dvh;
+}

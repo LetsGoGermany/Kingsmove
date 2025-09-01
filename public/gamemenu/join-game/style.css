@@ -1,0 +1,26 @@
+.main {
+    background-color: var(--secondary-gray);
+    border-radius: 15px;
+    outline: none;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+    padding: 1%;
+    border: solid 0.1rem var(--primary-border-color);
+    color: var(--primary-font-color);
+    font-size: 2dvh;
+    padding-left: 10px; /* oder mehr, je nach Geschmack */
+
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#joinForm {
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    cursor: pointer;
+}

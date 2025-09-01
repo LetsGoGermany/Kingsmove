@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Kingsmove - Start a new Game</title>
+
+       <link rel="stylesheet" href="/css/colors.css">
+
+       <link rel="stylesheet" href="/css/board.css">
+       <link rel="stylesheet" href="style.css">
+       <link rel="stylesheet" href="style-small.css" media="(max-aspect-ratio: 1/1)">
+
+       <script src="/socket.io/socket.io.js"></script>
+       <script src="/js/index.js"></script>
+
+       <script src="/navbar/navbar.js" defer></script>
+       <script src="index.js" defer></script>
+
+       <link rel="icon" type="image/x-icon" href="/gamedesign/favicon.ico">
+       <link rel="stylesheet" href="/css/scrollbar.css">
+
+</head>
+
+<body>
+
+       <nav class="navbar" id="navbar"></nav>
+
+
+       <main>
+
+              <section class="time-selection-form">
+
+                     <section class="all-time-option-wrapper">
+                            <article class="time-class-section" id="">
+                                   <legend class="time-class-title"><img src="/gamedesign/time_logo/bullet.png">Bullet
+                                   </legend>
+                                   <div class="timemode-select-time">
+                                          <button class="time-class-button" value="[1,0]">1</button>
+                                          <button class="time-class-button" value="[2,0]">2</button>
+                                          <button class="time-class-button" value="[2,1]">2 | 1</button>
+                                   </div>
+                            </article>
+
+                            <article class="time-class-section" id="">
+                                   <legend class="time-class-title"><img src="/gamedesign/time_logo/blitz.png">Blitz
+                                   </legend>
+                                   <div class="timemode-select-time">
+                                          <button class="time-class-button" value="[3,0]">3</button>
+                                          <button class="time-class-button" value="[5,0]">5</button>
+                                          <button class="time-class-button" value="[5,10]">5 | 10</button>
+                                   </div>
+                            </article>
+
+                            <article class="time-class-section" id="">
+                                   <legend class="time-class-title"><img src="/gamedesign/time_logo/rapid.png">Rapid
+                                   </legend>
+                                   <div class="timemode-select-time">
+                                          <button class="time-class-button" value="[10,0]">10</button>
+                                          <button class="time-class-button" value="[20,0]">20</button>
+                                          <button class="time-class-button" value="[20,60]">20 | 1</button>
+                                   </div>
+                            </article>
+
+                            <article class="time-class-section" id="">
+                                   <legend class="time-class-title"><img src="/gamedesign/time_logo/classic.png">Classic
+                                   </legend>
+                                   <div class="timemode-select-time">
+                                          <button class="time-class-button" value="[30,0]">30</button>
+                                          <button class="time-class-button" value="[60,0]">60</button>
+                                          <button class="time-class-button" value="[60,300]">60 | 5</button>
+                                   </div>
+                            </article>
+                     </section>
+
+
+
+                     <article class="time-class-section" id="bulletSection">
+                            <legend class="time-class-title">Color to play</legend>
+                            <div class="timemode-select-time">
+                                   <button class="time-class-button select-color-button" value="white"><img
+                                                 src="/gamedesign/time_logo/white.png" alt="White"></button>
+                                   <button class="time-class-button select-color-button" value="random"><img
+                                                 src="/gamedesign/time_logo/random.png" alt="Random"></button>
+                                   <button class="time-class-button select-color-button" value="black"><img
+                                                 src="/gamedesign/time_logo/black.png" alt="Black"></button>
+                            </div>
+                     </article>
+                     <div class="timemode-select-time continue-button-container">
+                            <button class="time-class-button continue-button" disabled
+                                   onclick="continueSelection()">Continue</button>
+                     </div>
+              </section>
+       </main>
+
+</body>
+
+</html>

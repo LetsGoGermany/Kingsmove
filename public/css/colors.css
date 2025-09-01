@@ -1,0 +1,33 @@
+:root {
+    --primary-gray: #302E2B;
+    --secondary-gray: #21211F;
+    --tertiary-gray: #262522;
+    --dark-gray: #121210;
+
+    --button-gray: #43433F;
+    --button-hover: #54534F;
+
+    --primary-border-color: #10100E;
+    --primary-font-color: #dfdfdf;
+
+    --primary-font: "Karla", sans-serif;
+
+    --old-move-color: #FAA02E;
+    --new-move-color: #FEBF0F;
+}
+
+
+body.lightmode {
+  --primary-gray: #f2f2f2;
+  --secondary-gray: #ffffff;
+  --tertiary-gray: #e6e6e6;
+  --dark-gray: #cccccc;
+
+  --button-gray: #dddddd;
+  --button-hover: #c0c0c0;
+
+  --primary-border-color: #d0d0d0;
+  --primary-font-color: #111111;
+
+  --primary-font: "Karla", sans-serif;
+}

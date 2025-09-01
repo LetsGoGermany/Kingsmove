@@ -1,0 +1,137 @@
+body {
+    height: 100dvh;
+     background-color: #302E2B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+
+.main  {
+  aspect-ratio: 8 / 10;
+  height: 90dvh;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--dark-gray);
+  border-radius: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.input-section {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 20%;
+    aspect-ratio: 4/9;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.input-section input {
+    flex-shrink: 0;
+    background-color: var(--secondary-gray);
+    display: flex;
+    height: 60%;
+    width: 10%;
+    border-radius: 7%;
+    border: none;
+    outline: none;
+    aspect-ratio: 1/5;
+    font-size: 6dvh;
+    color: #FDFCFD;
+    text-align: center;
+    border:  solid 0.01px var(--primary-border-color);
+}
+
+
+.verify-headline {
+    color: var(--primary-font-color);
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 8dvh;
+    margin-top: 5%;
+}
+
+.confirm-button-container {
+     width: 100%;
+     height: auto;
+     flex-grow: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.confirm-button {
+    height: 20%;
+    width: auto;
+    aspect-ratio: 9/3;
+    border-radius: 15px;
+    border: solid 0.1rem var(--primary-border-color);
+    background-color: var(--secondary-gray);
+    cursor: pointer;
+    font-size: 2.3dvh;
+
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    color: var(--primary-font-color);
+
+    max-width: 90%;
+}
+
+.confirm-button:hover {
+    background-color: var(--button-gray);
+}
+
+
+.login-error-output {
+    margin-top: 2%;
+    height: 3%;
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-size: 2.5dvh;
+}
+
+@media (max-aspect-ratio: 8/10) {
+   .main {
+    aspect-ratio: 8 / 10;
+    height: auto;
+    width: 90vw;
+    
+   }
+    .input-section input {
+   font-size: 7vw;
+    }
+
+    .verify-headline {
+        font-size: 9vw;
+    }
+
+    .login-error-output {
+          font-size: 3vw;
+    }
+
+    .confirm-button {
+        font-size: 3.5vw;
+    }
+}

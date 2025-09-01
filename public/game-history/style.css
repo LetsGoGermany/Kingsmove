@@ -1,0 +1,91 @@
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    overflow: auto;
+}
+
+.gameElement {
+   width: 90%;
+   height: 90%;
+   color: white;
+   display: grid;
+   grid-template-columns: repeat(8, 12.5%);
+   grid-template-rows: repeat(8,12.5%);
+   position: relative;
+}
+
+.container {
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.gameElement .field {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.gameElement img {
+    width: 90%;
+    aspect-ratio: 1/1;
+}
+
+.gameElement img:hover {
+    height: 90%;
+    width: 90%;
+}
+
+.not-my-turn::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.game-over::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.game-over::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "Game Over"; 
+    font-size: 6dvh;
+    color: var(--primary-font-color);
+    background-color: black;
+    opacity: 0.8;
+    border-radius: 15px;
+    white-space: nowrap;
+}
+
+.flipped {
+    transform: rotate(180deg);
+}
+
+.flipped .figure {
+    transform: rotate(180deg);
+}
+
+.flipped.game-over::after {
+    transform: translate(-50%,-50%) rotate(180deg);
+}

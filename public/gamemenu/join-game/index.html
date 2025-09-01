@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Kingsmove - Join a Game</title>
+
+       <link rel="stylesheet" href="/css/board.css">
+       <link rel="stylesheet" href="style.css">
+
+       <script src="/socket.io/socket.io.js"></script>
+       <script src="/js/index.js"></script>
+
+       <script src="/navbar/navbar.js" defer></script>
+       <script src="index.js" defer></script>
+       
+
+       <link rel="stylesheet" href="/css/colors.css">
+       
+       <link rel="icon" type="image/x-icon" href="/gamedesign/favicon.ico">
+
+
+</head>
+
+<body>
+
+       <nav class="navbar" id="navbar"></nav>
+
+
+       <main>
+            <form action="" method="GET" id="joinForm">
+           <input type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" oninput="editVerifyInput(this)" class="main" placeholder="Code xxxxxx" name="code" minlength="6" required/>
+           <input type="submit" class="main button">
+           </form>
+       </main>
+
+</body>
+
+</html>

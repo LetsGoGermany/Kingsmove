@@ -1,0 +1,119 @@
+#navWrapper  {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 1;
+    width: 100%;
+    height: 10dvh;
+    background-color: var(--tertiary-gray);
+}
+
+
+.index-link {
+    flex-grow: 1;
+    height: 100%;
+    padding-left: 0;
+    align-items: flex-end;
+}
+
+.index-link img {
+    height: 90%;
+    width: auto;
+    aspect-ratio: 1/1;
+}
+
+.menu-link-text {
+    font-size: 4vw;
+}
+
+.menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#homeButtonLink {
+    height: 100%;
+    width: fit-content;
+    border-radius: 50%;
+    margin-right: auto;
+    padding-left: 0;
+}
+
+#loginButtonLink {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    top: 92dvh;
+    left: calc(100vw - 8dvh);
+    text-align: center;
+}
+
+.login-menu-wrapper {
+    width: fit-content;
+    height: fit-content;
+}
+
+#loginButtonLink img {
+    width: 7dvh;
+    height: 7dvh;
+    max-height: 10dvh !important;
+}
+
+.menu-link-text {
+    text-align: center;
+}
+
+.dropton-option {
+    font-size: 3dvh;
+    z-index: 1;
+    background-color: var(--dark-gray);
+    width: 100vw;
+}
+
+#gameButtonCover:hover .dropdown-wrapper {
+       width: 100vw;
+       position: absolute;
+       left: 0;
+       top: 10dvh;
+       display: flex;
+       flex-direction: row;
+       justify-content: space-evenly;
+}
+
+
+#gameButtonCover:hover .dropton-option {
+      display: flex;
+      justify-content: center;
+      width: 44vw;
+}
+
+
+
+.result-dialog {
+    left: 50%;
+}
+
+.toggle-darkmode-wrapper {
+    position: absolute;
+    top:  92dvh;
+    left: calc(100vw - 16dvh);
+    width: fit-content;
+    background-color: transparent;
+    height: 7dvh;
+    width: 7dvh;
+}
+
+#loginStatusText {
+    display: none;
+}
+
+.toggle-darkmode-container {
+    width: fit-content;
+    background-color: transparent;
+}
+
+body.lightmode .darkmode-toggle-button {
+    left: 5%;
+}
+
+
