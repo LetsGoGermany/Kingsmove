@@ -69,7 +69,8 @@ function pawnStraightMoves(x,y,isFirstMove,color,boardCopy) {
     const currentField = boardCopy[posY][x]
   
     if(currentField.fieldType != "empty") return 
-    changeFields(x,posY,x,posY-direction,boardCopy)
+    changeFields(x,y,x,posY,boardCopy)
+    console.log(x,posY)
     if(check.checkIfInChess(color,boardCopy) === false) fields.push([x,posY])
     if(isFirstMove === true) pawnStraightMoves(x,posY,false,color,boardCopy)
 }
@@ -82,11 +83,9 @@ function pawnDiagonalMoves(x,y,modX,color,boardCopy) {
     if(posY < 0 || posY > 7) return 
     if(posX < 0 || posX > 7) return 
     const currenField = boardCopy[posY][posX]
-    console.log(posY,posX)
     if(currenField.fieldType === "empty" && currenField.enPassentField === false) return 
     const childColor = currenField.figureColor
     if(childColor === color) return
-    console.trace(currenField.enPassentField)
     changeFields(selectedX,selectedY,posX,posY,boardCopy)
 
     if(check.checkIfInChess(color,boardCopy) === false) fields.push([posX,posY])
