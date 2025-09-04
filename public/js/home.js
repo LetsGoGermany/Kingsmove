@@ -10,6 +10,7 @@ socket.on("sendLegalMoves",(data) => showMovesMarker(data))
 
 
 socket.on("newBoard",(data) => {
+
     showOpenGames(data.openGames)
     if(data.game._id !== localStorage.getItem("currentGameID")) return
     game = data
@@ -24,10 +25,9 @@ socket.on("newBoard",(data) => {
     const move = data.game.moves[len-1]
 
     index = data.game.moves.length - 1 
-    placeFigures(data.game.board,board)
+    placeFigures(data.game.board,board,data.color)
     makeMoveHandler(board)
-    makeFieldMoveMarkers(move)
-    if(data.color == "black") rotateBoard(board)
+    makeFieldMoveMarkers(move,data.color)
 })
 
 
@@ -45,7 +45,7 @@ function showNames(names, color, toMove) {
 }
 
 socket.on("pawnConvertRequest", (data) => {
-    moveFigureByone(data)
+    moveFigureByone(data,game.color)
     const y = data[1][1]
     const x = data[1][0]
     const fieldIndex = (7-y) * 8 + x
@@ -69,55 +69,62 @@ createBoard(board)
 designFigures("classic")
 
 function skipGameBack(game) {
-    placeFigures(standartBoard ,board)
-    if(game.color === "black") {
-    const figures = Array.from(board.querySelectorAll(".figure"))
-    figures.forEach(figure => figure.style.transform = "rotate(180deg)")
-   }
-      if(index<0) return
+    placeFigures(standartBoard ,board, game.color)
+
+    if(index<0) return
     const moves = game.game.moves
     index--
-   for(i=0;i<=index;i++) {
-    moveFigureByone(moves[i])
+
+    for(i=0;i<=index;i++) {
+    moveFigureByone(moves[i],game.color)
    }
-   if(game.color === "black") {
-    const figures = Array.from(board.querySelectorAll(".figure"))
-    figures.forEach(figure => figure.style.transform = "rotate(180deg)")
-   }
+
    isCurrentGameSkipped = true
 }
 
-function moveFigureByone(move) {
-    const oldY = move[0][1]
-    const oldX = move[0][0]
-    const newY= move[1][1]
-    const newX = move[1][0]
-    const oldIndex = (7 - oldY) * 8 + oldX
-    const newIndex = (7 - newY) * 8 + newX
+function moveFigureByone(move,color) {
+
+    const [newY,newX,oldY,oldX] = getMoveFieldsIndexes(move,color)
+
+    const oldIndex = oldY * 8 + oldX
+    const newIndex = newY * 8 + newX
     board.children[newIndex].innerHTML = ""
 
-    makeFieldMoveMarkers(move)
-
+    makeFieldMoveMarkers(move,color)
     
     board.children[newIndex].appendChild(board.children[oldIndex].firstChild)
-    specialMoves(move,newIndex)
+    specialMoves(move,[newY,newX,oldY],newIndex,color)
 }
 
-function makeFieldMoveMarkers(move) {
+function makeFieldMoveMarkers(move,color) {
     if(move === undefined) return
-    const newIndex = (7-move[1][1]) * 8 + move[1][0]
-    const oldIndex = (7-move[0][1]) * 8 + move[0][0]
-    const fields = Array.from(board.querySelectorAll(".field"))
-    fields.forEach(field => {
-        field.classList.remove("new-field-marker")
-        field.classList.remove("old-field-marker")
-    })
+
+    const [newY,newX,oldY,oldX] = getMoveFieldsIndexes(move,color)
+
+    const newIndex = newY * 8 + newX
+    const oldIndex = oldY * 8 + oldX
+
+    clearFieldTags()
+
     board.children[newIndex].classList.add("new-field-marker")
     board.children[oldIndex].classList.add("old-field-marker")
-
 }
 
-function specialMoves(move,newIndex) {
+
+function getMoveFieldsIndexes(move,color) {
+    const [start, modifyer] = color === "white" ? [0,1] : [7,-1]
+
+    const newY = start + modifyer * (7-move[1][1])
+    const newX = start + modifyer * move[1][0] 
+    const oldY = start + modifyer * (7-move[0][1])
+    const oldX = start + modifyer * move[0][0]
+
+    return [newY,newX,oldY,oldX]
+}
+
+
+function specialMoves(move,[newY,newX,oldY],newIndex,color) {
+    const [r1,r2] = color === "white" ? [3,5] : [2,4]
     if(move.length < 3) return
       if(move[2].includes("=")) {
         const pawn = board.children[newIndex].firstChild
@@ -126,14 +133,14 @@ function specialMoves(move,newIndex) {
         designFigures("classic")
     }
     if(move[2] === "O-O") {
-        const rookX = move[1][0] === 1 ? 0 : 7
-        const newRookX = rookX === 0 ? 3 : 5
-        const row = (7- move[1][1]) * 8
+        const rookX = newX === 1 ? 0 : 7
+        const newRookX = rookX === 0 ? r1 : r2
+        const row = newY * 8
         board.children[row+newRookX].appendChild(board.children[row+rookX].firstChild) 
     }
     if(move[2] === "e.P.") {
-        const row = (7-move[0][1]) * 8
-        const col = move[1][0]
+        const row = oldY * 8
+        const col = newX
         board.children[row+col].innerHTML = ""
     }
 }
@@ -144,7 +151,7 @@ function skipGameForward(game) {
     if(index+1 >= length) return 
     if(index+2==length) makeMoveHandler(board)
     index++
-    moveFigureByone(moves[index])
+    moveFigureByone(moves[index],game.color)
 }
 
 

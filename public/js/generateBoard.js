@@ -31,12 +31,17 @@ function newField(x, y, gameBoard) {
 
 
 
-function placeFigures(data, gameBoard) {
+function placeFigures(data, gameBoard, color) {
     currentFigureSelected = null
+
+    const [start, modifyer] = color === "white" ? [0,1] : [7,-1]
+
     createBoard(gameBoard)
     for (y = 7; y >= 0; y--) {
         for (x = 0; x < 8; x++) {
-            placeFigure(data[y][x], x, y, gameBoard)
+            const posX = start + modifyer * x
+            const posY = start + modifyer * y
+            placeFigure(data[posY][posX], x, y, gameBoard)
         }
     }
     designFigures("classic")
@@ -105,6 +110,8 @@ function clearFieldTags() {
     fields.forEach(field => {
         field.classList.remove("movable-field")
         field.classList.remove("takeable-field")
+        field.classList.remove("new-field-marker")
+        field.classList.remove("old-field-marker")
     })
 }
 
@@ -147,9 +154,8 @@ function startDraggingFigure(event) {
 function setPositonOfFigure(event, figure) {
     const boardBox = figure.parentNode.getBoundingClientRect()
  
-    const [x,y] = getCoodinates(event,boardBox)
-    //const x2 = event.clientX - boardBox.left
-    //const y2 = event.clientY - boardBox.top
+    const [x,y] = getCoodinates(event,boardBox)  
+
     if(board.classList.contains("rotated")) {
         figure.style.right = x + "px"
         figure.style.bottom = y + "px"
@@ -160,10 +166,9 @@ function setPositonOfFigure(event, figure) {
  
 }
 
+
 function getCoodinates(e,boardBox) {
     if(e.touches) {
-        //    alert(    e.touches[0].clientX - boardBox.left,
-        //     e.touches[1].clientY - boardBox.top)
         return [
         
             e.touches[0].clientX - boardBox.left,
