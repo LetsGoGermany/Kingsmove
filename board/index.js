@@ -33,7 +33,7 @@ function moveSpamDetected(socket) {
 
 async function processMove(move, gameID, sessionId, socket) {
 
-    if(moveSpamDetected(socket)) return console.trace("Spamming Detected")
+    if(moveSpamDetected(socket)) return 
     if (invalidInput(move)) return console.trace("Invalid")
     
     const board = await gameLoader.getGame(gameID, sessionId)

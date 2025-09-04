@@ -13,6 +13,8 @@ function createBoard(gameBoard) {
         }
     }
     switchBoardTheme("classic")
+    gameBoard.addEventListener("touchmove", moveFigureWithmouse)
+    gameBoard.addEventListener("touchend", endDraggingFigure)
 }
 
 
@@ -22,9 +24,12 @@ function newField(x, y, gameBoard) {
     div.dataset.x = x
     div.dataset.y = y
     div.id = `field_${x}_${y}`;
-    div.setAttribute("dragenter", "console.log(1)");
+    div.addEventListener("mouseenter", (e) => currentFigureMoving === null || e.target.classList.add("hovered-field"))
+    div.addEventListener("mouseleave", (e) => e.target.classList.remove("hovered-field"))
     gameBoard.appendChild(div)
 }
+
+
 
 function placeFigures(data, gameBoard) {
     currentFigureSelected = null
@@ -45,7 +50,9 @@ function placeFigure(fig, x, y, gameBoard) {
     figure.classList.add("figure")
     figure.draggable = false;
     figure.addEventListener("mousedown", startDraggingFigure)
-
+    figure.addEventListener("touchstart", startDraggingFigure)
+    //figure.addEventListener("touchmove", moveFigureWithmouse)
+    //figure.addEventListener("touchend", endDraggingFigure)
     const row = 7 - y
     const element = 8 * row + x
     field = gameBoard.children[element]
@@ -55,6 +62,11 @@ function placeFigure(fig, x, y, gameBoard) {
 
  document.addEventListener("mousemove", moveFigureWithmouse)
  document.addEventListener("mouseup", endDraggingFigure)
+
+
+
+
+
 
 function makeMoveHandler(board) {
     const fields = board.children
@@ -125,17 +137,19 @@ function startDraggingFigure(event) {
     event.preventDefault()
     if(isCurrentGameSkipped) return
     currentFigureMoving = event.target
+    currentFigureMoving.classList.add("current-figure-moving")
     setPositonOfFigure(event, currentFigureMoving)
     event.target.classList.add("movable-figure")
     handleFigureInput(event.target.parentNode)
 }
 
+
 function setPositonOfFigure(event, figure) {
     const boardBox = figure.parentNode.getBoundingClientRect()
-    
-    const x = event.clientX - boardBox.left
-    const y = event.clientY - boardBox.top
-    console.log(board.classList.contains("rotated"))
+ 
+    const [x,y] = getCoodinates(event,boardBox)
+    //const x2 = event.clientX - boardBox.left
+    //const y2 = event.clientY - boardBox.top
     if(board.classList.contains("rotated")) {
         figure.style.right = x + "px"
         figure.style.bottom = y + "px"
@@ -143,7 +157,24 @@ function setPositonOfFigure(event, figure) {
         figure.style.left = x + "px"
         figure.style.top = y + "px"
     }
+ 
+}
 
+function getCoodinates(e,boardBox) {
+    if(e.touches) {
+        //    alert(    e.touches[0].clientX - boardBox.left,
+        //     e.touches[1].clientY - boardBox.top)
+        return [
+        
+            e.touches[0].clientX - boardBox.left,
+            e.touches[0].clientY - boardBox.top
+    ] 
+    } else {
+        return [
+            e.clientX - boardBox.left,
+            e.clientY - boardBox.top
+        ]
+    }
 }
 
 function endDraggingFigure(event) {
@@ -164,14 +195,16 @@ function endDraggingFigure(event) {
 
     if(document.elementFromPoint(event.clientX,event.clientY).classList.contains("movable-field")) {
         document.elementFromPoint(event.clientX,event.clientY).innerHTML = ""
-        document.elementFromPoint(event.clientX,event.clientY).appendChild(currentFigureMoving)
-        moveMade = true;
-        
+        document.elementFromPoint(event.clientX,event.clientY).appendChild(currentFigureMoving)  
+        index = 0;
     }
+    currentFigureMoving.classList.remove("current-figure-moving")
     currentFigureMoving = null
 }
 
 function moveFigureWithmouse(event) {
+    event.preventDefault()
     if(currentFigureMoving === null) return
     setPositonOfFigure(event,currentFigureMoving)
 }
+

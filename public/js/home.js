@@ -19,10 +19,6 @@ socket.on("newBoard",(data) => {
     const currentMove = index+2 === len && index != null
     showNames(data.names,data.color,data.game.toMove)
 
-    if(moveMade) {
-        index++;x
-        return moveMade = false
-    }
     if(currentMove) return skipGameForward(data)
 
     const move = data.game.moves[len-1]

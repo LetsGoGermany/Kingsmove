@@ -238,3 +238,11 @@ main {
 .rotated .field .figure {
     transform: rotate(180deg);
 }
+
+.hovered-field {
+    border: solid 5px gray;
+}
+
+.current-figure-moving {
+    pointer-events: none;
+}
