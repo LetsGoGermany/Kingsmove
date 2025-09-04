@@ -103,8 +103,12 @@ function getPossibleMoves(figure) {
 
 function showMovesMarker(data) {
     clearFieldTags()
+    const [start, modifyer] = game.color === "white" ? [0,1] : [7,-1]
     data.forEach(field => {
-        const fieldDiv = document.getElementById(`field_${field[0]}_${field[1]}`)
+        console.log(field)
+        const fieldname = `field_${start + modifyer * field[0]}_${start + modifyer * field[1]}`
+        console.log(fieldname)
+        const fieldDiv = document.getElementById(fieldname)
         fieldDiv.classList.add("movable-field")
         if (fieldDiv.childElementCount > 0) fieldDiv.classList.add("takeable-field")
     })
@@ -125,7 +129,13 @@ function sendPieceMove(field) {
     const newY = parseInt(field.dataset.y)
     const oldX = parseInt(currentFigureSelected.parentNode.dataset.x)
     const oldY = parseInt(currentFigureSelected.parentNode.dataset.y)
-    socket.emit("sendMoveRequest", [[oldX, oldY], [newX, newY], localStorage.getItem("currentGameID"), localStorage.getItem("sessionId")])
+    const [rnX,rlY,roX,roY] = makeFullMoveReal([newX,newY,oldX,oldY])
+    socket.emit("sendMoveRequest", [[roX, roY], [rnX, rlY], localStorage.getItem("currentGameID"), localStorage.getItem("sessionId")])
+}
+
+function makeFullMoveReal(moves) {
+    const [start, modifyer] = game.color === "white" ? [0,1] : [7,-1]
+    return moves.map(move => start + modifyer * move)
 }
 
 function rotateBoard(board) {

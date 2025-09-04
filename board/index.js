@@ -144,7 +144,7 @@ function invalidInput(moves) {
 
 function changeFields(x1, y1, x2, y2, boardCopy) {
     boardCopy[y2][x2] = boardCopy[y1][x1]
-    boardCopy[y1][x1] = { fieldType: "empty", movableField: false }
+    boardCopy[y1][x1] = { fieldType: "empty", movableField: false, enPassentField:false}
     return boardCopy
 }
 

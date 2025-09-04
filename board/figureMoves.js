@@ -82,11 +82,13 @@ function pawnDiagonalMoves(x,y,modX,color,boardCopy) {
     if(posY < 0 || posY > 7) return 
     if(posX < 0 || posX > 7) return 
     const currenField = boardCopy[posY][posX]
+    console.log(posY,posX)
     if(currenField.fieldType === "empty" && currenField.enPassentField === false) return 
     const childColor = currenField.figureColor
-    if(childColor == color && currenField.enPassentField === false) return
-    console.trace("test")
+    if(childColor === color) return
+    console.trace(currenField.enPassentField)
     changeFields(selectedX,selectedY,posX,posY,boardCopy)
+
     if(check.checkIfInChess(color,boardCopy) === false) fields.push([posX,posY])
     
 }
@@ -161,7 +163,7 @@ function isPossibleField(x,y,dirX,dirY,i,moveLimiter) {
 
 function changeFields(x1,y1,x2,y2,boardCopy) {
     boardCopy[y2][x2] = boardCopy[y1][x1]
-    boardCopy[y1][x1] = {fieldType:"empty",movableField:false}
+    boardCopy[y1][x1] = {fieldType:"empty",movableField:false,enPassentField:false}
     return boardCopy
 }
 
