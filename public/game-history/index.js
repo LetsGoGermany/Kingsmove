@@ -22,16 +22,14 @@ function createGameElement(game,id) {
 
     wrapper.appendChild(gameBord)
     if(game.finished) gameBord.classList.add("game-over")
-    const color = Object.entries(game).find(game => game[1] === id)[0]
 
+    const color = Object.entries(game).find(game => game[1] === id)[0]
     if(color !== game.toMove) gameBord.classList.add("not-my-turn")
 
     gameBord.classList.add("gameElement")
 
     document.getElementById("main").appendChild(wrapper)
-    placeFigures(game.board, gameBord)
-    if(game.black === id) gameBord.classList.add("flipped")
-    
+    placeFigures(game.board, gameBord,color)    
 }
 
 
