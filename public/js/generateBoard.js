@@ -34,7 +34,7 @@ function newField(x, y, gameBoard) {
 function placeFigures(data, gameBoard, color) {
     currentFigureSelected = null
 
-    const [start, modifyer] = color === "white" ? [0,1] : [7,-1]
+    const [start, modifyer] = color === "white" ? [0, 1] : [7, -1]
 
     createBoard(gameBoard)
     for (y = 7; y >= 0; y--) {
@@ -63,19 +63,14 @@ function placeFigure(fig, x, y, gameBoard) {
 
 }
 
- document.addEventListener("mousemove", moveFigureWithmouse)
- document.addEventListener("mouseup", endDraggingFigure)
-
-
-
-
-
+document.addEventListener("mousemove", moveFigureWithmouse)
+document.addEventListener("mouseup", endDraggingFigure)
 
 function makeMoveHandler(board) {
     const fields = board.children
     Array.from(fields).forEach(field => {
         field.addEventListener("click", (event) => {
-            if(!event.currentTarget.classList.contains("movable-field")) return
+            if (!event.currentTarget.classList.contains("movable-field")) return
             handleFigureInput(event.currentTarget)
         })
     })
@@ -85,7 +80,7 @@ function makeMoveHandler(board) {
 
 
 function handleFigureInput(field) {
-    if(field === null) return false
+    if (field === null) return false
     if (field.classList.contains("movable-field")) return sendPieceMove(field)
     if (field.childElementCount > 0) return getPossibleMoves(field.firstChild)
 }
@@ -93,7 +88,7 @@ function handleFigureInput(field) {
 function getPossibleMoves(figure) {
     const x = parseInt(figure.parentNode.dataset.x)
     const y = parseInt(figure.parentNode.dataset.y)
-    const [start,modifyer] = game.color === "white" ? [0,1] : [7,-1]
+    const [start, modifyer] = game.color === "white" ? [0, 1] : [7, -1]
     const realX = start + modifyer * x
     const realY = start + modifyer * y
 
@@ -103,7 +98,7 @@ function getPossibleMoves(figure) {
 
 function showMovesMarker(data) {
     clearFieldTags()
-    const [start, modifyer] = game.color === "white" ? [0,1] : [7,-1]
+    const [start, modifyer] = game.color === "white" ? [0, 1] : [7, -1]
     data.forEach(field => {
         console.log(field)
         const fieldname = `field_${start + modifyer * field[0]}_${start + modifyer * field[1]}`
@@ -129,12 +124,12 @@ function sendPieceMove(field) {
     const newY = parseInt(field.dataset.y)
     const oldX = parseInt(currentFigureSelected.parentNode.dataset.x)
     const oldY = parseInt(currentFigureSelected.parentNode.dataset.y)
-    const [rnX,rlY,roX,roY] = makeFullMoveReal([newX,newY,oldX,oldY])
+    const [rnX, rlY, roX, roY] = makeFullMoveReal([newX, newY, oldX, oldY])
     socket.emit("sendMoveRequest", [[roX, roY], [rnX, rlY], localStorage.getItem("currentGameID"), localStorage.getItem("sessionId")])
 }
 
 function makeFullMoveReal(moves) {
-    const [start, modifyer] = game.color === "white" ? [0,1] : [7,-1]
+    const [start, modifyer] = game.color === "white" ? [0, 1] : [7, -1]
     return moves.map(move => start + modifyer * move)
 }
 
@@ -157,7 +152,7 @@ function showResultScreen(game) {
 
 function startDraggingFigure(event) {
     event.preventDefault()
-    if(isCurrentGameSkipped) return
+    if (isCurrentGameSkipped) return
     currentFigureMoving = event.target
     currentFigureMoving.classList.add("current-figure-moving")
     setPositonOfFigure(event, currentFigureMoving)
@@ -168,27 +163,25 @@ function startDraggingFigure(event) {
 
 function setPositonOfFigure(event, figure) {
     const boardBox = figure.parentNode.getBoundingClientRect()
- 
-    const [x,y] = getCoodinates(event,boardBox)  
-
-    if(board.classList.contains("rotated")) {
-        figure.style.right = x + "px"
-        figure.style.bottom = y + "px"
-    } else {
-        figure.style.left = x + "px"
-        figure.style.top = y + "px"
-    }
- 
+    const fullBoardBox = figure.parentNode.parentNode.getBoundingClientRect()
+    const [x, y] = getCoodinates(event, boardBox)
+    styleDraggingPositionFigure(x, y, figure, fullBoardBox, event)
 }
 
+function styleDraggingPositionFigure(x, y, figure, boardBox, e) {
+    const isInX = boardBox.x < e.clientX && boardBox.x + boardBox.width > e.clientX
+    const isInY = boardBox.y < e.clientY && boardBox.y + boardBox.height > e.clientY
+    if (isInX) figure.style.left = x + "px"
+    if (isInY) figure.style.top = y + "px"
+}
 
-function getCoodinates(e,boardBox) {
-    if(e.touches) {
+function getCoodinates(e, boardBox) {
+    if (e.touches) {
         return [
-        
+
             e.touches[0].clientX - boardBox.left,
             e.touches[0].clientY - boardBox.top
-    ] 
+        ]
     } else {
         return [
             e.clientX - boardBox.left,
@@ -199,34 +192,28 @@ function getCoodinates(e,boardBox) {
 
 function endDraggingFigure(event) {
     event.preventDefault()
-    if(currentFigureMoving === null) return
-  
+    if (currentFigureMoving === null) return
+
     currentFigureMoving.classList.remove("movable-figure")
 
-   
-    
-    if(board.classList.contains("rotated")) {
-        currentFigureMoving.style.bottom = 0;
-        currentFigureMoving.style.right = 0;
-    } else {
-         currentFigureMoving.style.top = 0;
-         currentFigureMoving.style.left = 0;
-    }
-
-    if(document.elementFromPoint(event.clientX,event.clientY).classList.contains("movable-field")) {
-        document.elementFromPoint(event.clientX,event.clientY).innerHTML = ""
-        document.elementFromPoint(event.clientX,event.clientY).appendChild(currentFigureMoving)  
-        index = 0;
-        handleFigureInput(document.elementFromPoint(event.clientX,event.clientY))
-    }
+    currentFigureMoving.style.top = 0;
+    currentFigureMoving.style.left = 0;
 
     currentFigureMoving.classList.remove("current-figure-moving")
     currentFigureMoving = null
+
+    const field = document.elementFromPoint(event.clientX, event.clientY)
+    document.querySelectorAll(".field").forEach(el => el.classList.remove("hovered-field"))
+    if (!field?.classList.contains("movable-field")) return
+        field.innerHTML = ""
+        field.appendChild(currentFigureMoving)
+        index = 0;
+        handleFigureInput(field)
 }
 
 function moveFigureWithmouse(event) {
     event.preventDefault()
-    if(currentFigureMoving === null) return
-    setPositonOfFigure(event,currentFigureMoving)
+    if (currentFigureMoving === null) return
+    setPositonOfFigure(event, currentFigureMoving)
 }
 

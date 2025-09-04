@@ -28,7 +28,7 @@ socket.on("sessionCorrect", (data) => {
 
 function showOpenGames(response) {
   const navbarText = document.querySelector(".history-navbar-text")
-  navbarText.dataset.value = response;
+  navbarText.dataset.value = response;//TODO:
   if(response > 0) {
     navbarText.classList.remove("hide-before")
   } else {

@@ -227,22 +227,14 @@ main {
     z-index: 100;
 }
 
-.rotated .field .figure.movable-figure  {
-    transform: translate(50%,50%) rotate(180deg);
-}
-
-.rotated {
-    transform: rotate(180deg);
-}
-
-.rotated .field .figure {
-    transform: rotate(180deg);
-}
-
 .hovered-field {
     border: solid 5px gray;
 }
 
-.current-figure-moving {
+.chessboard .field .current-figure-moving.figure {
     pointer-events: none;
+}
+
+body:has(.chessboard .field .current-figure-moving.figure) {
+    cursor: grabbing !important;
 }
