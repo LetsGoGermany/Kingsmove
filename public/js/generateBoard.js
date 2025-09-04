@@ -1,4 +1,3 @@
-
 let currentFigureSelected = null;
 let currentFieldSelected = null;
 let currentFigureMoving = null;
@@ -165,20 +164,23 @@ function setPositonOfFigure(event, figure) {
     const boardBox = figure.parentNode.getBoundingClientRect()
     const fullBoardBox = figure.parentNode.parentNode.getBoundingClientRect()
     const [x, y] = getCoodinates(event, boardBox)
-    styleDraggingPositionFigure(x, y, figure, fullBoardBox, event)
+    styleDraggingPositionFigure(x, y, figure, fullBoardBox, event, boardBox)
 }
 
-function styleDraggingPositionFigure(x, y, figure, boardBox, e) {
-    const isInX = boardBox.x < e.clientX && boardBox.x + boardBox.width > e.clientX
-    const isInY = boardBox.y < e.clientY && boardBox.y + boardBox.height > e.clientY
-    if (isInX) figure.style.left = x + "px"
-    if (isInY) figure.style.top = y + "px"
+function styleDraggingPositionFigure(x, y, figure, boardBox, e,figuerBounding) {
+
+    const left = Math.min(Math.max(x,boardBox.x - figuerBounding.x), boardBox.x + boardBox.width - figuerBounding.x)
+    const top = Math.min(Math.max(y,boardBox.y - figuerBounding.y), boardBox.y + boardBox.height - figuerBounding.y)
+
+    console.log(x,figuerBounding.x - boardBox.x)
+    figure.style.left = left + "px"
+    figure.style.top = top + "px"
 }
+
 
 function getCoodinates(e, boardBox) {
     if (e.touches) {
         return [
-
             e.touches[0].clientX - boardBox.left,
             e.touches[0].clientY - boardBox.top
         ]
@@ -205,10 +207,10 @@ function endDraggingFigure(event) {
     const field = document.elementFromPoint(event.clientX, event.clientY)
     document.querySelectorAll(".field").forEach(el => el.classList.remove("hovered-field"))
     if (!field?.classList.contains("movable-field")) return
-        field.innerHTML = ""
-        field.appendChild(currentFigureMoving)
-        index = 0;
-        handleFigureInput(field)
+    field.innerHTML = ""
+    field.appendChild(currentFigureMoving)
+    index = 0;
+    handleFigureInput(field)
 }
 
 function moveFigureWithmouse(event) {
@@ -216,4 +218,6 @@ function moveFigureWithmouse(event) {
     if (currentFigureMoving === null) return
     setPositonOfFigure(event, currentFigureMoving)
 }
+
+
 
