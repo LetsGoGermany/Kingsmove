@@ -56,8 +56,6 @@ function placeFigure(fig, x, y, gameBoard) {
     figure.draggable = false;
     figure.addEventListener("mousedown", startDraggingFigure)
     figure.addEventListener("touchstart", startDraggingFigure)
-    //figure.addEventListener("touchmove", moveFigureWithmouse)
-    //figure.addEventListener("touchend", endDraggingFigure)
     const row = 7 - y
     const element = 8 * row + x
     field = gameBoard.children[element]
@@ -76,7 +74,10 @@ function placeFigure(fig, x, y, gameBoard) {
 function makeMoveHandler(board) {
     const fields = board.children
     Array.from(fields).forEach(field => {
-        field.addEventListener("click", (event) => handleFigureInput(event.currentTarget))
+        field.addEventListener("click", (event) => {
+            if(!event.currentTarget.classList.contains("movable-field")) return
+            handleFigureInput(event.currentTarget)
+        })
     })
     isCurrentGameSkipped = false
 
@@ -92,8 +93,12 @@ function handleFigureInput(field) {
 function getPossibleMoves(figure) {
     const x = parseInt(figure.parentNode.dataset.x)
     const y = parseInt(figure.parentNode.dataset.y)
+    const [start,modifyer] = game.color === "white" ? [0,1] : [7,-1]
+    const realX = start + modifyer * x
+    const realY = start + modifyer * y
+
     currentFigureSelected = figure
-    socket.emit("askForLegalMoves", [x, y, localStorage.getItem("currentGameID"), localStorage.getItem("sessionId")])
+    socket.emit("askForLegalMoves", [realX, realY, localStorage.getItem("currentGameID"), localStorage.getItem("sessionId")])
 }
 
 function showMovesMarker(data) {
@@ -188,7 +193,7 @@ function endDraggingFigure(event) {
   
     currentFigureMoving.classList.remove("movable-figure")
 
-    handleFigureInput(document.elementFromPoint(event.clientX,event.clientY))
+   
     
     if(board.classList.contains("rotated")) {
         currentFigureMoving.style.bottom = 0;
@@ -202,7 +207,9 @@ function endDraggingFigure(event) {
         document.elementFromPoint(event.clientX,event.clientY).innerHTML = ""
         document.elementFromPoint(event.clientX,event.clientY).appendChild(currentFigureMoving)  
         index = 0;
+        handleFigureInput(document.elementFromPoint(event.clientX,event.clientY))
     }
+
     currentFigureMoving.classList.remove("current-figure-moving")
     currentFigureMoving = null
 }

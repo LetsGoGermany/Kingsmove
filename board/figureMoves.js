@@ -85,7 +85,7 @@ function pawnDiagonalMoves(x,y,modX,color,boardCopy) {
     if(currenField.fieldType === "empty" && currenField.enPassentField === false) return 
     const childColor = currenField.figureColor
     if(childColor == color && currenField.enPassentField === false) return
-
+    console.trace("test")
     changeFields(selectedX,selectedY,posX,posY,boardCopy)
     if(check.checkIfInChess(color,boardCopy) === false) fields.push([posX,posY])
     
