@@ -1,6 +1,6 @@
 const express = require("express") //Installing Express
 const app = express();  //Creating an Express app
-const server = app.listen(1887) //Creating an Port
+const server = app.listen(9999) //Creating an Port
 require("./mongoConncection");
 
 const path = require('path');
@@ -97,7 +97,7 @@ async function checkForChorrectInput(data) {
       if(JSON.stringify(Object.keys(data)) != JSON.stringify(["user_name","user_mail","user_password"])) return "Hacker detected"
 
       if(typeof(data.user_password) != "string" || typeof(data.user_mail) != "string" || typeof(data.user_name) != "string") return "Invalid Input"
-      if(data.user_name.length > 15 || data.user_name.length <= 4) return "Username must be between 4 and 15 characters long"
+      if(data.user_name.length > 15 || data.user_name.length < 4) return "Username must be between 4 and 15 characters long"
       if(data.user_mail.length > 254 || data.user_mail.length <= 5) return "Invalid Input"
       if(data.user_password.length > 72 || data.user_mail.length <= 0) return "Invalid Input"
       if(userExist = await db.doesUserExist(data.user_name,"name") == true) return "Username already exists"

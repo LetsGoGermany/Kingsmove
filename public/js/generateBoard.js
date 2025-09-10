@@ -80,6 +80,7 @@ function makeMoveHandler(board) {
 
 function handleFigureInput(field) {
     if (field === null) return false
+    console.log(field)
     if (field.classList.contains("movable-field")) return sendPieceMove(field)
     if (field.childElementCount > 0) return getPossibleMoves(field.firstChild)
 }
@@ -99,9 +100,7 @@ function showMovesMarker(data) {
     clearFieldTags()
     const [start, modifyer] = game.color === "white" ? [0, 1] : [7, -1]
     data.forEach(field => {
-        console.log(field)
         const fieldname = `field_${start + modifyer * field[0]}_${start + modifyer * field[1]}`
-        console.log(fieldname)
         const fieldDiv = document.getElementById(fieldname)
         fieldDiv.classList.add("movable-field")
         if (fieldDiv.childElementCount > 0) fieldDiv.classList.add("takeable-field")
@@ -124,6 +123,7 @@ function sendPieceMove(field) {
     const oldX = parseInt(currentFigureSelected.parentNode.dataset.x)
     const oldY = parseInt(currentFigureSelected.parentNode.dataset.y)
     const [rnX, rlY, roX, roY] = makeFullMoveReal([newX, newY, oldX, oldY])
+    console.log([roX, roY], [rnX, rlY])
     socket.emit("sendMoveRequest", [[roX, roY], [rnX, rlY], localStorage.getItem("currentGameID"), localStorage.getItem("sessionId")])
 }
 
@@ -172,7 +172,6 @@ function styleDraggingPositionFigure(x, y, figure, boardBox, e,figuerBounding) {
     const left = Math.min(Math.max(x,boardBox.x - figuerBounding.x), boardBox.x + boardBox.width - figuerBounding.x)
     const top = Math.min(Math.max(y,boardBox.y - figuerBounding.y), boardBox.y + boardBox.height - figuerBounding.y)
 
-    console.log(x,figuerBounding.x - boardBox.x)
     figure.style.left = left + "px"
     figure.style.top = top + "px"
 }
@@ -200,17 +199,23 @@ function endDraggingFigure(event) {
 
     currentFigureMoving.style.top = 0;
     currentFigureMoving.style.left = 0;
-
-    currentFigureMoving.classList.remove("current-figure-moving")
-    currentFigureMoving = null
-
     const field = document.elementFromPoint(event.clientX, event.clientY)
+    
+    currentFigureMoving.classList.remove("current-figure-moving")
+ 
+
+   
     document.querySelectorAll(".field").forEach(el => el.classList.remove("hovered-field"))
+
+    const currentFigureSelected = currentFigureMoving
+    currentFigureMoving = null
+   
     if (!field?.classList.contains("movable-field")) return
     field.innerHTML = ""
-    field.appendChild(currentFigureMoving)
-    index = 0;
     handleFigureInput(field)
+    field.appendChild(currentFigureSelected)
+    index = 0;
+    clearFieldTags()
 }
 
 function moveFigureWithmouse(event) {
