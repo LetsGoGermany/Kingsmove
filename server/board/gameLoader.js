@@ -180,14 +180,10 @@ async function getGames(id) {
   return games
 }
 
-async function sendAllGamesOfAccount(sessionId, socket) {
+async function sendAllGamesOfAccount(sessionId) {
   const id = await sessionLoader.getIdBySession(sessionId)
   const games = await getGames(id)
-  socket.emit("sendAllGamesOfAccount", {
-    games: games,
-    id: id
-  })
-
+  return games
 }
 
 async function getOpenGamesLength(session) {

@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 export default function LogOut() {
     const navigate = useNavigate()
     useEffect(() => {
-        console.log(localStorage.getItem("sessionid"))
           socket.emit("sessionEndet", localStorage.getItem("sessionid"))
           localStorage.removeItem("sessionid")
           navigate("/")
-    },[])
+          console.log("sessionOver")
+    },[navigate])
     
   
     return (

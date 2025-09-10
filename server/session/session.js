@@ -1,30 +1,32 @@
 const userSession = require('./sessionModel');
 const mongoose = require('mongoose');
-
 const connectedAccounts = new Map()
 
 async function addUserSession(object) {
-    const sessionObject = { user_id: object[0] }
-    const session = new userSession(sessionObject)
-    await session.save()
-    return session._id
+  const sessionObject = { user_id: object[0] }
+  const session = new userSession(sessionObject)
+  await session.save()
+  return session._id
 }
 
 async function verifyUserSession(session, socket) {
-    const object = await checkusersSession(session)
+  const gameLoader = require("../board/gameLoader")
 
-    if (object) {
-        connectedAccounts.set(socket, object.user_id)
-    }
-
-    socket.emit("userLoggedInSucess", object)
+  const object = await checkusersSession(session)
+  if(object === undefined) return
+  if (object) {
+    connectedAccounts.set(socket, object.user_id)
+  }
+  const games = await gameLoader.sendAllGamesOfAccount(object._id)
+  const {_id, user_id} = object
+  socket.emit("userLoggedInSucess",{_id,user_id,games})
 }
 
 async function checkusersSession(sessionID) {
-    if (!mongoose.Types.ObjectId.isValid(sessionID)) return console.log("Fehler beim ausführen, checkUserSession")
-    const id = new mongoose.Types.ObjectId(sessionID)
-    const object = await userSession.findOne({ _id: id })
-    return object
+  if (!mongoose.Types.ObjectId.isValid(sessionID)) return console.trace("Fehler beim ausführen, checkUserSession")
+  const id = new mongoose.Types.ObjectId(sessionID)
+  const object = await userSession.findOne({ _id: id })
+  return object
 }
 
 async function endSession(sessionID) {
@@ -46,16 +48,16 @@ async function getIdBySession(session) {
   }
 }
 
-function getAllSessionFromGame(white,black) {
+function getAllSessionFromGame(white, black) {
   return [...connectedAccounts.entries()].filter(account => account[1] == white || account[1] == black)
 }
 
 module.exports = {
-    addUserSession,
-    verifyUserSession,
-    checkusersSession,
-    removeAccount,
-    getIdBySession,
-    endSession,
-    getAllSessionFromGame,
+  addUserSession,
+  verifyUserSession,
+  checkusersSession,
+  removeAccount,
+  getIdBySession,
+  endSession,
+  getAllSessionFromGame,
 }

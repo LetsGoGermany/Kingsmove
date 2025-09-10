@@ -17,7 +17,7 @@ export default function LogIn() {
         msg:"userAttemptToLogIn"
     }
 
-  const navigate = useNavigate();
+   const navigate = useNavigate();
 
     socket.on("userLoggedInSucess", () => {
     navigate("/");

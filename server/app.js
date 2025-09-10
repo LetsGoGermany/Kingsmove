@@ -65,7 +65,7 @@ socket.on("joinGameByCode", (data) => gameLoader.joinGameByCode(data,socket))
 
 socket.on("disconnect", () => sessionLoader.removeAccount(socket))
 
-socket.on("requestAllGamesOnAccount", (data) => gameLoader.sendAllGamesOfAccount(data, socket)) 
+//socket.on("requestAllGamesOnAccount", (data) => gameLoader.sendAllGamesOfAccount(data, socket)) 
 
 socket.on("sendPawnConvertMove", (data) => game.processPawnConvert(data,socket))
 

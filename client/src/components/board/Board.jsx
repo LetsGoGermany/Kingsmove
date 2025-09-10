@@ -23,7 +23,7 @@ function Field({nr,figures}) {
             data-y={row}
             id={`field_${col}_${row}`}   
         >
-            {figures[row][col]?.fieldType === "figure" && <Figure figure={figures[row][col]}/>}
+            {figures[row]?.[col]?.fieldType === "figure" && <Figure figure={figures[row][col]}/>}
         </div>
     )
 }

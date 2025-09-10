@@ -7,7 +7,7 @@ import LogIn from "./pages/login/Login"
 import Signup from "./pages/signup/Signup"
 import LandingPage from "./pages/landing-page/Landing"
 import LogOut from "./pages/logout/Logout"
-
+import History from "./pages/history/History"
 import "./style/App.css";  // <- globale Styles hier laden
 
 const router = createBrowserRouter([
@@ -16,6 +16,7 @@ const router = createBrowserRouter([
   {path:"*", element: <LandingPage />},
   {path: "/signup",element: <Signup />},
   {path:"/logout", element: <LogOut />},
+  {path:"/game-history",element: <History />},
 ])
 
 createRoot(document.getElementById("root")).render(

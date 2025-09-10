@@ -32,6 +32,7 @@ export default function Navbar() {
   const [logStatus, setLogStatus] = useState("login")
 
   useEffect(() => {
+    console.log(localStorage.getItem("sessionid"))
    if(localStorage.getItem("sessionid")) socket.emit("checkSession",localStorage.getItem("sessionid"))
 
     
