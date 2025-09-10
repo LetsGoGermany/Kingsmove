@@ -1,0 +1,107 @@
+
+
+#navbar {
+    height: 100dvh;
+    width: fit-content;
+    background-color: var(--tertiary-gray );
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+
+#homeButtonLink img {
+    height: calc(var(--font-bg) * 2.2);
+}
+
+#homeButtonLink {
+    height: fit-content;
+}
+
+#homeButtonLink:hover {
+    background-color: var(--primary-gray);
+} 
+
+.index-link {
+    width: 100%;
+    text-decoration: none;
+    padding: 5px 14px 5px 5px;
+}
+
+.index-link p {
+    height: var(--font-bg);
+    font-size: var(--font-bg);
+    font-family: var(--primary-font);
+    color: var(--primary-font-color);
+}
+
+.index-link img {
+    height: var(--font-bg);
+}
+
+.index-link:hover {
+    background-color: var(--secondary-gray);
+}
+
+.menu-wrapper {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+}
+
+.dropdown-wrapper {
+    display: none;
+}
+
+.btm-part {
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.toggle-darkmode-container {
+    width: 100%;
+    padding-left: 14px;
+    margin-top: auto;
+}
+
+.toggle-darkmode-wrapper {
+    width: 50%;
+    height: calc(var(--font-bg)  * 1.4);
+    border: solid 3px var(--button-gray);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 3px;
+    cursor: pointer;
+}
+
+.darkmode-toggle-button {
+    height: 90%;
+    aspect-ratio: 1/1;
+    border: solid 1px var(--button-gray);
+    border-radius: 100%;
+    background-color: transparent;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    transition: left 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+body.darkmode .darkmode-toggle-button {
+   left: 100%;
+   transform: translate(-100%);
+}
+
+
+#loginLink, #logoutLink {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+@import url("./navbar-small.css") only screen and (max-aspect-ratio: 1/1);

@@ -1,0 +1,29 @@
+@import url("./Board-small.css") (max-aspect-ratio: 1/1); 
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    height: 90dvh;
+    aspect-ratio: 1/1;
+}
+
+.field {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.field.fw {
+    background-image: url(img/classic/white.png);
+}
+
+.field.fb {
+    background-image: url(img/classic/black.png);
+}
+
+.figure {
+    width: 80%;
+    height: 80%;
+}

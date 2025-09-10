@@ -1,0 +1,40 @@
+#navbar.nav {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0px;
+    padding: 10px 0;
+}
+
+#navbar .index-link {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar #homeButtonLink .menu-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+
+#navbar #homeButtonLink .menu-wrapper p {
+    display: none;
+}
+
+#root {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-wrapper {
+    flex-direction: column;
+}
+
+#navbar #loginLink, .toggle-darkmode-container {
+    display: none;
+}

@@ -1,0 +1,106 @@
+:root {
+  --primary-gray: #f2f2f2;
+  --secondary-gray: #ffffff;
+  --tertiary-gray: #e6e6e6;
+  --dark-gray: #cccccc;
+
+  --button-gray: #dddddd;
+  --button-hover: #c0c0c0;
+
+  --primary-border-color: #d0d0d0;
+  --primary-font-color: #111111;
+
+  --primary-contrast: #1a1a1a;
+
+  --primary-font: "Karla", sans-serif;
+
+  --old-move-color: #FAA02E;
+  --new-move-color: #FEBF0F;
+
+
+
+  --font-bg: 28px;
+
+  @media screen and (max-width : 1000px) {
+    --font-bg: 22px;
+    --font-small: 18px;
+  }
+
+  @media screen and (max-width : 900px) {
+    --font-bg: 20.5px;
+    --font-small: 17px;
+  }
+
+  @media screen and (max-width : 800px) {
+    --font-bg: 19px;
+    --font-small: 16px;
+  }
+
+  @media screen and (max-width : 700px) {
+    --font-bg: 17.5px;
+    --font-small: 15px;
+  }
+
+  @media screen and (max-width : 600px) {
+    --font-bg: 16px;
+    --font-small: 14px;
+  }
+
+  @media screen and (max-width : 500px) {
+    --font-bg: 14.5px;
+    --font-small: 13px;
+  }
+
+  @media screen and (max-width : 400px) {
+    --font-bg: 13px;
+    --font-small: 12px;
+  }
+
+
+  overflow: hidden;
+
+}
+
+body {
+  background-color: var(--primary-gray);
+}
+
+body.darkmode {
+  --primary-gray: #302E2B;
+  --secondary-gray: #21211F;
+  --tertiary-gray: #262522;
+  --dark-gray: #121210;
+
+  --button-gray: #43433F;
+  --button-hover: #54534F;
+
+  --primary-border-color: #10100E;
+  --primary-font-color: #dfdfdf;
+  --primary-contrast: #787878;
+
+  --primary-font: "Karla", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+}
+
+.cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: auto;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  #root .cover {
+    height: calc(100dvh - 25px - var(--font-bg) * 2);
+  }
+}
