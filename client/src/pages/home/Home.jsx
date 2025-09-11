@@ -9,8 +9,8 @@ export default function App() {
   useEffect(() => {
     function updateBoard(data) {
       const n = data.games.length - 1
-      console.log(n)
-      setBoard(data.games[n].board)
+      localStorage.setItem("currentGameID",data.games[n]._id)
+      setBoard(data.games[n])
     }
     socket.on("userLoggedInSucess", updateBoard)
     return () => {
@@ -21,7 +21,7 @@ export default function App() {
     <>
       <Navbar />
       <div className="cover">
-        < Board figures={board} />
+          < Board game={board} classname="moving"/>
       </div>
     </>
   )

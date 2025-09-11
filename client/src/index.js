@@ -11,12 +11,12 @@ import History from "./pages/history/History"
 import "./style/App.css";  // <- globale Styles hier laden
 
 const router = createBrowserRouter([
-  {path:"/", element:<Home />},
-  {path:"/login", element: <LogIn />},
-  {path:"*", element: <LandingPage />},
-  {path: "/signup",element: <Signup />},
-  {path:"/logout", element: <LogOut />},
-  {path:"/game-history",element: <History />},
+  {path:"/", element:<Home />, errorElement: <div>Error in ln 42 :/ ln 42: *blank*</div>},
+  {path:"/login", element: <LogIn />, errorElement: <div>Error in ln 42 :/ ln 42: *blank*</div>},
+  {path:"*", element: <LandingPage />, errorElement: <div>Error in ln 42 :/ ln 42: *blank*</div>},
+  {path: "/signup",element: <Signup />, errorElement: <div>Error in ln 42 :/ ln 42: *blank*</div>},
+  {path:"/logout", element: <LogOut />, errorElement: <div>Error in ln 42 :/ ln 42: *blank*</div>},
+  {path:"/game-history",element: <History />, errorElement: <div>Error in ln 42 :/ ln 42: *blank*</div>},
 ])
 
 createRoot(document.getElementById("root")).render(
