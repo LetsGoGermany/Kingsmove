@@ -1,8 +1,11 @@
 import "./board.css"
 import socket from "../../lib/socket";
+import { useState } from "react";
 
-export default function Board({game,classname}) {
-
+let  myColor;
+export default function Board({game,classname,color}) {
+    myColor = color
+    if(game.length === 0) return (<div>No Games Found</div>) 
     currentGame = game;
      const squares = Array.from({ length: 64 }, (_, i) => 63 - i);
     return (
@@ -10,7 +13,7 @@ export default function Board({game,classname}) {
             className={`board board-small ${classname}`}
         >
             {
-                squares.map(nr => <Field nr={nr} key={nr} figures={game.board || []}/>)
+                squares.map(nr => <Field nr={nr} key={nr} classname={classname} figures={game.board || []}/>)
             }
         </div>
     )
@@ -22,7 +25,7 @@ let currentFigureSelected = undefined;
 
 
 
-function Field({nr,figures}) {
+function Field({nr,figures,classname}) {
     const row = Math.floor(nr / 8)
     const col = 7 - nr % 8
     return (
@@ -34,20 +37,20 @@ function Field({nr,figures}) {
             onMouseEnter={(e) => currentFigureMoving === null || e.target.classList.add("hovered-field")}
             onMouseLeave={ (e) => e.target.classList.remove("hovered-field")}
         >
-            {figures[row]?.[col]?.fieldType === "figure" && <Figure figure={figures[row][col]}/>}
+            {figures[row]?.[col]?.fieldType === "figure" && <Figure figure={figures[row][col]} classname={classname}/>}
         </div>
     )
 }
 
 
-function Figure({figure}) {
+function Figure({figure,classname}) {
     return <img
         src={`/pieces/classic/${figure.figureColor}-${figure.figureType}.png`}
         alt={figure.figureType + figure.figureColor}
         className="figure"
         data-figure-color = {figure.figureColor}
         data-figure-type = {figure.figureType}
-        onMouseDown={startDraggingFigure}
+        onMouseDown={classname === "moving" ? startDraggingFigure : undefined}
     />
 }
 
@@ -124,14 +127,28 @@ function handleFigureInput(field) {
 }
 
 function getPossibleMoves(figure) {
+
     const x = parseInt(figure.parentNode.dataset.x)
     const y = parseInt(figure.parentNode.dataset.y)
-    const [start, modifyer] = currentGame.color === "white" ? [0, 1] : [7, -1]
+    const [start, modifyer] = myColor === "white" ? [0, 1] : [7, -1]
     const realX = start + modifyer * x
     const realY = start + modifyer * y
-
     currentFigureSelected = figure
-    socket.emit("askForLegalMoves", [realX, realY, localStorage.getItem("currentGameID"), localStorage.getItem("sessionid")])
+    socket.emit("askForLegalMoves", [realX, realY, localStorage.getItem("currentGameID"), localStorage.getItem("sessionid")],recievePossibleMoves)
+}
+
+function recievePossibleMoves(data) {
+    clearFieldTags()
+    data.forEach(move => {
+        const el = document.getElementById(`field_${move[0]}_${move[1]}`)
+        el.classList.add("movable-field")
+    })
+}
+
+function clearFieldTags() {
+    document.querySelectorAll(".field").forEach(el => {
+        el.classList.remove("movable-field")
+    })
 }
 
 function sendPieceMove(field) {
@@ -145,7 +162,7 @@ function sendPieceMove(field) {
 }
 
 function makeFullMoveReal(moves) {
-    const [start, modifyer] = currentGame.color === "white" ? [0, 1] : [7, -1]
+    const [start, modifyer] = myColor === "white" ? [0, 1] : [7, -1]
     return moves.map(move => start + modifyer * move)
 }
 

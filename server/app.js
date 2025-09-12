@@ -40,9 +40,10 @@ socket.on("verifyAccount", (data) => handleVerificationFeedback(data,socket))
 
 socket.on("userVerificationCode", (data) => userTriedToVerifyAccount(data,socket))
 
-socket.on("askForLegalMoves",(data) => {
-  game.legalMoves(data.splice(0,2),socket,data[0],data[1]);
-
+socket.on("askForLegalMoves",async (data,callback) => {
+  const moves = await game.legalMoves(data.splice(0,2),data[0],data[1]);
+  console.log(callback)
+  callback(moves)
 })
 
 socket.on("sendMoveRequest",(data) => {

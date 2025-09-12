@@ -4,13 +4,15 @@ import { useEffect, useState } from "react"
 import socket from "../../lib/socket"
 
 export default function App() {
-  const [board, setBoard] = useState([])
+  const [game, setGame] = useState([])
+  const [color,setColor] = useState("")
 
   useEffect(() => {
     function updateBoard(data) {
-      const n = data.games.length - 1
-      localStorage.setItem("currentGameID",data.games[n]._id)
-      setBoard(data.games[n])
+      const game = data.games.find(game => game._id === localStorage.getItem("currentGameID"))
+      setGame(game)
+      setColor(data.user_id === game.white ? "white" : "black")
+
     }
     socket.on("userLoggedInSucess", updateBoard)
     return () => {
@@ -21,7 +23,7 @@ export default function App() {
     <>
       <Navbar />
       <div className="cover">
-          < Board game={board} classname="moving"/>
+          < Board game={game} classname="moving" color={color}/>
       </div>
     </>
   )

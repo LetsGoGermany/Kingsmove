@@ -16,9 +16,11 @@ const router = createBrowserRouter([
   {path:"*", element: <LandingPage />, errorElement: <div>Error in ln 42 :/ ln 42: *blank*</div>},
   {path: "/signup",element: <Signup />, errorElement: <div>Error in ln 42 :/ ln 42: *blank*</div>},
   {path:"/logout", element: <LogOut />, errorElement: <div>Error in ln 42 :/ ln 42: *blank*</div>},
-  {path:"/game-history",element: <History />, errorElement: <div>Error in ln 42 :/ ln 42: *blank*</div>},
+  {path:"/game-history",element: <History />, errorElement: <div>Error in ln 42 :/ ln 42: *blank*</div>},   
 ])
 
 createRoot(document.getElementById("root")).render(
     <RouterProvider router={router}/>
 )
+
+//git ls-files -z | grep -zE "\.js$|\.jsx$" | grep -vz "node_modules/" | xargs -0 wc -l

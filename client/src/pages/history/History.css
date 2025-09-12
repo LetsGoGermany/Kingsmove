@@ -11,3 +11,16 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
 }
+
+.history-game-container {
+    position: relative;
+}
+
+.history-game-container.false::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+}

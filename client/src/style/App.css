@@ -81,6 +81,11 @@ body.darkmode {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-user-drag: none; 
+}
+
+img {
+  user-select: none;
 }
 
 #root {

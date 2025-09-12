@@ -5,14 +5,12 @@ const possibleMoves = require("./figureMoves")
 const ending = require("./checkForGameEnd")
 
 
-async function legalMoves(figure, socket, gameID, sessionID) {
-
+async function legalMoves(figure, gameID, sessionID) {
     const board = await gameLoader.getGame(gameID, sessionID)
     const playerID = await sessionLoader.getIdBySession(sessionID)
 
-    if (!isValidMove(board, playerID, figure)) return
-    const fields = possibleMoves.touchPiece(board.board, figure, playerID)
-    socket.emit("sendLegalMoves", fields)
+    if (!isValidMove(board, playerID, figure)) return []
+    return possibleMoves.touchPiece(board.board, figure, playerID)
 }
 
 function isValidMove(board, playerID, figure) {
