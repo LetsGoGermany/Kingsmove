@@ -18,6 +18,7 @@ async function verifyUserSession(session, socket) {
     connectedAccounts.set(socket, object.user_id)
   }
   const games = await gameLoader.sendAllGamesOfAccount(object._id)
+  
   const {_id, user_id} = object
   socket.emit("userLoggedInSucess",{_id,user_id,games})
 }

@@ -11,7 +11,7 @@ export default function App() {
     function updateBoard(data) {
       const game = data.games.find(game => game._id === localStorage.getItem("currentGameID"))
       setGame(game)
-      setColor(data.user_id === game.white ? "white" : "black")
+      setColor(data.user_id === game?.white ? "white" : "black")
 
     }
     socket.on("userLoggedInSucess", updateBoard)
@@ -19,6 +19,7 @@ export default function App() {
       socket.off("userLoggedInSucess", updateBoard)
     }
   }, [])
+ 
   return (
     <>
       <Navbar />

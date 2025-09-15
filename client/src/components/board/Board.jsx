@@ -1,62 +1,76 @@
 import "./board.css"
 import socket from "../../lib/socket";
-import { useState } from "react";
+import { useEffect } from "react";
+let myColor;
+let currentFigureMoving = null;
+let currentFigureSelected = undefined;
 
-let  myColor;
-export default function Board({game,classname,color}) {
+export default function Board({ game, classname, color }) {
+
+    useEffect(() => {
+        document.addEventListener("mousemove", moveFigureWithmouse)
+        document.addEventListener("mouseup", endDraggingFigure)
+        return () => {
+            document.removeEventListener("mousemove", moveFigureWithmouse)
+            document.removeEventListener("mouseup", endDraggingFigure)
+        }
+    }, [])
+
     myColor = color
-    if(game.length === 0) return (<div>No Games Found</div>) 
-    currentGame = game;
-     const squares = Array.from({ length: 64 }, (_, i) => 63 - i);
+    const squares = Array.from({ length: 64 }, (_, i) => 63 - i);
     return (
-        <div
-            className={`board board-small ${classname}`}
-        >
-            {
-                squares.map(nr => <Field nr={nr} key={nr} classname={classname} figures={game.board || []}/>)
-            }
+        <div style={{width : "fit-content", height:"100%",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
+            <ShowNamesOnBoard {...{ game, top:true,color }} />
+            <div className={`board board-small ${classname}`}>
+                {squares.map(nr => <Field nr={nr} key={nr} classname={classname} figures={game?.board || []} color={color} />)}
+            </div>
+            <ShowNamesOnBoard  {...{ game, top:false,color }} />
         </div>
     )
 }
 
-let currentFigureMoving = null;
-let currentGame = undefined;
-let currentFigureSelected = undefined;
 
-
-
-function Field({nr,figures,classname}) {
+function Field({ nr, figures, classname, color }) {
     const row = Math.floor(nr / 8)
     const col = 7 - nr % 8
+    const [modifyer, start] = color === "white" ? [1, 0] : [-1, 7]
+    const currentFigure = figures[start + modifyer * row]?.[start + modifyer * col];
     return (
         <div
             className={`field ${(row + col) % 2 ? "fb" : "fw"}`}
             data-x={col}
             data-y={row}
-            id={`field_${col}_${row}`}   
+            id={`field_${col}_${row}`}
             onMouseEnter={(e) => currentFigureMoving === null || e.target.classList.add("hovered-field")}
-            onMouseLeave={ (e) => e.target.classList.remove("hovered-field")}
+            onMouseLeave={(e) => e.target.classList.remove("hovered-field")}
         >
-            {figures[row]?.[col]?.fieldType === "figure" && <Figure figure={figures[row][col]} classname={classname}/>}
+            {currentFigure?.fieldType === "figure" && <Figure figure={currentFigure} classname={classname} />}
         </div>
     )
 }
 
 
-function Figure({figure,classname}) {
+function Figure({ figure, classname }) {
     return <img
         src={`/pieces/classic/${figure.figureColor}-${figure.figureType}.png`}
         alt={figure.figureType + figure.figureColor}
         className="figure"
-        data-figure-color = {figure.figureColor}
-        data-figure-type = {figure.figureType}
+        data-figure-color={figure.figureColor}
+        data-figure-type={figure.figureType}
         onMouseDown={classname === "moving" ? startDraggingFigure : undefined}
     />
 }
 
-
-document.addEventListener("mousemove", moveFigureWithmouse)
-document.addEventListener("mouseup", endDraggingFigure)
+function ShowNamesOnBoard({ game, top, color }) {
+    game.players = game.players || ["Player1","Player2"]
+    return (
+        <section 
+            className={`name-display`}
+        >
+            {game?.players[color === "white" === top ? 1 : 0]}
+        </section>
+    )
+}
 
 
 function moveFigureWithmouse(event) {
@@ -86,10 +100,10 @@ function getCoodinates(e, boardBox) {
     }
 }
 
-function styleDraggingPositionFigure(x, y, figure, boardBox, e,figuerBounding) {
+function styleDraggingPositionFigure(x, y, figure, boardBox, e, figuerBounding) {
 
-    const left = Math.min(Math.max(x,boardBox.x - figuerBounding.x), boardBox.x + boardBox.width - figuerBounding.x)
-    const top = Math.min(Math.max(y,boardBox.y - figuerBounding.y), boardBox.y + boardBox.height - figuerBounding.y)
+    const left = Math.min(Math.max(x, boardBox.x - figuerBounding.x), boardBox.x + boardBox.width - figuerBounding.x)
+    const top = Math.min(Math.max(y, boardBox.y - figuerBounding.y), boardBox.y + boardBox.height - figuerBounding.y)
 
     figure.style.left = left + "px"
     figure.style.top = top + "px"
@@ -104,16 +118,16 @@ function endDraggingFigure(event) {
     currentFigureMoving.style.top = 0;
     currentFigureMoving.style.left = 0;
     const field = document.elementFromPoint(event.clientX, event.clientY)
-    
-    currentFigureMoving.classList.remove("current-figure-moving")
- 
 
-   
+    currentFigureMoving.classList.remove("current-figure-moving")
+
+
+
     document.querySelectorAll(".field").forEach(el => el.classList.remove("hovered-field"))
 
     const currentFigureSelected = currentFigureMoving
     currentFigureMoving = null
-   
+
     if (!field?.classList.contains("movable-field")) return
     field.innerHTML = ""
     handleFigureInput(field)
@@ -134,13 +148,14 @@ function getPossibleMoves(figure) {
     const realX = start + modifyer * x
     const realY = start + modifyer * y
     currentFigureSelected = figure
-    socket.emit("askForLegalMoves", [realX, realY, localStorage.getItem("currentGameID"), localStorage.getItem("sessionid")],recievePossibleMoves)
+    socket.emit("askForLegalMoves", [realX, realY, localStorage.getItem("currentGameID"), localStorage.getItem("sessionid")], recievePossibleMoves)
 }
 
 function recievePossibleMoves(data) {
+    const [start, modifyer] = myColor === "white" ? [0, 1] : [7, -1]
     clearFieldTags()
     data.forEach(move => {
-        const el = document.getElementById(`field_${move[0]}_${move[1]}`)
+        const el = document.getElementById(`field_${start + modifyer * move[0]}_${start + modifyer * move[1]}`)
         el.classList.add("movable-field")
     })
 }

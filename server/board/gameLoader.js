@@ -14,14 +14,14 @@ async function startGameByCode(settings, socket) {
 
   const colors = await makeColors(settings, userID)
   const code = Math.floor(100000 + Math.random() * 900000)
-  const gameSettings = new Game(settings,colors,code)
+  const gameSettings = new Game(settings, colors, code)
   const game = new startGame(gameSettings)
   await game.save()
   socket.emit("gameRequestAccepted", code)
 }
 
 class Game {
-  constructor(settings,colors, code) {
+  constructor(settings, colors, code) {
     this.board = board.loadBoard()
     this.moves = []
     this.white = colors[0]
@@ -85,14 +85,14 @@ async function joinGameByCode(data) {
   if (!/^\d+$/.test(data.code)) return
   const userID = await sessionLoader.checkusersSession(data.sessionId)
   const game = await startGame.findOne({ gameCode: data.code })
-  if(!checkIfUserCanJoinGame(userID,game)) return console.trace("Unable to join Game")
+  if (!checkIfUserCanJoinGame(userID, game)) return console.trace("Unable to join Game")
   game.white === null ? game.white = userID.user_id : game.black = userID.user_id
   game.hasStarted = true
   await game.save();
   sendGameStarted(game.white, game.black, game._id)
 }
 
-function checkIfUserCanJoinGame(userID,game) {
+function checkIfUserCanJoinGame(userID, game) {
   if (userID === undefined) return false
   if (game === null) return false
   if (game.white === userID.user_id || game.black === userID.user_id) return false
@@ -101,7 +101,7 @@ function checkIfUserCanJoinGame(userID,game) {
 }
 
 function sendGameStarted(white, black, gameID) {
-  const accounts = sessionLoader.getAllSessionFromGame(white,black)
+  const accounts = sessionLoader.getAllSessionFromGame(white, black)
   accounts.forEach(element => {
     element[0].emit("gameStarted", gameID)
   });
@@ -115,8 +115,8 @@ async function sendGame(sessionID, gameID, socket) {
     if (game === null) return console.trace("Game Undefinded")
     const id = await sessionLoader.getIdBySession(sessionID)
     const myColor = game.white === id ? "white" : "black"
- 
-    socket.emit("newBoard", await makeBoardObject(game,myColor,names,sessionID))
+
+    socket.emit("newBoard", await makeBoardObject(game, myColor, names, sessionID))
 
   } catch (error) { console.trace(error) }
 }
@@ -136,30 +136,30 @@ async function getGame(gameID, sessionID) {
 
 async function saveMove(gameID, updatedBoard, color, ending, move) {
   const game = await startGame.findById(gameID)
-  if (game?.toMove !== color ) return console.trace("Fehler beim Ausführen")
-  
-  newGame = updateGame(game,ending,updatedBoard,move)
-  try{await newGame.save()} catch(error) {console.trace("/")}
+  if (game?.toMove !== color) return console.trace("Fehler beim Ausführen")
 
-  const accounts = sessionLoader.getAllSessionFromGame(game.white,game.black)
+  newGame = updateGame(game, ending, updatedBoard, move)
+  try { await newGame.save() } catch (error) { console.trace("/") }
+
+  const accounts = sessionLoader.getAllSessionFromGame(game.white, game.black)
   const names = await db.getNamesById([game.white, game.black])
 
   for (element of accounts) {
     const myColor = game.white === element[1] ? "white" : "black"
-    element[0].emit("newBoard", await makeBoardObject(game,myColor,names,element[1]));
+    element[0].emit("newBoard", await makeBoardObject(game, myColor, names, element[1]));
   }
 }
 
-async function makeBoardObject(game,myColor,names,sessionID) {
+async function makeBoardObject(game, myColor, names, sessionID) {
   return {
-      game: game,
-      color: myColor,
-      names: names,
-      openGames: await getOpenGamesLengthByID(sessionID)
+    game: game,
+    color: myColor,
+    names: names,
+    openGames: await getOpenGamesLengthByID(sessionID)
   }
 }
 
-function updateGame(game,ending,updatedBoard,move) {
+function updateGame(game, ending, updatedBoard, move) {
   game.board = updatedBoard
   game.toMove = game.toMove === "white" ? "black" : "white"
   game.finished = ending.ending
@@ -183,7 +183,16 @@ async function getGames(id) {
 async function sendAllGamesOfAccount(sessionId) {
   const id = await sessionLoader.getIdBySession(sessionId)
   const games = await getGames(id)
-  return games
+  const nameGames = []
+  for (const game of games) {
+    const gameObject = game.toObject()
+    const players = await Promise.all([
+      db.getNameById(gameObject.white),
+      db.getNameById(gameObject.black)
+    ])
+      nameGames.push({...gameObject,players})
+  }
+  return nameGames
 }
 
 async function getOpenGamesLength(session) {

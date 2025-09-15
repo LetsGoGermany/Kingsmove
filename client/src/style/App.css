@@ -21,40 +21,9 @@
 
   --font-bg: 28px;
 
-  @media screen and (max-width : 1000px) {
-    --font-bg: 22px;
-    --font-small: 18px;
-  }
-
-  @media screen and (max-width : 900px) {
-    --font-bg: 20.5px;
-    --font-small: 17px;
-  }
-
-  @media screen and (max-width : 800px) {
-    --font-bg: 19px;
-    --font-small: 16px;
-  }
-
-  @media screen and (max-width : 700px) {
-    --font-bg: 17.5px;
-    --font-small: 15px;
-  }
-
-  @media screen and (max-width : 600px) {
-    --font-bg: 16px;
-    --font-small: 14px;
-  }
-
-  @media screen and (max-width : 500px) {
-    --font-bg: 14.5px;
-    --font-small: 13px;
-  }
-
-  @media screen and (max-width : 400px) {
-    --font-bg: 13px;
-    --font-small: 12px;
-  }
+  --font-bg: clamp(13px, 2vw + 0.5rem, 28px);
+  --font-md: clamp(12px, 1.5vw + 0.4rem, 22px);
+  --font-small: clamp(11px, 1vw + 0.3rem, 18px);
 }
 
 body {

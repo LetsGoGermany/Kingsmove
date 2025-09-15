@@ -1,5 +1,5 @@
 .board.board-small {
-    width: 100%;
+    width: 100dvw;
     height: fit-content;
     aspect-ratio: 1/1;
 }

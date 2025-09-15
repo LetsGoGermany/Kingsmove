@@ -26,8 +26,7 @@ export default function History() {
     function loadGame(id) {
         localStorage.setItem("currentGameID",id)
         navigate("/")
-    }
-
+    }   
     return (
 
         <>
@@ -42,7 +41,7 @@ export default function History() {
                     key={game._id} 
                     onClick={() => {loadGame(game._id)}}
                     >
-                            < Board game={game} key={game._id} myMove={myMove} classname={`archive-game`} />
+                            < Board game={game} key={game._id} myMove={myMove} classname={`archive-game`} color={myColor}/>
                     </div>
                 }
                 )}
