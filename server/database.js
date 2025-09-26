@@ -118,7 +118,7 @@ async function userLogInAttempt(data, socket, callback) {
   if (password !== result[0].user_password) return callback("Password is incorrect")
 
   const sessionID = await sessionLoader.addUserSession([result[0].user_id])
-  
+ 
   return socket.emit("userLoggedInSucess", {
     user_id: result[0].user_id,
     _id: sessionID,

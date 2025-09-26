@@ -2,6 +2,8 @@ import "./Form.css"
 import { Link } from "react-router-dom"
 import socket from "../../lib/socket"
 import { useState } from "react"
+import BgButton from "../bg-button/BgButton"
+
 export default function Form(form) {
 
     const [feedback, setFeedback] = useState("")
@@ -21,7 +23,7 @@ export default function Form(form) {
             <h1 className="title">{form.title}</h1>
             {form.inputs.map(input => <Input input={input} key={input.name} />)}
             <p className="feedback">{feedback}</p>
-            <button className="send-btn" onClick={() => { sendForm(form.msg) }}>Log IN</button>
+            <BgButton onClick={() => sendForm(form.msg)} display={"Log In"} style={{marginTop:"auto"}}/>
             {form.links.map(link => <Link
                 to={link.to}
                 key={link.to}

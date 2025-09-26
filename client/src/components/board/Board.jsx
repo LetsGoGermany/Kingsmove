@@ -6,7 +6,7 @@ let currentFigureMoving = null;
 let currentFigureSelected = undefined;
 
 export default function Board({ game, classname, color }) {
-
+    clearFieldTags()
     useEffect(() => {
         document.addEventListener("mousemove", moveFigureWithmouse)
         document.addEventListener("mouseup", endDraggingFigure)
@@ -19,7 +19,7 @@ export default function Board({ game, classname, color }) {
     myColor = color
     const squares = Array.from({ length: 64 }, (_, i) => 63 - i);
     return (
-        <div style={{width : "fit-content", height:"100%",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
+        <div style={{width : "100% ", height:"100%",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
             <ShowNamesOnBoard {...{ game, top:true,color }} />
             <div className={`board board-small ${classname}`}>
                 {squares.map(nr => <Field nr={nr} key={nr} classname={classname} figures={game?.board || []} color={color} />)}
@@ -43,6 +43,7 @@ function Field({ nr, figures, classname, color }) {
             id={`field_${col}_${row}`}
             onMouseEnter={(e) => currentFigureMoving === null || e.target.classList.add("hovered-field")}
             onMouseLeave={(e) => e.target.classList.remove("hovered-field")}
+            onClick={(e) => {handleFigureInput(e.currentTarget)}}
         >
             {currentFigure?.fieldType === "figure" && <Figure figure={currentFigure} classname={classname} />}
         </div>
@@ -135,6 +136,7 @@ function endDraggingFigure(event) {
 }
 
 function handleFigureInput(field) {
+    console.log(field)
     if (field === null) return false
     if (field.classList.contains("movable-field")) return sendPieceMove(field)
     if (field.childElementCount > 0) return getPossibleMoves(field.firstChild)
@@ -172,7 +174,8 @@ function sendPieceMove(field) {
     const oldX = parseInt(currentFigureSelected.parentNode.dataset.x)
     const oldY = parseInt(currentFigureSelected.parentNode.dataset.y)
     const [rnX, rlY, roX, roY] = makeFullMoveReal([newX, newY, oldX, oldY])
-    console.log([roX, roY], [rnX, rlY])
+    console.log(rnX, rlY, roX, roY)
+    console.log(newX, newY, oldX, oldY)
     socket.emit("sendMoveRequest", [[roX, roY], [rnX, rlY], localStorage.getItem("currentGameID"), localStorage.getItem("sessionid")])
 }
 

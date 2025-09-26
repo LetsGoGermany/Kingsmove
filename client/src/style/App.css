@@ -17,10 +17,6 @@
   --old-move-color: #FAA02E;
   --new-move-color: #FEBF0F;
 
-
-
-  --font-bg: 28px;
-
   --font-bg: clamp(13px, 2vw + 0.5rem, 28px);
   --font-md: clamp(12px, 1.5vw + 0.4rem, 22px);
   --font-small: clamp(11px, 1vw + 0.3rem, 18px);

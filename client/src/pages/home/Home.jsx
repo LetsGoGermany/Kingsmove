@@ -5,7 +5,7 @@ import socket from "../../lib/socket"
 
 export default function App() {
   const [game, setGame] = useState([])
-  const [color,setColor] = useState("")
+  const [color, setColor] = useState("")
 
   useEffect(() => {
     function updateBoard(data) {
@@ -15,16 +15,20 @@ export default function App() {
 
     }
     socket.on("userLoggedInSucess", updateBoard)
+    socket.on("newBoard", updateBoard)
     return () => {
       socket.off("userLoggedInSucess", updateBoard)
+      socket.off("newBoard", updateBoard)
     }
   }, [])
- 
+
   return (
     <>
       <Navbar />
       <div className="cover">
-          < Board game={game} classname="moving" color={color}/>
+        <section className="container">
+          < Board game={game} classname="moving" color={color} />
+        </section>
       </div>
     </>
   )

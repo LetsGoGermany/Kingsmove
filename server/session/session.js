@@ -15,11 +15,11 @@ async function verifyUserSession(session, socket) {
   const object = await checkusersSession(session)
   if(object === undefined) return
   if (object) {
-    connectedAccounts.set(socket, object.user_id)
+    connectedAccounts.set(socket, object)
   }
   const games = await gameLoader.sendAllGamesOfAccount(object._id)
-  
   const {_id, user_id} = object
+
   socket.emit("userLoggedInSucess",{_id,user_id,games})
 }
 
@@ -50,7 +50,7 @@ async function getIdBySession(session) {
 }
 
 function getAllSessionFromGame(white, black) {
-  return [...connectedAccounts.entries()].filter(account => account[1] == white || account[1] == black)
+  return [...connectedAccounts.entries()].filter(account => account[1].user_id == white || account[1].user_id == black)
 }
 
 module.exports = {

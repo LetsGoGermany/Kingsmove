@@ -1,0 +1,19 @@
+.send-btn {
+    background-color: var(--primary-gray);
+    border: solid 1px var(--primary-contrast);
+    border-radius: 7.5px;
+    color: var(--primary-font-color);
+    font-size: var(--font-md);
+    padding: var(--font-md) calc(var(--font-md) * 2);
+    width: fit-content;
+}
+
+
+.send-btn:hover {
+    background-color: var(--button-hover);
+    cursor: pointer;
+}
+
+.send-btn-text{
+    width: fit-content;
+}

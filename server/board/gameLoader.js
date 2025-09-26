@@ -145,8 +145,9 @@ async function saveMove(gameID, updatedBoard, color, ending, move) {
   const names = await db.getNamesById([game.white, game.black])
 
   for (element of accounts) {
-    const myColor = game.white === element[1] ? "white" : "black"
-    element[0].emit("newBoard", await makeBoardObject(game, myColor, names, element[1]));
+    const games = await sendAllGamesOfAccount(element[1]._id)
+    const {user_id,_id} = element[1]
+    element[0].emit("userLoggedInSucess",{_id,user_id,games})
   }
 }
 
