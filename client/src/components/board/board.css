@@ -67,10 +67,38 @@
    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' stroke='black' stroke-width='4' fill='transparent'/></svg>");
 }
 
-.name-display {
-    color: var(--primary-font-color);
+.game-info-section{
+    width: 100%;
+    display: flex;
+    align-items: center;
     font-family: var(--primary-font);
     font-size: var(--font-md);
-    width: 100%;
-    padding: 10px;
+    padding: 10px 0;
+}
+
+.name-display {
+    width: fit-content;
+    text-align: center;
+    color: var(--primary-font-color);
+}
+
+.time-box {
+    margin-left: auto;
+    padding: calc(var(--padding-md) / 2) var(--padding-md);
+    border-radius: 4.5px;
+}
+
+.time-box.true {
+    background-color: black;
+    color: white;
+}
+
+.time-box.false {
+    background-color: white;
+    color: black;
+}
+
+.name-display.false::before {
+    content: "";
+   
 }

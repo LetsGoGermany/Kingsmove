@@ -17,18 +17,75 @@ export default function Board({ game, classname, color }) {
     }, [])
 
     myColor = color
+
     const squares = Array.from({ length: 64 }, (_, i) => 63 - i);
+    const figureDiff = calcFigureDiff(game.board || [])
+    
     return (
-        <div style={{width : "100% ", height:"100%",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
-            <ShowNamesOnBoard {...{ game, top:true,color }} />
+        <div style={{ width: "100% ", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+            <ShowNamesOnBoard {...{ game, top: true, color }} />
             <div className={`board board-small ${classname}`}>
                 {squares.map(nr => <Field nr={nr} key={nr} classname={classname} figures={game?.board || []} color={color} />)}
             </div>
-            <ShowNamesOnBoard  {...{ game, top:false,color }} />
+            {<ShowNamesOnBoard  {...{ game, top: false, color ,figureDiff}} />}
         </div>
     )
 }
 
+function calcFigureDiff(figures) {
+    if(figures.length === 0) return
+    const valuesBlack = [
+        { name: "pawn", count: 8, value: 1},
+        { name: "knight", count: 2, value: 3},
+        { name: "bishop", count: 2, value: 3},
+        { name: "rook", count: 2, value: 5},
+        { name: "queen", count: 1, value: 9},
+        { name: "king", count: 1, value: 0}
+    ]
+    const valuesWhite = JSON.parse(JSON.stringify(valuesBlack))
+
+    const white = figures.flat().filter(figure => figure.figureType !== "empty" && figure.figureColor === "white").map(el => el.figureType)
+    const black = figures.flat().filter(figure => figure.figureType !== "empty" && figure.figureColor === "black").map(el => el.figureType)
+
+    white.forEach(el => valuesWhite.find(type => type.name === el).count--)
+    black.forEach(el => valuesBlack.find(type => type.name === el).count--)
+
+    const valueAllWhite = valuesWhite.reduce((arr,curr) => arr+=(curr.count * curr.value),0)
+    const valueAllBlack = valuesBlack.reduce((arr,curr) => arr+=(curr.count * curr.value),0)
+  
+
+    const lostPiecesWhite = getLostPieces(valuesWhite)
+    const lostPiecesBlack = getLostPieces(valuesBlack)
+    const diffWhite = compareFigures(lostPiecesWhite,lostPiecesBlack)
+    const diffBlack = compareFigures(lostPiecesBlack,lostPiecesWhite)
+    return {
+        white: diffWhite,
+        black: diffBlack,
+        diff: valueAllBlack - valueAllWhite
+    }
+}
+
+function getLostPieces(values) {
+    const pieces = []
+    values.forEach(figure => {
+        for(let i=0;i<figure.count;i++) {
+            pieces.push(figure.name)
+        }
+    })
+    return pieces
+}
+
+function compareFigures(arr1, arr2) {
+    const set1 = JSON.parse(JSON.stringify(arr1))
+    const set2 = JSON.parse(JSON.stringify(arr2))
+
+    return set1.filter(int => {
+        const index = set2.indexOf(int)
+        if (index < 0) return true
+        set2.splice(index, 1)
+        return false
+    })
+}
 
 function Field({ nr, figures, classname, color }) {
     const row = Math.floor(nr / 8)
@@ -43,7 +100,7 @@ function Field({ nr, figures, classname, color }) {
             id={`field_${col}_${row}`}
             onMouseEnter={(e) => currentFigureMoving === null || e.target.classList.add("hovered-field")}
             onMouseLeave={(e) => e.target.classList.remove("hovered-field")}
-            onClick={(e) => {handleFigureInput(e.currentTarget)}}
+            onClick={(e) => { handleFigureInput(e.currentTarget) }}
         >
             {currentFigure?.fieldType === "figure" && <Figure figure={currentFigure} classname={classname} />}
         </div>
@@ -62,13 +119,20 @@ function Figure({ figure, classname }) {
     />
 }
 
-function ShowNamesOnBoard({ game, top, color }) {
-    game.players = game.players || ["Player1","Player2"]
+function ShowNamesOnBoard({ game, top, color, figureDiff}) {
+    game.players = game.players || ["Player1", "Player2"]
+
     return (
-        <section 
-            className={`name-display`}
+        <section
+            className="game-info-section"
         >
-            {game?.players[color === "white" === top ? 1 : 0]}
+            <p className={`name-display ${game.toMove === color === top}`}>
+                {game?.players[color === "white" === top ? 1 : 0]}{figureDiff?.diff}
+            </p>
+
+            <div className={`time-box ${color === "white" === top}`}>
+                10:00
+            </div>
         </section>
     )
 }
