@@ -35,6 +35,17 @@
     flex-direction: column;
 }
 
-#navbar #loginLink, .toggle-darkmode-container {
+.toggle-darkmode-container {
     display: none;
+}
+
+.login-mobile.index-link {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: min-content;
+}
+
+.login-mobile .menu-wrapper {
+    width: fit-content;
 }

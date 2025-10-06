@@ -5,7 +5,7 @@
     background-color: blue;
     overflow: auto;
     max-width: 90dvw;
-    max-height: 85dvh;
+    max-height: 78dvh;
     border-radius: 15px;
     background-color: var(--tertiary-gray);
     border: solid 1px var(--primary-contrast);

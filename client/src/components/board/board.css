@@ -73,7 +73,7 @@
     align-items: center;
     font-family: var(--primary-font);
     font-size: var(--font-md);
-    padding: 10px 0;
+    margin: 10px 0;
 }
 
 .name-display {
@@ -101,4 +101,30 @@
 .name-display.false::before {
     content: "";
    
+}
+
+.fig-name-info {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.fig-info {
+    font-size: var(--font-small);   
+    height: var(--font-small);
+    flex-direction: row;
+    display: flex;
+}
+
+.fig-info img {
+    height: var(--font-small);
+    margin: 0 calc(-1 * var(--font-small) / 4)
+}
+
+.fig-info p {
+    margin-left: calc(var(--font-small) / 2);
+}
+
+.blocker {
+    width: var(--font-md);
 }

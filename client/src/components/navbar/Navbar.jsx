@@ -23,6 +23,7 @@ const links = [
   { name: "historyLink", src: gameHistory, to: "game-history", displayName: "History" },
 ]
 
+
 const logButtons = {
   login: { name: "loginLink", src: login, to: "login", displayName: "Login" },
   logout: { name: "logoutLink", src: logout, to: "logout", displayName: "Logout" },
@@ -32,31 +33,43 @@ export default function Navbar() {
   const [logStatus, setLogStatus] = useState("login")
 
   useEffect(() => {
-   if(localStorage.getItem("sessionid")) socket.emit("checkSession",localStorage.getItem("sessionid"))
+    if (localStorage.getItem("sessionid")) socket.emit("checkSession", localStorage.getItem("sessionid"))
 
-    
+
     socket.on("userLoggedInSucess", handleLoginSucess)
-  
+
 
     return () => {
-    socket.off("userLoggedInSucess")
-  }
+      socket.off("userLoggedInSucess")
+    }
 
 
   }, [])
 
+     const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const checkWidth = () => setIsMobile(window.innerWidth <= window.innerHeight);
+      checkWidth();
+      window.addEventListener("resize", checkWidth);
+      return () => window.removeEventListener("resize", checkWidth);
+    }, []);
+
   function handleLoginSucess(data) {
-    if(data === null) return
+    if (data === null) return
     setLogStatus("logout")
-    localStorage.setItem("sessionid",data._id)
+    localStorage.setItem("sessionid", data._id)
   }
 
   return (
-    <div id="navbar" className="nav">
-      <MainList />
-      <DarkModeContainer />
-      <NavElement props={logButtons[logStatus]} />
-    </div>
+    <>
+      <div id="navbar" className="nav">
+        <MainList />
+        <DarkModeContainer />
+        {!isMobile && <NavElement props={logButtons[logStatus]} />}
+      </div>
+      {isMobile && <NavElement props={logButtons[logStatus]} className={"login-mobile"}/>}
+    </>
   )
 }
 
@@ -68,9 +81,9 @@ function MainList() {
   )
 }
 
-function NavElement({ props }) {
+function NavElement({ props, className}) {
   return (
-    <Link to={"/" + props.to} className="index-link" id={props.name}>
+    <Link to={"/" + props.to} className={`index-link${className ? ` ${className}` : ""}`} id={props.name}>
       <div className="menu-wrapper">
         <img
           src={props.src}
@@ -86,23 +99,23 @@ function NavElement({ props }) {
 
 function DarkModeContainer() {
 
-  const [darkmode,setDarkmode] = useState(JSON.parse(localStorage.getItem("darkmode")) || false)
+  const [darkmode, setDarkmode] = useState(JSON.parse(localStorage.getItem("darkmode")) || false)
 
   function toggleDarkmode() {
     setDarkmode(prev => !prev)
   }
 
-    useEffect(() => {
-         document.body.classList.toggle("darkmode", darkmode)
-         localStorage.setItem("darkmode", darkmode)
-    },[darkmode])
+  useEffect(() => {
+    document.body.classList.toggle("darkmode", darkmode)
+    localStorage.setItem("darkmode", darkmode)
+  }, [darkmode])
 
 
   return (
     <article className="toggle-darkmode-container">
       <div className="toggle-darkmode-wrapper" onClick={() => { toggleDarkmode() }}>
-        <button className="darkmode-toggle-button" 
-            style={{backgroundImage: `url(${darkmode ? darkmodePNG : lightmodePNG})`}}
+        <button className="darkmode-toggle-button"
+          style={{ backgroundImage: `url(${darkmode ? darkmodePNG : lightmodePNG})` }}
         />
       </div>
     </article>

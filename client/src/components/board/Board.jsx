@@ -23,8 +23,8 @@ export default function Board({ game, classname, color }) {
     
     return (
         <div style={{ width: "100% ", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
-            <ShowNamesOnBoard {...{ game, top: true, color }} />
-            <div className={`board board-small ${classname}`}>
+            <ShowNamesOnBoard {...{ game, top: true, color, figureDiff}} />
+            <div className={`board board-small ${classname}`}>    
                 {squares.map(nr => <Field nr={nr} key={nr} classname={classname} figures={game?.board || []} color={color} />)}
             </div>
             {<ShowNamesOnBoard  {...{ game, top: false, color ,figureDiff}} />}
@@ -78,13 +78,15 @@ function getLostPieces(values) {
 function compareFigures(arr1, arr2) {
     const set1 = JSON.parse(JSON.stringify(arr1))
     const set2 = JSON.parse(JSON.stringify(arr2))
+    const [unique,double] = [[],[]]
 
-    return set1.filter(int => {
+    set1.forEach(int => {
         const index = set2.indexOf(int)
-        if (index < 0) return true
+        if (index < 0) return unique.push(int)
         set2.splice(index, 1)
-        return false
+        return double.push(int)
     })
+    return [unique,double]
 }
 
 function Field({ nr, figures, classname, color }) {
@@ -119,24 +121,56 @@ function Figure({ figure, classname }) {
     />
 }
 
-function ShowNamesOnBoard({ game, top, color, figureDiff}) {
-    game.players = game.players || ["Player1", "Player2"]
+function ShowNamesOnBoard({ game, top, color, figureDiff }) {
 
+    game.players = game.players || ["Player1", "Player2"]
+    const isWhite = color==="white" === top
     return (
         <section
             className="game-info-section"
         >
-            <p className={`name-display ${game.toMove === color === top}`}>
-                {game?.players[color === "white" === top ? 1 : 0]}{figureDiff?.diff}
-            </p>
+            <div className="fig-name-info">
+                <p className={`name-display ${game.toMove === color === top}`}>
+                    {game?.players[isWhite ? 1 : 0]}
+                </p>
+                <div className="name-display fig-info">
 
-            <div className={`time-box ${color === "white" === top}`}>
+                    <BeatenFigures isWhite={isWhite} figures={isWhite ? figureDiff?.white : figureDiff?.black }/>
+
+                    <p>{isWhite === (figureDiff?.diff > 0) || "+" + Math.abs(figureDiff?.diff)}</p>
+                    
+                    </div>
+            </div>
+            <div className={`time-box ${isWhite}`}>
                 10:00
             </div>
         </section>
     )
 }
 
+function BeatenFigures({ isWhite, figures }) {
+    if(figures === undefined) return
+    return (
+        <>
+            <SetBeatenFigures figures={figures[1]} isWhite={isWhite}/>
+            <div className="blocker"></div>
+            <SetBeatenFigures figures={figures[0]} isWhite={isWhite}/>
+        </>
+    )
+}
+
+function SetBeatenFigures({figures, isWhite}) {
+    return (
+        <>
+        {
+        figures.map((el, i) => {
+            const figureFull = {figureType:el,figureColor : isWhite ? "white" : "black"}
+            return <Figure figure={figureFull} key={el+i}/>
+        })
+    }
+    </>
+    )
+}
 
 function moveFigureWithmouse(event) {
     event.preventDefault()
