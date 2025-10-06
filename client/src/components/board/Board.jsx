@@ -19,15 +19,15 @@ export default function Board({ game, classname, color }) {
     myColor = color
 
     const squares = Array.from({ length: 64 }, (_, i) => 63 - i);
-    const figureDiff = calcFigureDiff(game.board || [])
+    const figureDiff = calcFigureDiff(game?.board || [])
     
     return (
         <div style={{ width: "100% ", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
-            <ShowNamesOnBoard {...{ game, top: true, color, figureDiff}} />
+            {<ShowNamesOnBoard  game={game || {}} top={true} color={color} figureDiff={figureDiff}/>}
             <div className={`board board-small ${classname}`}>    
                 {squares.map(nr => <Field nr={nr} key={nr} classname={classname} figures={game?.board || []} color={color} />)}
             </div>
-            {<ShowNamesOnBoard  {...{ game, top: false, color ,figureDiff}} />}
+            {<ShowNamesOnBoard  game={game || {}} top={false} color={color} figureDiff={figureDiff}/>}
         </div>
     )
 }
@@ -123,7 +123,7 @@ function Figure({ figure, classname }) {
 
 function ShowNamesOnBoard({ game, top, color, figureDiff }) {
 
-    game.players = game.players || ["Player1", "Player2"]
+    game.players = game?.players || ["Player1", "Player2"]
     const isWhite = color==="white" === top
     return (
         <section

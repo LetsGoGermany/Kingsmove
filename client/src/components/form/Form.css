@@ -36,6 +36,7 @@
 .link {
     color: var(--primary-font-color);
     padding: 10px 0;
+    padding: 1rem;
 }
 
 .feedback {

@@ -56,6 +56,7 @@ socket.on("checkSession",(data) => {
 socket.on("sessionEndet",(data) => sessionLoader.endSession(data))
 
 socket.on("userAttemptToLogIn",(data,callback) => {
+  console.log("new Login detected")
   db.userLogInAttempt(data,socket,callback)
 })
 

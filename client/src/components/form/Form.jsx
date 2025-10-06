@@ -1,7 +1,7 @@
 import "./Form.css"
 import { Link } from "react-router-dom"
 import socket from "../../lib/socket"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import BgButton from "../bg-button/BgButton"
 
 export default function Form(form) {
