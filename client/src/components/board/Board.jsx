@@ -1,93 +1,42 @@
 import "./board.css"
-import socket from "../../lib/socket";
-import { useEffect } from "react";
-let myColor;
-let currentFigureMoving = null;
-let currentFigureSelected = undefined;
+import { useEffect, useState } from "react";
+import Figure from "./Figure";
+import ShowNamesOnBoard from "./GameInfoSection";
 
 export default function Board({ game, classname, color }) {
-    clearFieldTags()
-    useEffect(() => {
-        document.addEventListener("mousemove", moveFigureWithmouse)
-        document.addEventListener("mouseup", endDraggingFigure)
-        return () => {
-            document.removeEventListener("mousemove", moveFigureWithmouse)
-            document.removeEventListener("mouseup", endDraggingFigure)
-        }
-    }, [])
+    const [index,setIndex] = useState(0)
+    const [boardBuilder,setBoardBuilder] = useState([])
 
-    myColor = color
+    useEffect(() => {
+        setIndex(game?.moves?.length || 0) 
+    },[game])
+
+    useEffect(() => {
+        if(game.length === 0) return
+        renderGame(index,game,setBoardBuilder)
+    },[index,game])
 
     const squares = Array.from({ length: 64 }, (_, i) => 63 - i);
-    const figureDiff = calcFigureDiff(game?.board || [])
-    
+    const nameProps = {game:game || {},color,setIndex}
+
     return (
-        <div style={{ width: "100% ", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
-            {<ShowNamesOnBoard  game={game || {}} top={true} color={color} figureDiff={figureDiff}/>}
-            <div className={`board board-small ${classname}`}>    
-                {squares.map(nr => <Field nr={nr} key={nr} classname={classname} figures={game?.board || []} color={color} />)}
-            </div>
-            {<ShowNamesOnBoard  game={game || {}} top={false} color={color} figureDiff={figureDiff}/>}
+        <div className="board-wrapper">
+            <ShowNamesOnBoard {...nameProps} top={true}/>
+            <MainBoard {...{classname,boardBuilder,color,squares}}/>
+            <ShowNamesOnBoard {...nameProps} top={false}/>
         </div>
     )
 }
 
-function calcFigureDiff(figures) {
-    if(figures.length === 0) return
-    const valuesBlack = [
-        { name: "pawn", count: 8, value: 1},
-        { name: "knight", count: 2, value: 3},
-        { name: "bishop", count: 2, value: 3},
-        { name: "rook", count: 2, value: 5},
-        { name: "queen", count: 1, value: 9},
-        { name: "king", count: 1, value: 0}
-    ]
-    const valuesWhite = JSON.parse(JSON.stringify(valuesBlack))
 
-    const white = figures.flat().filter(figure => figure.figureType !== "empty" && figure.figureColor === "white").map(el => el.figureType)
-    const black = figures.flat().filter(figure => figure.figureType !== "empty" && figure.figureColor === "black").map(el => el.figureType)
-
-    white.forEach(el => valuesWhite.find(type => type.name === el).count--)
-    black.forEach(el => valuesBlack.find(type => type.name === el).count--)
-
-    const valueAllWhite = valuesWhite.reduce((arr,curr) => arr+=(curr.count * curr.value),0)
-    const valueAllBlack = valuesBlack.reduce((arr,curr) => arr+=(curr.count * curr.value),0)
-  
-
-    const lostPiecesWhite = getLostPieces(valuesWhite)
-    const lostPiecesBlack = getLostPieces(valuesBlack)
-    const diffWhite = compareFigures(lostPiecesWhite,lostPiecesBlack)
-    const diffBlack = compareFigures(lostPiecesBlack,lostPiecesWhite)
-    return {
-        white: diffWhite,
-        black: diffBlack,
-        diff: valueAllBlack - valueAllWhite
-    }
+function MainBoard({classname,boardBuilder,color,squares}) {
+    return (
+        <div className={`board board-small ${classname}`}>
+            {squares.map(nr => <Field nr={nr} key={nr} classname={classname} figures={boardBuilder} color={color} />)}
+        </div>
+    )
 }
 
-function getLostPieces(values) {
-    const pieces = []
-    values.forEach(figure => {
-        for(let i=0;i<figure.count;i++) {
-            pieces.push(figure.name)
-        }
-    })
-    return pieces
-}
-
-function compareFigures(arr1, arr2) {
-    const set1 = JSON.parse(JSON.stringify(arr1))
-    const set2 = JSON.parse(JSON.stringify(arr2))
-    const [unique,double] = [[],[]]
-
-    set1.forEach(int => {
-        const index = set2.indexOf(int)
-        if (index < 0) return unique.push(int)
-        set2.splice(index, 1)
-        return double.push(int)
-    })
-    return [unique,double]
-}
 
 function Field({ nr, figures, classname, color }) {
     const row = Math.floor(nr / 8)
@@ -100,196 +49,31 @@ function Field({ nr, figures, classname, color }) {
             data-x={col}
             data-y={row}
             id={`field_${col}_${row}`}
-            onMouseEnter={(e) => currentFigureMoving === null || e.target.classList.add("hovered-field")}
-            onMouseLeave={(e) => e.target.classList.remove("hovered-field")}
-            onClick={(e) => { handleFigureInput(e.currentTarget) }}
         >
             {currentFigure?.fieldType === "figure" && <Figure figure={currentFigure} classname={classname} />}
         </div>
     )
 }
 
-
-function Figure({ figure, classname }) {
-    return <img
-        src={`/pieces/classic/${figure.figureColor}-${figure.figureType}.png`}
-        alt={figure.figureType + figure.figureColor}
-        className="figure"
-        data-figure-color={figure.figureColor}
-        data-figure-type={figure.figureType}
-        onMouseDown={classname === "moving" ? startDraggingFigure : undefined}
-    />
+function renderGame(index,game,setBoardBuilder) {
+    let currentBoard = JSON.parse(JSON.stringify(game.board))
+    if(index !== game?.moves?.length) {
+        currentBoard = calculateNewBoard(game.moves,index)
+    } 
+ setBoardBuilder(currentBoard)
 }
 
-function ShowNamesOnBoard({ game, top, color, figureDiff }) {
-
-    game.players = game?.players || ["Player1", "Player2"]
-    const isWhite = color==="white" === top
-    return (
-        <section
-            className="game-info-section"
-        >
-            <div className="fig-name-info">
-                <p className={`name-display ${game.toMove === color === top}`}>
-                    {game?.players[isWhite ? 1 : 0]}
-                </p>
-                <div className="name-display fig-info">
-
-                    <BeatenFigures isWhite={isWhite} figures={isWhite ? figureDiff?.white : figureDiff?.black }/>
-
-                    <p>{isWhite === (figureDiff?.diff > 0) || "+" + Math.abs(figureDiff?.diff)}</p>
-                    
-                    </div>
-            </div>
-            <div className={`time-box ${isWhite}`}>
-                10:00
-            </div>
-        </section>
-    )
-}
-
-function BeatenFigures({ isWhite, figures }) {
-    if(figures === undefined) return
-    return (
-        <>
-            <SetBeatenFigures figures={figures[1]} isWhite={isWhite}/>
-            <div className="blocker"></div>
-            <SetBeatenFigures figures={figures[0]} isWhite={isWhite}/>
-        </>
-    )
-}
-
-function SetBeatenFigures({figures, isWhite}) {
-    return (
-        <>
-        {
-        figures.map((el, i) => {
-            const figureFull = {figureType:el,figureColor : isWhite ? "white" : "black"}
-            return <Figure figure={figureFull} key={el+i}/>
-        })
+function calculateNewBoard(moves,index) {
+    const board = JSON.parse(JSON.stringify(standartBoard))
+    for(let i=0;i<=index-1;i++) {
+        const [[x1,y1],[x2,y2]] = moves[i]
+        const temp = board[y1][x1]
+                     board[y1][x1] = {fieldType:"empty",movableField:false,enPassentField:false}
+                     board[y2][x2] = temp
+        if(moves[i][2] && moves[i][2] === "e.P.") board[y1][x2] = {fieldType:"empty",movableField:false,enPassentField:false}
     }
-    </>
-    )
+    return board
 }
 
-function moveFigureWithmouse(event) {
-    event.preventDefault()
-    if (currentFigureMoving === null) return
-    setPositonOfFigure(event, currentFigureMoving)
-}
-
-function setPositonOfFigure(event, figure) {
-    const boardBox = figure.parentNode.getBoundingClientRect()
-    const fullBoardBox = figure.parentNode.parentNode.getBoundingClientRect()
-    const [x, y] = getCoodinates(event, boardBox)
-    styleDraggingPositionFigure(x, y, figure, fullBoardBox, event, boardBox)
-}
-
-function getCoodinates(e, boardBox) {
-    if (e.touches) {
-        return [
-            e.touches[0].clientX - boardBox.left,
-            e.touches[0].clientY - boardBox.top
-        ]
-    } else {
-        return [
-            e.clientX - boardBox.left,
-            e.clientY - boardBox.top
-        ]
-    }
-}
-
-function styleDraggingPositionFigure(x, y, figure, boardBox, e, figuerBounding) {
-
-    const left = Math.min(Math.max(x, boardBox.x - figuerBounding.x), boardBox.x + boardBox.width - figuerBounding.x)
-    const top = Math.min(Math.max(y, boardBox.y - figuerBounding.y), boardBox.y + boardBox.height - figuerBounding.y)
-
-    figure.style.left = left + "px"
-    figure.style.top = top + "px"
-}
-
-function endDraggingFigure(event) {
-    event.preventDefault()
-    if (currentFigureMoving === null) return
-
-    currentFigureMoving.classList.remove("movable-figure")
-
-    currentFigureMoving.style.top = 0;
-    currentFigureMoving.style.left = 0;
-    const field = document.elementFromPoint(event.clientX, event.clientY)
-
-    currentFigureMoving.classList.remove("current-figure-moving")
-
-
-
-    document.querySelectorAll(".field").forEach(el => el.classList.remove("hovered-field"))
-
-    const currentFigureSelected = currentFigureMoving
-    currentFigureMoving = null
-
-    if (!field?.classList.contains("movable-field")) return
-    field.innerHTML = ""
-    handleFigureInput(field)
-    field.appendChild(currentFigureSelected)
-}
-
-function handleFigureInput(field) {
-    console.log(field)
-    if (field === null) return false
-    if (field.classList.contains("movable-field")) return sendPieceMove(field)
-    if (field.childElementCount > 0) return getPossibleMoves(field.firstChild)
-}
-
-function getPossibleMoves(figure) {
-
-    const x = parseInt(figure.parentNode.dataset.x)
-    const y = parseInt(figure.parentNode.dataset.y)
-    const [start, modifyer] = myColor === "white" ? [0, 1] : [7, -1]
-    const realX = start + modifyer * x
-    const realY = start + modifyer * y
-    currentFigureSelected = figure
-    socket.emit("askForLegalMoves", [realX, realY, localStorage.getItem("currentGameID"), localStorage.getItem("sessionid")], recievePossibleMoves)
-}
-
-function recievePossibleMoves(data) {
-    const [start, modifyer] = myColor === "white" ? [0, 1] : [7, -1]
-    clearFieldTags()
-    data.forEach(move => {
-        const el = document.getElementById(`field_${start + modifyer * move[0]}_${start + modifyer * move[1]}`)
-        el.classList.add("movable-field")
-    })
-}
-
-function clearFieldTags() {
-    document.querySelectorAll(".field").forEach(el => {
-        el.classList.remove("movable-field")
-    })
-}
-
-function sendPieceMove(field) {
-    const newX = parseInt(field.dataset.x)
-    const newY = parseInt(field.dataset.y)
-    const oldX = parseInt(currentFigureSelected.parentNode.dataset.x)
-    const oldY = parseInt(currentFigureSelected.parentNode.dataset.y)
-    const [rnX, rlY, roX, roY] = makeFullMoveReal([newX, newY, oldX, oldY])
-    console.log(rnX, rlY, roX, roY)
-    console.log(newX, newY, oldX, oldY)
-    socket.emit("sendMoveRequest", [[roX, roY], [rnX, rlY], localStorage.getItem("currentGameID"), localStorage.getItem("sessionid")])
-}
-
-function makeFullMoveReal(moves) {
-    const [start, modifyer] = myColor === "white" ? [0, 1] : [7, -1]
-    return moves.map(move => start + modifyer * move)
-}
-
-let isCurrentGameSkipped = false
-
-function startDraggingFigure(event) {
-    event.preventDefault()
-    if (isCurrentGameSkipped) return
-    currentFigureMoving = event.target
-    currentFigureMoving.classList.add("current-figure-moving")
-    setPositonOfFigure(event, currentFigureMoving)
-    event.target.classList.add("movable-figure")
-    handleFigureInput(event.target.parentNode)
-}
+   const standartBoard = await fetch("http://192.168.2.115:1887/api/standartBoard")
+    .then(res => res.json())

@@ -83,7 +83,7 @@
 }
 
 .time-box {
-    margin-left: auto;
+    margin-left: var(--font-small);
     padding: calc(var(--padding-md) / 2) var(--padding-md);
     border-radius: 4.5px;
 }
@@ -118,7 +118,7 @@
 
 .fig-info img {
     height: var(--font-small);
-    margin: 0 calc(-1 * var(--font-small) / 4)
+    margin: 0 calc(-1.4 * var(--font-small) / 4)
 }
 
 .fig-info p {
@@ -126,5 +126,21 @@
 }
 
 .blocker {
-    width: var(--font-md);
+    width: calc(var(--font-md) * 2);
+}
+
+.skip-btn-section {
+    margin-left: auto;
+    align-self: flex-end;
+    display: flex;
+    gap: calc(var(--font-small) / 4);
+}
+
+.board-wrapper {
+    width: "100% ";
+    height: "100%";
+    display: "flex";
+    justify-content: "center";
+    align-items: "center";
+    flex-direction: "column";
 }

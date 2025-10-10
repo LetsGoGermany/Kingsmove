@@ -3,17 +3,22 @@ require("./mongoConncection");
 
 const express = require("express");
 const http = require("http");
+const cors = require('cors');
 const { Server } = require("socket.io");
 
 const app = express();
 
 const server = http.createServer(app);
-const io = new Server(server, {
 
+const io = new Server(server, {
   cors: {
     origin: "*", // Erlaube alle Domains, nur für Testing. Später auf Frontend-Domain einschränken.
   },
 });
+
+app.use(cors());
+
+const generateBoard = require("./board/generateBoard")
 
 server.listen(1887, () => {
   console.log("Server läuft auf Port 1887");
@@ -130,13 +135,18 @@ function createID(limit) {
 const deleteUserInterval = setInterval(() => {db.deleteInactiveUsers()},1000)
 
 
+
 async function userTriedToVerifyAccount(data,socket) {
   if(JSON.stringify(Object.keys(data)) != JSON.stringify(["code","user_id"]) || data.code === null) return console.log("Ungültige Eingabe")
- const verifySucess = await db.verifyAccount(data)
- if(typeof verifySucess !== "object") return socket.emit("userVerificationError",verifySucess)
+    const verifySucess = await db.verifyAccount(data)
+  if(typeof verifySucess !== "object") return socket.emit("userVerificationError",verifySucess)
     const sessionID = await sessionLoader.addUserSession(verifySucess)
   result = {user_id: verifySucess[0],sessionId: sessionID}
   socket.emit("userLoggedIn", result)
-
+  
 }
 
+
+app.get("/api/standartBoard", (req,res) => {
+  res.json(generateBoard.loadBoard())
+})

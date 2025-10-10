@@ -65,10 +65,18 @@ export default function Navbar() {
     <>
       <div id="navbar" className="nav">
         <MainList />
-        <DarkModeContainer />
-        {!isMobile && <NavElement props={logButtons[logStatus]} />}
+        {!isMobile && <LowerPart logStatus={logStatus} />}
       </div>
-      {isMobile && <NavElement props={logButtons[logStatus]} className={"login-mobile"}/>}
+      {isMobile && <div className="mobile-sec-nav"><LowerPart logStatus={logStatus}/> </div>}
+    </>
+  )
+}
+
+function LowerPart({logStatus}) {
+  return (
+    <>
+        <DarkModeContainer />
+        <NavElement props={logButtons[logStatus]} />
     </>
   )
 }

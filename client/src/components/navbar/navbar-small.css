@@ -35,17 +35,32 @@
     flex-direction: column;
 }
 
-.toggle-darkmode-container {
-    display: none;
+.login-mobile .menu-wrapper {
+    width: fit-content;
 }
 
-.login-mobile.index-link {
+.mobile-sec-nav {
     position: absolute;
     right: 0px;
     bottom: 0px;
     width: min-content;
+    display: flex;
+    align-items: center;
 }
 
-.login-mobile .menu-wrapper {
-    width: fit-content;
+.mobile-sec-nav .toggle-darkmode-container {
+    padding: 0;
+    margin: 0;
+    margin-top: 0;
+}
+
+.mobile-sec-nav .toggle-darkmode-wrapper {
+    height: 20px;
+    width: auto;
+    aspect-ratio: 1/1;
+}
+
+.mobile-sec-nav .darkmode-toggle-button {
+    height: 100%;
+    width: 100%;
 }
