@@ -26,3 +26,5 @@ createRoot(document.getElementById("root")).render(
 )
 
 //git ls-files -z | grep -zE "\.js$|\.jsx$" | grep -vz "node_modules/" | xargs -0 wc -l
+//git ls-files -z | grep -zE "\.css$" | grep -vz "node_modules/" | xargs -0 wc -l
+//git ls-files -z | grep -zE "\.js$|\.jsx$" |  xargs -0 wc -l

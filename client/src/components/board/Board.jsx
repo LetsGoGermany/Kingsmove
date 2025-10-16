@@ -2,6 +2,7 @@ import "./board.css"
 import { useEffect, useState } from "react";
 import Figure from "./Figure";
 import ShowNamesOnBoard from "./GameInfoSection";
+import { dragMove, dragStart, dragEnd} from "./DragAndDrop";
 
 export default function Board({ game, classname, color }) {
     const [index, setIndex] = useState(0)
@@ -28,7 +29,7 @@ export default function Board({ game, classname, color }) {
     }
     useEffect(() => {
         setIndex(length)
-    }, [game])
+    }, [game,length])
 
     useEffect(() => {
         if (game.length === 0) return
@@ -42,15 +43,29 @@ export default function Board({ game, classname, color }) {
         <div className="board-wrapper">
             <ShowNamesOnBoard {...nameProps} top={true} />
             <MainBoard {...{ classname, boardBuilder, color, squares, move}} />
-            <ShowNamesOnBoard {...nameProps} top={false} />
+            <ShowNamesOnBoard {...nameProps} top={false} len={length}/>
         </div>
     )
 }
 
 
 function MainBoard({ classname, boardBuilder, color, squares , move}) {
+    const [currentFigure,setCurrentFigure] = useState(null)
+
+    useEffect(() => {
+        document.addEventListener("mousemove",(e) => dragMove(e,currentFigure))
+        document.addEventListener("mouseup",(e) => dragEnd(e,setCurrentFigure,currentFigure))
+        return () => {
+        document.removeEventListener("mousemove",(e) => dragMove(e,currentFigure))
+        document.removeEventListener("dragend",(e) => dragEnd(e,setCurrentFigure))
+        }
+    },[currentFigure])
+
     return (
-        <div className={`board board-small ${classname}`}>
+        <div 
+        className={`board board-small ${classname}`}
+        onMouseDown={(e) => dragStart(e,setCurrentFigure)}
+        >
             {squares.map(nr => <Field {...{nr,classname,figures:boardBuilder,color,move}} key={nr}/>)}
         </div>
     )

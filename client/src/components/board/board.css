@@ -32,13 +32,6 @@
     z-index: 200;
 }
 
-.current-figure-moving {
-    pointer-events: none;
-    position: relative;
-    transform: translate(-50%,-50%);
-    z-index: 999;
-}
-
 .movable-field::before {
     width: 30%;
     height: 30%;
@@ -119,6 +112,7 @@
 
 .fig-info img {
     height: var(--font-small);
+    width: var(--font-small);
     margin: 0 calc(-1.4 * var(--font-small) / 4)
 }
 
@@ -163,4 +157,11 @@
     background-color: orange;
     opacity: 0.6;
     z-index: 100;
+}
+
+.current-figure-moving {
+    pointer-events: none;
+    position: relative;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
 }

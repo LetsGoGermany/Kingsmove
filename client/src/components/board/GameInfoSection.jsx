@@ -1,7 +1,7 @@
 import Figure from "./Figure"
 import SimpleBtn from "../simple-btn/SimpleBtn";
 
-export default function ShowNamesOnBoard({ game, top, color, setIndex}) {
+export default function ShowNamesOnBoard({ game, top, color, setIndex, len}) {
     const figureDiff = calcFigureDiff(game?.board || [])
 
     game.players = game?.players || ["Player1", "Player2"]
@@ -9,7 +9,7 @@ export default function ShowNamesOnBoard({ game, top, color, setIndex}) {
     return (
         <section className="game-info-section">
             <NameAndFigureInfo {...{figureDiff,game,isWhite,color, top}}/>
-            <GameControlBtns {...{setIndex,game}}/>
+            {top || <GameControlBtns {...{setIndex,game,len}}/>}
             <div className={`time-box ${isWhite}`}>
                 10:00
             </div>
@@ -19,7 +19,7 @@ export default function ShowNamesOnBoard({ game, top, color, setIndex}) {
 
 
 
-function NameAndFigureInfo({ figureDiff, game, isWhite, color, top }) {
+function NameAndFigureInfo({ figureDiff, game, isWhite, color, top}) {
     return (
         <div className="fig-name-info">
            <NameInfo {...{game,color,top,isWhite}}/>
@@ -42,14 +42,13 @@ function changeIndex(setIndex,newIndex,length) {
     setIndex(prev => Math.min(Math.max(0,prev+newIndex),length))
 }
 
-function GameControlBtns({setIndex, game}) {
-    const length = game?.moves?.length -1 || 0;
+function GameControlBtns({setIndex, game, len}) {
     return (
         <div className="skip-btn-section">
         <SimpleBtn displayText={"|<"} func={() => setIndex(0)}/>
-        <SimpleBtn displayText={"<"} func={() => changeIndex(setIndex, -1,length)}/>
-        <SimpleBtn displayText={">"} func={() => changeIndex(setIndex, +1,length)}/>
-        <SimpleBtn displayText={">|"} func={() => setIndex(length)}/>
+        <SimpleBtn displayText={"<"} func={() => changeIndex(setIndex, -1,len)}/>
+        <SimpleBtn displayText={">"} func={() => changeIndex(setIndex, +1,len)}/>
+        <SimpleBtn displayText={">|"} func={() => setIndex(len)}/>
         </div>
     )
 }
