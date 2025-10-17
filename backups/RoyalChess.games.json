@@ -1,0 +1,8422 @@
+[{
+  "_id": {
+    "$oid": "68616b11c4a1d4a68022d7a3"
+  },
+  "board": [
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ]
+  ],
+  "moves": [
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        5
+      ]
+    ],
+    [
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        4,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      "e.P."
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        7,
+        4
+      ]
+    ],
+    [
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        5
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        1,
+        4
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        7,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        6,
+        7
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        5,
+        7
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    [
+      [
+        6,
+        0
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        6,
+        7
+      ],
+      "O-O"
+    ],
+    [
+      [
+        3,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        5
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        3
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    [
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    [
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    [
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    [
+      [
+        5,
+        4
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        5,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        2,
+        0
+      ],
+      [
+        7,
+        5
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        7,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        6,
+        3
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    [
+      [
+        7,
+        7
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    [
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    [
+      [
+        6,
+        7
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    [
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        4
+      ]
+    ],
+    [
+      [
+        7,
+        5
+      ],
+      [
+        6,
+        6
+      ]
+    ],
+    [
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        6
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    [
+      [
+        4,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    [
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        5,
+        1
+      ]
+    ],
+    [
+      [
+        5,
+        2
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        5,
+        5
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ]
+    ],
+    [
+      [
+        6,
+        6
+      ],
+      [
+        5,
+        7
+      ]
+    ]
+  ],
+  "white": "RC-OZNK5V8DMJ36",
+  "black": "RC-FO2MNMUNLYVO",
+  "hasStarted": true,
+  "toMove": "white",
+  "finished": false,
+  "winner": null,
+  "startDate": {
+    "$date": "2025-06-29T16:34:25.794Z"
+  },
+  "time": 30,
+  "bonusTime": 0,
+  "timerPerMove": false,
+  "gameCode": "361632",
+  "__v": 78
+},
+{
+  "_id": {
+    "$oid": "686a4dc7a3b78c6132cabe0d"
+  },
+  "board": [
+    [
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "queen",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "figureType": "queen",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ]
+  ],
+  "moves": [
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        6,
+        0
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        4,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      "O-O"
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        2,
+        7
+      ],
+      "O-O"
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ]
+  ],
+  "white": "RC-OZNK5V8DMJ36",
+  "black": "RC-FO2MNMUNLYVO",
+  "hasStarted": true,
+  "toMove": "black",
+  "finished": false,
+  "winner": null,
+  "startDate": {
+    "$date": "2025-07-06T10:19:51.110Z"
+  },
+  "time": 60,
+  "bonusTime": 0,
+  "timerPerMove": false,
+  "gameCode": "222890",
+  "__v": 23
+},
+{
+  "_id": {
+    "$oid": "686c097d177324f9fe72da64"
+  },
+  "board": [
+    [
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "knight",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "queen",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "queen",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ]
+  ],
+  "moves": [
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    [
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      "e.P."
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      "e.P."
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        6,
+        0
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    [
+      [
+        5,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      "O-O"
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        7
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        7
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        2,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        2,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ]
+    ],
+    [
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    [
+      [
+        7,
+        7
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        4,
+        1
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        4
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    [
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        2
+      ]
+    ],
+    [
+      [
+        7,
+        5
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        6,
+        2
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        6,
+        7
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ]
+    ]
+  ],
+  "white": "RC-OZNK5V8DMJ36",
+  "black": "RC-FO2MNMUNLYVO",
+  "hasStarted": true,
+  "toMove": "black",
+  "finished": true,
+  "winner": "white",
+  "startDate": {
+    "$date": "2025-07-07T17:53:01.011Z"
+  },
+  "time": 30,
+  "bonusTime": 0,
+  "timerPerMove": false,
+  "gameCode": "366080",
+  "__v": 61
+},
+{
+  "_id": {
+    "$oid": "686c0a2f8a99d32bf5b56e66"
+  },
+  "board": [
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ]
+  ],
+  "moves": [
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        6,
+        0
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      "O-O"
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        6,
+        7
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        2
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        6,
+        3
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        0,
+        7
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    [
+      [
+        2,
+        0
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        5
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        2,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        5
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        2
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    [
+      [
+        5,
+        2
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    [
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    [
+      [
+        6,
+        2
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        5
+      ],
+      [
+        7,
+        2
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        7
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        7,
+        2
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        5,
+        5
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        5,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        7,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        5,
+        6
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        6,
+        6
+      ]
+    ],
+    [
+      [
+        4,
+        5
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        6
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        7,
+        6
+      ],
+      [
+        0,
+        6
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    [
+      [
+        0,
+        6
+      ],
+      [
+        2,
+        6
+      ]
+    ],
+    [
+      [
+        4,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        7,
+        1
+      ],
+      [
+        7,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        2
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    [
+      [
+        6,
+        0
+      ],
+      [
+        6,
+        1
+      ]
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    [
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    [
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ]
+    ],
+    [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ]
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      "=queen"
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        7,
+        7
+      ]
+    ],
+    [
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        1
+      ]
+    ],
+    [
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        3
+      ]
+    ],
+    [
+      [
+        6,
+        1
+      ],
+      [
+        5,
+        1
+      ]
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        5,
+        1
+      ],
+      [
+        6,
+        2
+      ]
+    ],
+    [
+      [
+        7,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    [
+      [
+        6,
+        2
+      ],
+      [
+        7,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    [
+      [
+        7,
+        2
+      ],
+      [
+        6,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        6,
+        2
+      ],
+      [
+        7,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    [
+      [
+        7,
+        2
+      ],
+      [
+        6,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        6,
+        2
+      ],
+      [
+        7,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        3
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        1
+      ]
+    ],
+    [
+      [
+        5,
+        2
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        7,
+        1
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        6,
+        0
+      ],
+      [
+        7,
+        0
+      ]
+    ],
+    [
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        2
+      ]
+    ],
+    [
+      [
+        7,
+        0
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        1
+      ]
+    ],
+    [
+      [
+        6,
+        0
+      ],
+      [
+        7,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        0
+      ]
+    ]
+  ],
+  "white": "RC-OZNK5V8DMJ36",
+  "black": "RC-FO2MNMUNLYVO",
+  "hasStarted": true,
+  "toMove": "white",
+  "finished": true,
+  "winner": "black",
+  "startDate": {
+    "$date": "2025-07-07T17:55:59.366Z"
+  },
+  "time": 60,
+  "bonusTime": 0,
+  "timerPerMove": false,
+  "gameCode": "141619",
+  "__v": 134
+},
+{
+  "_id": {
+    "$oid": "68754beb2ace9fa228e43be9"
+  },
+  "board": [
+    [
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "queen",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "rook",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "figureType": "queen",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ]
+  ],
+  "moves": [
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        6,
+        7
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        6
+      ]
+    ]
+  ],
+  "white": "RC-FO2MNMUNLYVO",
+  "black": "RC-OZNK5V8DMJ36",
+  "hasStarted": true,
+  "toMove": "black",
+  "finished": true,
+  "winner": "white",
+  "startDate": {
+    "$date": "2025-07-14T18:26:51.824Z"
+  },
+  "time": 10,
+  "bonusTime": 0,
+  "timerPerMove": false,
+  "gameCode": "940838",
+  "__v": 7
+},
+{
+  "_id": {
+    "$oid": "6877c63db3b46dc99b5067df"
+  },
+  "board": [
+    [
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "figureType": "queen",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "rook",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "figureType": "queen",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ]
+  ],
+  "moves": [
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        6,
+        0
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        5,
+        2
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        2,
+        3
+      ]
+    ]
+  ],
+  "white": "RC-OZNK5V8DMJ36",
+  "black": "RC-FO2MNMUNLYVO",
+  "hasStarted": true,
+  "toMove": "black",
+  "finished": false,
+  "winner": null,
+  "startDate": {
+    "$date": "2025-07-16T15:33:17.861Z"
+  },
+  "time": 30,
+  "bonusTime": 0,
+  "timerPerMove": false,
+  "gameCode": "190219",
+  "__v": 7
+},
+{
+  "_id": {
+    "$oid": "6877dbf56915e1f98d843154"
+  },
+  "board": [
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "queen",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ]
+  ],
+  "moves": [
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        6,
+        0
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    [
+      [
+        6,
+        7
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        5,
+        7
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      "O-O"
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        6,
+        7
+      ],
+      "O-O"
+    ],
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    [
+      [
+        5,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        5,
+        7
+      ]
+    ],
+    [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        5,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        2,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        5,
+        7
+      ]
+    ],
+    [
+      [
+        6,
+        0
+      ],
+      [
+        5,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        4,
+        5
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        5,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        2,
+        6
+      ]
+    ],
+    [
+      [
+        4,
+        2
+      ],
+      [
+        7,
+        2
+      ]
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      [
+        1,
+        5
+      ]
+    ],
+    [
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        3
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        0,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ]
+    ]
+  ],
+  "white": "RC-OZNK5V8DMJ36",
+  "black": "RC-FO2MNMUNLYVO",
+  "hasStarted": true,
+  "toMove": "black",
+  "finished": true,
+  "winner": "white",
+  "startDate": {
+    "$date": "2025-07-16T17:05:57.499Z"
+  },
+  "time": 10,
+  "bonusTime": 0,
+  "timerPerMove": false,
+  "gameCode": "154117",
+  "__v": 71
+},
+{
+  "_id": {
+    "$oid": "6879092ea4482911470488c6"
+  },
+  "board": [
+    [
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "figureType": "bishop",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "knight",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false
+      },
+      {
+        "figureType": "queen",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      }
+    ]
+  ],
+  "moves": [
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        7,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        7,
+        4
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        4,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    [
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        4
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        0,
+        7
+      ]
+    ],
+    [
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    [
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    [
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    [
+      [
+        0,
+        4
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    [
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        4
+      ]
+    ],
+    [
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        4
+      ]
+    ],
+    [
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        4
+      ]
+    ],
+    [
+      [
+        6,
+        4
+      ],
+      [
+        7,
+        4
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        7
+      ]
+    ],
+    [
+      [
+        6,
+        7
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    [
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        5
+      ]
+    ],
+    [
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        6
+      ]
+    ],
+    [
+      [
+        7,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    [
+      [
+        6,
+        3
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        5
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    [
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        7
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        5,
+        6
+      ]
+    ]
+  ],
+  "white": "RC-OZNK5V8DMJ36",
+  "black": "RC-FO2MNMUNLYVO",
+  "hasStarted": true,
+  "toMove": "black",
+  "finished": true,
+  "winner": null,
+  "startDate": {
+    "$date": "2025-07-17T14:31:10.519Z"
+  },
+  "time": 30,
+  "bonusTime": 0,
+  "timerPerMove": false,
+  "gameCode": "359177",
+  "__v": 41
+},
+{
+  "_id": {
+    "$oid": "68bc63b6c3244c6e68bc60f3"
+  },
+  "board": [
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 3,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 2,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 0,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 1,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "rook",
+        "figureColor": "white",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 5,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 6,
+        "enPassentField": false
+      },
+      {
+        "figureType": "pawn",
+        "figureColor": "black",
+        "notMoved": true,
+        "fieldType": "figure",
+        "startX": 7,
+        "enPassentField": false
+      }
+    ],
+    [
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      },
+      {
+        "figureType": "king",
+        "figureColor": "black",
+        "notMoved": false,
+        "fieldType": "figure",
+        "startX": 4,
+        "enPassentField": false
+      },
+      {
+        "fieldType": "empty",
+        "movableField": false,
+        "enPassentField": false
+      }
+    ]
+  ],
+  "moves": [
+    [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    [
+      [
+        6,
+        0
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        5,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        3
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    [
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    [
+      [
+        4,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      "O-O"
+    ],
+    [
+      [
+        6,
+        7
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    [
+      [
+        2,
+        0
+      ],
+      [
+        6,
+        4
+      ]
+    ],
+    [
+      [
+        5,
+        7
+      ],
+      [
+        4,
+        6
+      ]
+    ],
+    [
+      [
+        6,
+        4
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    [
+      [
+        4,
+        6
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    [
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        1,
+        4
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        1,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    [
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        6,
+        7
+      ],
+      "O-O"
+    ],
+    [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    [
+      [
+        0,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    [
+      [
+        5,
+        5
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        5,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        5,
+        7
+      ],
+      [
+        4,
+        7
+      ]
+    ],
+    [
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        6
+      ]
+    ],
+    [
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        0
+      ]
+    ]
+  ],
+  "white": "RC-6M2EFJW4X0HV",
+  "black": "RC-OZNK5V8DMJ36",
+  "hasStarted": true,
+  "toMove": "white",
+  "finished": true,
+  "winner": "black",
+  "startDate": {
+    "$date": "2025-09-06T16:39:18.229Z"
+  },
+  "time": 30,
+  "bonusTime": 0,
+  "timerPerMove": false,
+  "gameCode": "996833",
+  "__v": 42
+}]

@@ -13,6 +13,10 @@ export default function Board({ game, classname, color }) {
         return (() => document.removeEventListener("keydown", pressKey))
     })
 
+    useEffect(() => {
+
+    },[])
+
     const length = game?.moves?.length || 0
 
     function pressKey(e) {
@@ -51,20 +55,29 @@ export default function Board({ game, classname, color }) {
 
 function MainBoard({ classname, boardBuilder, color, squares , move}) {
     const [currentFigure,setCurrentFigure] = useState(null)
+    const [lastFigureTouched,setLastFigureTouched] = useState(null)
 
     useEffect(() => {
-        document.addEventListener("mousemove",(e) => dragMove(e,currentFigure))
-        document.addEventListener("mouseup",(e) => dragEnd(e,setCurrentFigure,currentFigure))
+        const startMove = (e) => {dragMove(e,currentFigure)}
+        const endMove = (e) => {dragEnd(setCurrentFigure,currentFigure,color,setLastFigureTouched)} 
+
+        document.addEventListener("mousemove",startMove)
+        document.addEventListener("mouseup",endMove)
+        document.addEventListener("touchmove",startMove)
+        document.addEventListener("tochend",endMove)
         return () => {
-        document.removeEventListener("mousemove",(e) => dragMove(e,currentFigure))
-        document.removeEventListener("dragend",(e) => dragEnd(e,setCurrentFigure))
+        document.removeEventListener("mousemove",startMove)
+        document.removeEventListener("mouseup",endMove)
+        document.removeEventListener("touchmove",startMove)
+        document.removeEventListener("tochend",endMove)
         }
-    },[currentFigure])
+    },[currentFigure,color])
 
     return (
         <div 
         className={`board board-small ${classname}`}
-        onMouseDown={(e) => dragStart(e,setCurrentFigure)}
+        onMouseDown={(e) => dragStart(e,setCurrentFigure,color,lastFigureTouched)}
+        onTouchStart={(e) => dragStart(e,setCurrentFigure,color,lastFigureTouched)}
         >
             {squares.map(nr => <Field {...{nr,classname,figures:boardBuilder,color,move}} key={nr}/>)}
         </div>
@@ -80,6 +93,7 @@ function Field({ nr, figures, classname, color,move}) {
     const selectedField = `${isFirstField ? "first-field" : isSecondField ? "second-field" : ""}`
     const [modifyer, start] = color === "white" ? [1, 0] : [-1, 7]
     const currentFigure = figures[start + modifyer * row]?.[start + modifyer * col];
+
     return (
         <div
             className={`field ${(row + col) % 2 ? "fb" : "fw"} ${selectedField}`}
@@ -123,3 +137,4 @@ function swapFields([x1, x2, y1, y2], board) {
 
 const standartBoard = await fetch("http://192.168.2.115:1887/api/standartBoard")
     .then(res => res.json())
+    .catch((err) => err)

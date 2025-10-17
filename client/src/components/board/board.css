@@ -160,8 +160,14 @@
 }
 
 .current-figure-moving {
-    pointer-events: none;
     position: relative;
-    transform: translate(-50%,-50%);
     z-index: 9999;
+}
+
+body:has(.current-figure-moving) {
+    cursor: grabbing;
+}
+
+.field.hovered {
+    border: solid 0.3rem gray;
 }

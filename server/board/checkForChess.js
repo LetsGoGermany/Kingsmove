@@ -81,7 +81,6 @@ function checkForCheckloop(x,y,dirX,dirY,moveLimiter,color,gameBoard) {
         const newPosY = y + dirY * k
         const field = gameBoard[newPosY][newPosX]
         if(field.fieldType === "empty") continue
-        if(field.figureType == "king" && field.figureColor == color) console.log("Schach", x,y, "  //84")
         return field.figureType == "king" && field.figureColor == color
 
     }

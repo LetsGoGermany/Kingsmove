@@ -18,7 +18,7 @@ export default function LogIn() {
         msg: "userAttemptToLogIn"
     }
 
-    const navigate = useNavigate();
+ const navigate = useNavigate();
 
     useEffect(() => {
         socket.on("userLoggedInSucess", goBack)
@@ -29,7 +29,7 @@ export default function LogIn() {
         return () => {
             socket.off("userLoggedInSucess", goBack)
         }
-    },[])
+    },[navigate])
 
 
     return (

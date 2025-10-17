@@ -14,10 +14,10 @@ async function legalMoves(figure, gameID, sessionID) {
 }
 
 function isValidMove(board, playerID, figure) {
-    if (board === null) return false
+    if (!board || !figure[0] || !figure[1]) return false
     const ismove = board[board.toMove] === playerID
     if (!ismove) return false
-    if (board.board[figure[1]][figure[0]].figureColor !== board.toMove) return false
+    if (board?.board[figure[1]][figure[0]].figureColor !== board.toMove) return false
     return true
 }
 
@@ -30,7 +30,6 @@ function moveSpamDetected(socket) {
 }
 
 async function processMove(move, gameID, sessionId, socket) {
-
     if(moveSpamDetected(socket)) return 
     if (invalidInput(move)) return console.trace("Invalid")
     
