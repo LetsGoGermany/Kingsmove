@@ -6,8 +6,11 @@ export function dragStart(e,setCurrentFigure,color,lastFigureTouched) {
         setCurrentFigure(fig)
         fig.classList.add("current-figure-moving")
         setPositonOfFigure(e,fig)
+        handleFigureInput(fig.parentNode,color,lastFigureTouched)
+    } else {
+        handleFigureInput(fig,color,lastFigureTouched)
     }
-    handleFigureInput(fig,color,lastFigureTouched)
+    
 }
 
 export function dragMove(e,fig) {
@@ -15,10 +18,13 @@ export function dragMove(e,fig) {
     setPositonOfFigure(e,fig)
 }
 
-export function dragEnd(setCurrentFigure,currentFigure,color,setLastFigureTouched) {
+export function dragEnd(setCurrentFigure,currentFigure,color,setLastFigureTouched,e) {
     if(!currentFigure) return
-    handleFigureInput(currentFigure.parentNode,color,currentFigure)
+    const [x,y] = getCoodinates(e)
+    const field = getFieldFromPoint(x,y)
+    handleFigureInput(field,color,currentFigure)
     currentFigure.classList.remove("current-figure-moving")
+    setLastFigureTouched(currentFigure)
     setCurrentFigure(null)
     makeSelectedField(null)
 }
@@ -81,22 +87,11 @@ function makeSelectedField(field) {
 
 
 function handleFigureInput(field,color,figure) {
-     console.log(field.classList.contains("movable-field"))
-    // console.log(color)
-    // console.log(figure)
     if (field === null) return false
-    if (field.classList.contains("movable-field")) return sendPieceMove(field,color,figure)
-    if (field.childElementCount > 0) return getPossibleMoves(field.firstChild,color)
+    if (field?.classList.contains("movable-field")) return sendPieceMove(field,color,figure)
+    if (field?.childElementCount > 0) return getPossibleMoves(field.firstChild,color)
 }
 
-function handleFigureInput2(field,color,figure) {
-    console.log("test")
-    // console.log(color)
-    // console.log(figure)
-    if (field === null) return false
-    if (field.classList.contains("movable-field")) return sendPieceMove(field,color,figure)
-   // if (field.childElementCount > 0) return getPossibleMoves(field.firstChild,color)
-}
 
 function getPossibleMoves(figure,color) {
     const x = parseInt(figure.parentNode.dataset.x)
@@ -111,13 +106,6 @@ function getPossibleMoves(figure,color) {
 
 function recievePossibleMoves(data, color) {
     const [start, modifyer] = color === "white" ? [0, 1] : [7, -1]
-
-    function clearFieldTags() {
-        const fields = document.querySelectorAll(".field")
-        fields.forEach(el => {
-            el.classList.remove("movable-field")
-        })
-    }
     clearFieldTags()
     data.forEach(move => {
         const el = document.getElementById(`field_${start + modifyer * move[0]}_${start + modifyer * move[1]}`)
@@ -125,9 +113,16 @@ function recievePossibleMoves(data, color) {
     })
 }
 
+   export function clearFieldTags() {
+        const fields = document.querySelectorAll(".field")
+        fields.forEach(el => {
+            el.classList.remove("movable-field")
+        })
+    }
 
 
 function sendPieceMove(field,color,figure) {
+    console.log(figure,field)
     const newX = parseInt(field.dataset.x)
     const newY = parseInt(field.dataset.y)
     const oldX = parseInt(figure.parentNode.dataset.x)
@@ -136,7 +131,7 @@ function sendPieceMove(field,color,figure) {
     socket.emit("sendMoveRequest", [[roX, roY], [rnX, rlY], localStorage.getItem("currentGameID"), localStorage.getItem("sessionid")])
 }
 
-function makeFullMoveReal(moves,color) {
+export function makeFullMoveReal(moves,color) {
     const [start, modifyer] = color === "white" ? [0, 1] : [7, -1]
     return moves.map(move => start + modifyer * move)
 }

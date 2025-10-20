@@ -2,7 +2,7 @@ import "./board.css"
 import { useEffect, useState } from "react";
 import Figure from "./Figure";
 import ShowNamesOnBoard from "./GameInfoSection";
-import { dragMove, dragStart, dragEnd} from "./DragAndDrop";
+import { dragMove, dragStart, dragEnd, clearFieldTags, makeFullMoveReal} from "./DragAndDrop";
 
 export default function Board({ game, classname, color }) {
     const [index, setIndex] = useState(0)
@@ -33,11 +33,13 @@ export default function Board({ game, classname, color }) {
     }
     useEffect(() => {
         setIndex(length)
+        clearFieldTags()
     }, [game,length])
 
     useEffect(() => {
-        if (game.length === 0) return
+        if (!game || game.length === 0) return
         renderGame(index, game, setBoardBuilder)
+        clearFieldTags()
     }, [index, game])
 
     const squares = Array.from({ length: 64 }, (_, i) => 63 - i);
@@ -59,7 +61,7 @@ function MainBoard({ classname, boardBuilder, color, squares , move}) {
 
     useEffect(() => {
         const startMove = (e) => {dragMove(e,currentFigure)}
-        const endMove = (e) => {dragEnd(setCurrentFigure,currentFigure,color,setLastFigureTouched)} 
+        const endMove = (e) => {dragEnd(setCurrentFigure,currentFigure,color,setLastFigureTouched,e)} 
 
         document.addEventListener("mousemove",startMove)
         document.addEventListener("mouseup",endMove)
@@ -88,8 +90,9 @@ function MainBoard({ classname, boardBuilder, color, squares , move}) {
 function Field({ nr, figures, classname, color,move}) {
     const row = Math.floor(nr / 8)
     const col = 7 - nr % 8
-    const isFirstField = row === move[0][1] && col=== move[0][0]
-    const isSecondField = row === move[1][1] && col === move[1][0]
+    const [x1,y1,x2,y2] = makeFullMoveReal([move[0][1],move[0][0],move[1][1],move[1][0]],color)
+    const isFirstField = row === x1 && col=== y1
+    const isSecondField = row === x2 && col === y2
     const selectedField = `${isFirstField ? "first-field" : isSecondField ? "second-field" : ""}`
     const [modifyer, start] = color === "white" ? [1, 0] : [-1, 7]
     const currentFigure = figures[start + modifyer * row]?.[start + modifyer * col];
@@ -135,6 +138,6 @@ function swapFields([x1, x2, y1, y2], board) {
     return board
 }
 
-const standartBoard = await fetch("http://192.168.2.115:1887/api/standartBoard")
+const standartBoard = await fetch("http://localhost:1887/api/standartBoard")
     .then(res => res.json())
     .catch((err) => err)
