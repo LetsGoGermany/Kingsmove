@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy": "http://localhost:1887",
+  "proxy": "http://192.168.10.191:1887",
   "private": true,
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",

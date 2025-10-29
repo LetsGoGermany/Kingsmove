@@ -5,8 +5,11 @@ const express = require("express");
 const http = require("http");
 const cors = require('cors');
 const { Server } = require("socket.io");
+const fs = require("fs")
+
 
 const app = express();
+app.use(express.json())
 
 const server = http.createServer(app);
 
@@ -47,7 +50,7 @@ socket.on("userVerificationCode", (data) => userTriedToVerifyAccount(data,socket
 
 socket.on("askForLegalMoves",async (data,callback) => {
   const moves = await game.legalMoves(data.splice(0,2),data[0],data[1]);
-  console.log("test")
+  console.trace(moves)
   callback(moves)
 })
 
@@ -150,4 +153,34 @@ async function userTriedToVerifyAccount(data,socket) {
 
 app.get("/api/standartBoard", (req,res) => {
   res.json(generateBoard.loadBoard())
+})
+
+app.post("/api/todos", async (req, res) => {
+  const entry = {
+    title: req.body.title,
+    checked: false,
+    date: Date.now()
+  }
+  if(!(req.body.title.length > 0) || typeof req.body.title.length === "string") return 
+  const result = await manageNewTodo(entry)
+  res.send(result)
+})
+
+async function manageNewTodo(entry) {
+  const currentTodos = JSON.parse(
+    fs.readFileSync('./todos/todo.json', { encoding: 'utf8'})
+  )
+
+
+  if(!entry.title) currentTodos
+  currentTodos.push(entry)
+  fs.promises.writeFile("./todos/todo.json",JSON.stringify(currentTodos,null,2)).catch(() => [])
+  return currentTodos
+}
+
+app.get("/api/todos",async (req,res) => {
+    const currentTodos = JSON.parse(
+    fs.readFileSync('./todos/todo.json', { encoding: 'utf8'})
+  )
+  res.send(currentTodos)
 })

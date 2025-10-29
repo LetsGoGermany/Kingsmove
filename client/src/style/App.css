@@ -26,6 +26,7 @@
 
 body {
   background-color: var(--primary-gray);
+  overflow: hidden;
 }
 
 body.darkmode {
@@ -58,6 +59,7 @@ img {
 
 #root {
   height: 100dvh;
+  overflow: hidden;
 }
 
 .cover {

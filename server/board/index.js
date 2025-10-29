@@ -14,7 +14,7 @@ async function legalMoves(figure, gameID, sessionID) {
 }
 
 function isValidMove(board, playerID, figure) {
-    if (!board || !figure[0] || !figure[1]) return false
+    if (!board , !(figure[0] >= 0), !(figure[1] >= 0)) return false
     const ismove = board[board.toMove] === playerID
     if (!ismove) return false
     if (board?.board[figure[1]][figure[0]].figureColor !== board.toMove) return false
@@ -37,7 +37,7 @@ async function processMove(move, gameID, sessionId, socket) {
     const playerID = await sessionLoader.getIdBySession(sessionId)
 
     if (!isValidMove(board, playerID, move[0])) return
-    if (board.board[move[0][1]][move[0][0]].figureType === "pawn" && (move[1][1] === 0 || move[1][1] === 7)) return socket.emit("pawnConvertRequest", move)
+    if (board.board[move[0][1]][move[0][0]].figureType === "pawn" && (move[1][1] === 0 || move[1][1] === 7)) return
     const figure = board.board[move[0][1]][move[0][0]]
     if (figure.fieldType === "empty") return
     const boardCopy = JSON.parse(JSON.stringify(board.board))

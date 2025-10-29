@@ -126,7 +126,7 @@ async function getGame(gameID, sessionID) {
     const game = await startGame.findById(gameID)
     const session = await userSession.findById(sessionID)
     if (session === null) return null
-    if (game.white !== session.user_id && game.black !== session.user_id) return null
+    if (game?.white !== session.user_id && game.black !== session.user_id) return null
     return game
   } catch (error) {
     console.trace(error)

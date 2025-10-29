@@ -70,7 +70,6 @@ function pawnStraightMoves(x,y,isFirstMove,color,boardCopy) {
   
     if(currentField.fieldType != "empty") return 
     changeFields(x,y,x,posY,boardCopy)
-    console.log(x,posY)
     if(check.checkIfInChess(color,boardCopy) === false) fields.push([x,posY])
     if(isFirstMove === true) pawnStraightMoves(x,posY,false,color,boardCopy)
 }

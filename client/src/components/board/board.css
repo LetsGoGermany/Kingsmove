@@ -5,6 +5,7 @@
     grid-template-columns: repeat(8, 12.5%);
     grid-template-rows: repeat(8, 12.5%);
     height: 85dvh;
+    touch-action: none;
     aspect-ratio: 1/1;
 }
 

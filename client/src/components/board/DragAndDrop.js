@@ -39,8 +39,8 @@ function setPositonOfFigure(event, figure) {
 function getCoodinates(e) {
     if (e.touches) {
         return [
-            e.touches[0].clientX,
-            e.touches[0].clientY,
+            e.touches[0]?.clientX || 0,
+            e.touches[0]?.clientY ||0,
         ]
     } else {
         return [

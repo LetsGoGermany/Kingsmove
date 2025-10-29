@@ -31,6 +31,7 @@ export default function Board({ game, classname, color }) {
             setIndex(prev => Math.min(Math.max(0, prev + newIndex), length))
         }
     }
+    
     useEffect(() => {
         setIndex(length)
         clearFieldTags()
@@ -66,12 +67,12 @@ function MainBoard({ classname, boardBuilder, color, squares , move}) {
         document.addEventListener("mousemove",startMove)
         document.addEventListener("mouseup",endMove)
         document.addEventListener("touchmove",startMove)
-        document.addEventListener("tochend",endMove)
+        document.addEventListener("touchend",endMove)
         return () => {
         document.removeEventListener("mousemove",startMove)
         document.removeEventListener("mouseup",endMove)
         document.removeEventListener("touchmove",startMove)
-        document.removeEventListener("tochend",endMove)
+        document.removeEventListener("touchend",endMove)
         }
     },[currentFigure,color])
 
