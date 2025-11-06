@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react"
 import Navbar from "../../components/navbar/Navbar"
+import "./Todo.css"
+import { Trash } from 'lucide-react';
 
 export default function Todo() {
     return (
         <>
-        <Navbar></Navbar>
-        <TodoList />
+            <Navbar />
+            <div className="wrapper">
+                <main className="main-content">
+                    <TodoList />
+                </main>
+            </div>
         </>
     )
 }
@@ -21,55 +27,70 @@ function TodoList() {
 
     function sendForm(e) {
         const todoInput = document.getElementById("todoInput")
-         console.log(todoInput.value)
         e.preventDefault()
         fetch(`http://localhost:1887/api/todos`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({title: todoInput.value})
 
         })
-
             .then((data) => data.json())
             .then((data) => setTodos(data))
-            .catch((err) => console.log(err))
+            .then(todoInput.value = "")
     }
 
     return (
-        <form onSubmit={sendForm}>
-            <TodoInputs />
-            <TodoElements {...{todos}}/>
+        <>
+            <TodoInputs sendForm={sendForm}/>
+            <TodoElements {...{todos,setTodos}}/>
+            </>
+    )
+}
+
+function TodoInputs({sendForm}) {
+    return (
+        <form className="input-form" onSubmit={sendForm}>
+            <input type="text" placeholder="Add new task" id="todoInput" name="input" className="todo-input"/>
+            <input type="button" value="Add"  className="todo-submit"/>
         </form>
     )
 }
 
-function TodoInputs() {
+
+function TodoElements({ todos,setTodos }) {
     return (
-        <section>
-            <input type="text" placeholder="Add new task" id="todoInput"/>
-            <input type="button" value="Add" />
-        </section>
+        <div className="todo-list">
+            {todos.map(el => {
+                return <ListElement key={el.date} {...el} setTodos={setTodos}/>
+            })}
+        </div>
     )
 }
 
+function ListElement({ title, date, setTodos}) {
 
-function TodoElements({todos}) {
-    console.log(todos)
-    return (
-        <div>{todos.map(el => {
-            console.log(el);
-            return <ListElement key={el.date} {...el}/>
-        })}</div>
-    )
-}
+    function deleteItem(el) {
+        const id = el.currentTarget.parentNode.id
+            fetch(`http://localhost:1887/api/todos`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({id})
 
-function ListElement({title,time,checked}) {
+        })
+            .then((data) => data.json())
+            .then((data) => setTodos(data))
+    }
+
     return (
-        <div>
-            <p>{title}</p>
-            
+        <div className="todo-element" id={date}>
+            <p className="todo-text">{title}</p>
+            <span className="todo-delete" onClick={deleteItem}>
+                <Trash />
+            </span>
         </div>
     )
 }

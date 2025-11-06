@@ -1,0 +1,67 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-form {
+    display: flex;
+    height: fit-content;
+    flex-direction: row;
+    padding: 2rem 0 0 0;
+    gap: 0.5rem;
+}
+
+.main-content {
+    width: 900px;
+    max-width: 60%;
+}
+
+.todo-input {
+    background-color: transparent;
+    color: #ccc;
+    padding: 0.2rem;
+    font-size: 19px;
+    flex-grow: 1;
+}
+
+.todo-submit {
+    background-color: transparent;
+    color: #ccc;
+    padding: 0.2rem;
+    font-size: 19px;
+}
+
+.todo-list {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
+}
+
+.todo-element {
+    background-color: transparent;
+    color: #ccc;
+    padding: 0.2rem;
+    font-size: 19px;
+    border: solid 0.1rem #555;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.todo-text {
+    width: 60%;
+    max-width: 60%;
+    text-wrap: wrap;
+    height: auto;
+    word-break: break-word;   
+    hyphens: auto;
+}
+
+.todo-delete {
+    margin-left: auto;
+    cursor: pointer;
+}

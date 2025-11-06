@@ -5,7 +5,7 @@ const sessionLoader = require('./session/session');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'root',
+  password: 'RCadmin1887',
   database: 'royalchess'
 });
 
