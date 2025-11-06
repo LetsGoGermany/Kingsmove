@@ -88,6 +88,7 @@ function ListElement({ title, date, setTodos}) {
     return (
         <div className="todo-element" id={date}>
             <p className="todo-text">{title}</p>
+            <p>{formateDate(date)}</p>
             <span className="todo-delete" onClick={deleteItem}>
                 <Trash />
             </span>
@@ -95,7 +96,22 @@ function ListElement({ title, date, setTodos}) {
     )
 }
 
-function getTodos(setTodos) {
+function formateDate(data) {
+    const date = new Date(data)
+    if(isToday(date)) return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    return `${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`
+}
+
+function isToday(date) {
+    const today = new Date(Date.now())
+    return (
+        today.getDate() === date.getDate() &&
+        today.getMonth() === date.getMonth() &&
+        today.getFullYear() === date.getFullYear()
+    )
+}
+
+async function getTodos(setTodos) {
     return fetch("/api/todos")
                  .then((res) => res.json())
                  .then((data) => setTodos(data))
