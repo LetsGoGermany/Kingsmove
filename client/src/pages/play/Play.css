@@ -1,12 +1,94 @@
+.frame {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .timeCover {
     display: flex;
     gap: 30px;
 }
 
 .time-form {
-    width: 100%;
     height: 100%;
+    width: 30%;
+}
+
+.time-select-btn {
+    width: 30%;
+    padding: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    aspect-ratio: 1.9/1;
+}
+
+.category-title {
+    width: 100%;
+    color: var(--primary-font-color);
+    font-size: var(--font-md);
+    padding: 1rem 0 0.3rem 0;
+}
+
+
+
+.title {
+    font-size: var(--font-bg);
+    width: 100%;
+    text-align: center;
+    color: var(--primary-font-color );
+}
+
+.select-color-btn {
+    border: solid 1px var(--primary-contrast);
+    width: 100%;
+    border-radius: 7.5px;
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    aspect-ratio: 1.9/1;
+}
+
+.select-color-btn img {
+    height: 100%;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+}
+
+.select-color-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.color-selection-container {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+}
+
+.time-select-btn.selected, .select-color-btn.selected {
+    border-color: gold;
+}
+
+.start-btn {
+    border: solid 1px var(--primary-contrast);
+    width: 100%;
+    border-radius: 7.5px;
+    cursor: pointer;
+    background: transparent;
+    height: calc( var(--font-bg) * 3);
+    color: var(--primary-font-color);
+    font-size: var(--font-bg);
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    border-radius: 1px;
+    margin: 2rem 0;
+    background-color: var(--primary-contrast);
 }

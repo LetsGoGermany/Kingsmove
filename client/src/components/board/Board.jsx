@@ -64,7 +64,16 @@ function MainBoard({ classname, boardBuilder, color, squares, move }) {
         const startMove = (e) => { dragMove(e, currentFigure) }
         const endMove = (e) => { dragEnd(setCurrentFigure, currentFigure, color, setLastFigureTouched, e) }
 
-        dragNDropEventListeners(startMove, endMove)
+        document.addEventListener("mousemove", startMove)
+        document.addEventListener("mouseup", endMove)
+        document.addEventListener("touchmove", startMove)
+        document.addEventListener("touchend", endMove)
+        return () => {
+            document.removeEventListener("mousemove", startMove)
+            document.removeEventListener("mouseup", endMove)
+            document.removeEventListener("touchmove", startMove)
+            document.removeEventListener("touchend", endMove)
+        }
 
     }, [currentFigure, color])
 
@@ -79,18 +88,6 @@ function MainBoard({ classname, boardBuilder, color, squares, move }) {
     )
 }
 
-function dragNDropEventListeners(startMove, endMove) {
-    document.addEventListener("mousemove", startMove)
-    document.addEventListener("mouseup", endMove)
-    document.addEventListener("touchmove", startMove)
-    document.addEventListener("touchend", endMove)
-    return () => {
-        document.removeEventListener("mousemove", startMove)
-        document.removeEventListener("mouseup", endMove)
-        document.removeEventListener("touchmove", startMove)
-        document.removeEventListener("touchend", endMove)
-    }
-}
 
 function Field({ nr, figures, classname, color, move }) {
     const row = Math.floor(nr / 8)

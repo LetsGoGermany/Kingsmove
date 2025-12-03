@@ -1,4 +1,4 @@
-.send-btn {
+.bg-btn {
     background-color: var(--primary-gray);
     border: solid 1px var(--primary-contrast);
     border-radius: 7.5px;
@@ -9,11 +9,12 @@
 }
 
 
-.send-btn:hover {
+.bg-btn:hover {
     background-color: var(--button-hover);
     cursor: pointer;
 }
 
-.send-btn-text{
+.bg-btn-text{
     width: fit-content;
 }
+

@@ -1,5 +1,5 @@
 import Figure from "./Figure"
-import SimpleBtn from "../simple-btn/SimpleBtn";
+import SimpleBtn from "../btns/simple-btn/SimpleBtn"
 
 export default function ShowNamesOnBoard({ game, top, color, setIndex, len}) {
     const figureDiff = calcFigureDiff(game?.board || [])

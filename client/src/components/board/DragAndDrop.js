@@ -19,6 +19,7 @@ export function dragMove(e,fig) {
 }
 
 export function dragEnd(setCurrentFigure,currentFigure,color,setLastFigureTouched,e) {
+    console.log(currentFigure)
     if(!currentFigure) return
     const [x,y] = getCoodinates(e)
     const field = getFieldFromPoint(x,y)

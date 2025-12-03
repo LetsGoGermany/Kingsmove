@@ -28,7 +28,7 @@ function TodoList() {
     function sendForm(e) {
         const todoInput = document.getElementById("todoInput")
         e.preventDefault()
-        fetch(`http://localhost:1887/api/todos`, {
+        fetch(`/api/todos`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -73,7 +73,7 @@ function ListElement({ title, date, setTodos}) {
 
     function deleteItem(el) {
         const id = el.currentTarget.parentNode.id
-            fetch(`http://localhost:1887/api/todos`, {
+            fetch(`/api/todos`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
