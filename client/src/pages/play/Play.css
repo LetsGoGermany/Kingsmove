@@ -8,12 +8,14 @@
 
 .timeCover {
     display: flex;
-    gap: 30px;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .time-form {
     height: 100%;
-    width: 30%;
+    width: 400px;
+    max-width: 90%;
 }
 
 .time-select-btn {
@@ -39,14 +41,16 @@
     width: 100%;
     text-align: center;
     color: var(--primary-font-color );
+    padding-top: 5rem;
 }
 
 .select-color-btn {
     border: solid 1px var(--primary-contrast);
-    width: 100%;
+    padding: 0;
+    margin: 0;
+    width: 30%;
     border-radius: 7.5px;
     cursor: pointer;
-    aspect-ratio: 1/1;
     background-color: transparent;
     aspect-ratio: 1.9/1;
 }
@@ -54,7 +58,7 @@
 .select-color-btn img {
     height: 100%;
     aspect-ratio: 1/1;
-    background-color: transparent;
+    max-width: 100%;
 }
 
 .select-color-btn:hover {
@@ -62,12 +66,7 @@
 }
 
 .color-selection-container {
-    width: 100%;
-    padding: 2rem 0;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 30px;
+    padding: 0 0 2rem 0;
 }
 
 .time-select-btn.selected, .select-color-btn.selected {
@@ -91,4 +90,9 @@
     border-radius: 1px;
     margin: 2rem 0;
     background-color: var(--primary-contrast);
+}
+
+.color-selection-btn-container {
+    display: flex;
+    justify-content: space-between;
 }

@@ -11,6 +11,7 @@ import History from "./pages/history/History"
 import Play from "./pages/play/Play"
 import Todo from "./pages/Todo/todo"
 import "./style/App.css";  // <- globale Styles hier laden
+import SelectOponent from "./pages/play/Select-oponent/SelectOponent"
 
 const router = createBrowserRouter([
   {path:"/", element:<Home />},
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   {path:"/logout", element: <LogOut />},
   {path:"/game-history",element: <History />},
   {path:"/play",element: <Play />},
+  {path:"/play/select-oponent", element: <SelectOponent />},
   {path: "/todo", element: <Todo />},
 ])
 

@@ -14,7 +14,7 @@ async function legalMoves(figure, gameID, sessionID) {
 }
 
 function isValidMove(board, playerID, figure) {
-    if (!board , !(figure[0] >= 0), !(figure[1] >= 0)) return false
+    if (!board || !(figure[0] >= 0) || !(figure[1] >= 0)) return false
     const ismove = board[board.toMove] === playerID
     if (!ismove) return false
     if (board?.board[figure[1]][figure[0]].figureColor !== board.toMove) return false

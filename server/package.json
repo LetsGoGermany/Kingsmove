@@ -16,8 +16,10 @@
     "mongoose": "^8.18.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.14.5",
+    "node-json-logger": "^0.2.1",
     "nodemailer": "^7.0.6",
-    "socket.io": "^4.8.1"
+    "socket.io": "^4.8.1",
+    "winston": "^3.19.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

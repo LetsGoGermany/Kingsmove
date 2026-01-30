@@ -18,7 +18,7 @@ const io = new Server(server, {
     origin: "*", // Erlaube alle Domains, nur für Testing. Später auf Frontend-Domain einschränken.
   },
 });
-
+module.exports = {io}
 app.use(cors());
 
 const generateBoard = require("./board/generateBoard")
@@ -27,8 +27,11 @@ server.listen(1887, () => {
   console.log("Server läuft auf Port 1887");
 });
 
+const log = require("./console")
+
 
 io.on('connection', onConnected);
+io.on("connection",(socket) => {log.consoleClient(socket,io)})
 
 const sessionLoader = require("./session/session");
 const gameLoader = require("./board/gameLoader");
@@ -50,7 +53,6 @@ socket.on("userVerificationCode", (data) => userTriedToVerifyAccount(data,socket
 
 socket.on("askForLegalMoves",async (data,callback) => {
   const moves = await game.legalMoves(data.splice(0,2),data[0],data[1]);
-  console.trace(moves)
   callback(moves)
 })
 
@@ -156,7 +158,16 @@ app.get("/api/standartBoard", (req,res) => {
 })
 
 
+app.get("/",(req,res) => {
+  res.send("Das ist der Server")
+})
 
+app.use(express.static(__dirname + "/console"))
 
+app.get("/console", (req,res) => {
+
+  res.sendFile("console/index.html", {root:__dirname})
+})
 
 require("./todos/Todo")(app)
+

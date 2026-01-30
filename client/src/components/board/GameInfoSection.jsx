@@ -79,7 +79,11 @@ function SetBeatenFigures({figures, isWhite}) {
 
 
 function calcFigureDiff(figures) {
-    if(figures?.length === 0) return []
+    if(figures?.length === 0) return {
+        white: [[],[]],
+        black: [[],[]],
+        diff: 0
+    }
     
     const valuesBlack = getValues(figures,"black")
     const valuesWhite = getValues(figures,"white")
