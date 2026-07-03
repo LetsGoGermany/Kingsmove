@@ -1,4 +1,5 @@
-const check = require("./checkForChess")
+import check from "./checkForChess.js"
+import figureMoves from "./figureMoves.js"
 
 function status(color,board) {
 
@@ -27,8 +28,6 @@ function statusUpdate(areMovesPossible,isCheck,color) {
     }
 }
 
-const figureMoves = require("./figureMoves")
-
 function checkIfPossibleMoves(color,boarCopy) {
     
     let pieces = []
@@ -49,7 +48,7 @@ function checkIfPossibleMoves(color,boarCopy) {
 
 
 
-module.exports = {status}
+export default { status }
 
 
 

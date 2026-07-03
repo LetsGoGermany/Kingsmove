@@ -6,7 +6,7 @@ let selectedY;
 let gameBoard;
 let fields = [];
 
-const check = require("./checkForChess")
+import check from "./checkForChess.js"
 
 function touchPiece(board,fieldIndex) { //Wird ausgeführt, wenn eine Figur berüht wrid
     fields = []
@@ -192,4 +192,4 @@ function copy(object) {
 }
 
 
-module.exports = {touchPiece,isPossibleField}
+export default {touchPiece,isPossibleField}

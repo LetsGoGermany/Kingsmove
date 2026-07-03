@@ -1,8 +1,8 @@
 
-const gameLoader = require("./gameLoader")
-const sessionLoader = require("./../session/session")
-const possibleMoves = require("./figureMoves")
-const ending = require("./checkForGameEnd")
+import gameLoader from "./gameLoader.js"
+import sessionLoader from "./../session/session.js"
+import possibleMoves from "./figureMoves.js"
+import ending from "./checkForGameEnd.js"
 
 
 async function legalMoves(figure, gameID, sessionID) {
@@ -145,4 +145,4 @@ function changeFields(x1, y1, x2, y2, boardCopy) {
     return boardCopy
 }
 
-module.exports = { legalMoves, processMove, processPawnConvert }
+export default { legalMoves, processMove, processPawnConvert }

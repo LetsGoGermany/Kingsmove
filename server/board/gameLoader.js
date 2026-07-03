@@ -1,9 +1,9 @@
-const startGame = require('./boardModel');
-const board = require("./generateBoard")
-const db = require("./../database")
-const sessionLoader = require("./../session/session")
-const userSession = require("./../session/sessionModel")
-
+import startGame from './boardModel.js';
+import board from "./generateBoard.js";
+import db from "../lib/database.js";
+import sessionLoader from "./../session/session.js";
+import userSession from "./../session/sessionModel.js";
+import log from "../lib/console.js"
 
 async function startGameByCode(settings, socket) {
 
@@ -85,8 +85,12 @@ async function joinGameByCode(data) {
   if (!/^\d+$/.test(data.code)) return
   const userID = await sessionLoader.checkusersSession(data.sessionId)
   const game = await startGame.findOne({ gameCode: data.code })
-  if (!checkIfUserCanJoinGame(userID, game)) return console.trace("Unable to join Game")
-  game.white === null ? game.white = userID.user_id : game.black = userID.user_id
+  if (!checkIfUserCanJoinGame(userID, game)) return log.sendMSG({type:"warn",msg:`User unable to join game`,data})
+  if (game.white === null) {
+    game.white = userID.user_id
+  } else {
+    game.black = userID.user_id
+  }
   game.hasStarted = true
   await game.save();
   sendGameStarted(game.white, game.black, game._id)
@@ -111,14 +115,14 @@ async function sendGame(sessionID, gameID, socket) {
   try {
 
     const game = await getGame(gameID, sessionID)
+    if (game === null) return log.sendMSG({type:"warn",msg:`The Game with the ID: ${gameID} was not found`})
     const names = await db.getNamesById([game.white, game.black])
-    if (game === null) return console.trace("Game Undefinded")
     const id = await sessionLoader.getIdBySession(sessionID)
     const myColor = game.white === id ? "white" : "black"
 
     socket.emit("newBoard", await makeBoardObject(game, myColor, names, sessionID))
 
-  } catch (error) { console.trace(error) }
+  } catch (error) { log.sendMSG({type:"warn",msg:"Error sending Game to player",data:error},) }
 }
 
 async function getGame(gameID, sessionID) {
@@ -136,18 +140,18 @@ async function getGame(gameID, sessionID) {
 
 async function saveMove(gameID, updatedBoard, color, ending, move) {
   const game = await startGame.findById(gameID)
-  if (game?.toMove !== color) return console.trace("Fehler beim Ausführen")
+  if (game?.toMove !== color) return log.sendMSG({ type: "warn", msg: "Unable to Move figure" })
 
   newGame = updateGame(game, ending, updatedBoard, move)
-  try { await newGame.save() } catch (error) { console.trace("/") }
+  try { await newGame.save() } catch (error) { log.sendMSG({ type: "warn", msg: "Unable to Move figure", data: error }) }
 
   const accounts = sessionLoader.getAllSessionFromGame(game.white, game.black)
   const names = await db.getNamesById([game.white, game.black])
 
   for (element of accounts) {
     const games = await sendAllGamesOfAccount(element[1]._id)
-    const {user_id,_id} = element[1]
-    element[0].emit("userLoggedInSucess",{_id,user_id,games})
+    const { user_id, _id } = element[1]
+    element[0].emit("userLoggedInSucess", { _id, user_id, games })
   }
 }
 
@@ -191,7 +195,7 @@ async function sendAllGamesOfAccount(sessionId) {
       db.getNameById(gameObject.white),
       db.getNameById(gameObject.black)
     ])
-      nameGames.push({...gameObject,players})
+    nameGames.push({ ...gameObject, players })
   }
   return nameGames
 }
@@ -211,7 +215,7 @@ async function getOpenGamesLengthByID(id) {
 }
 
 
-module.exports = {
+export default {
   startGameByCode,
   joinGameByCode,
   sendGame,

@@ -1,5 +1,5 @@
 
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
   service: "Gmail", // Alternativ: "Outlook", "Yahoo", etc.
@@ -50,4 +50,4 @@ const sendVerificationCode = async (emailAdress,verification) => {
   }
 };
 
-module.exports = {sendVerificationCode}
+export default {sendVerificationCode}

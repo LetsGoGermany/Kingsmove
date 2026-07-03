@@ -1,3 +1,5 @@
+import figureMoves from "./figureMoves.js"
+
 function checkIfInChess(color,gameBoard) {
 
     const enemyColor = color === 'white' ? 'black' : 'white';
@@ -32,8 +34,6 @@ function canPieceGiveCheckInTheory(piece,kingX,kingY,pieceX,pieceY,direction) {
     if(piece.figureType == "king" && Math.abs(kingX - pieceX) <= 1 && Math.abs(kingY - pieceY) <= 1) return true
     return false
 }
-
-const figureMoves = require("./figureMoves")
 
 function checkIfPieceGivesCheck(piece,color,gameBoard) {
     const figureType = piece.figureType;
@@ -86,9 +86,6 @@ function checkForCheckloop(x,y,dirX,dirY,moveLimiter,color,gameBoard) {
     }
     return false
 }
-
-module.exports = {checkIfInChess}
-
 
 function getFigurePosition(figure,boardCopy) {
      const y = boardCopy.findIndex(innerArray => JSON.stringify(innerArray).includes(JSON.stringify(figure)));
@@ -144,3 +141,5 @@ function isPossibleField(x,y,dirX,dirY,i,moveLimiter) {
     if(moveLimiter > 0 && i > moveLimiter) return false
     return true
 }
+
+export default {checkIfInChess}

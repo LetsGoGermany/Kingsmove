@@ -101,3 +101,27 @@ color: #dfffea;
 ::-webkit-scrollbar-button {
   display: none;
 }
+
+.toggle {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  color: #4da3ff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.details {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+  padding: 8px;
+  background: #101018;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #bdbdd6;
+  display: none;
+}
+
+.log.open .details {
+  display: block;
+}

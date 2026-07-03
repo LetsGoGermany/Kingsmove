@@ -4,6 +4,8 @@ import Figure from "./Figure";
 import ShowNamesOnBoard from "./GameInfoSection";
 import { dragMove, dragStart, dragEnd, clearFieldTags, makeFullMoveReal } from "./DragAndDrop";
 
+import { touchPiece } from "http://localhost:1887/api/figureMoves.js"
+
 export default function Board({ game, classname, color }) {
     const [index, setIndex] = useState(0)
     const [boardBuilder, setBoardBuilder] = useState([])
@@ -53,6 +55,8 @@ export default function Board({ game, classname, color }) {
             <ShowNamesOnBoard {...nameProps} top={false} len={length} />
         </div>
     )
+    const test = touchpiece(boardBuilder,[[0,3],[4,0]])
+    console.log(test)
 }
 
 
@@ -143,3 +147,7 @@ function swapFields([x1, x2, y1, y2], board) {
 const standartBoard = await fetch("http://localhost:1887/api/standartBoard")
     .then(res => res.json())
     .catch((err) => err)
+
+
+    
+

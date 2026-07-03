@@ -1,6 +1,6 @@
-const fs = require("fs")
+import fs from "fs"
 
-module.exports = (app) => {
+export default (app) => {
     app.post("/api/todos", async (req, res) => {
       const entry = {
         title: req.body.title,

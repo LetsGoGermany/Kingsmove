@@ -1,5 +1,7 @@
-const userSession = require('./sessionModel');
-const mongoose = require('mongoose');
+import userSession from './sessionModel.js';
+import mongoose from 'mongoose';
+import log from "../lib/console.js"
+
 const connectedAccounts = new Map()
 
 async function addUserSession(object) {
@@ -31,8 +33,8 @@ async function checkusersSession(sessionID) {
 }
 
 async function endSession(sessionID) {
-  console.log(sessionID)
-  if (!mongoose.Types.ObjectId.isValid(sessionID)) return console.log("Fehler beim ausführen, endSession")
+  if (!mongoose.Types.ObjectId.isValid(sessionID)) return  log.sendMSG({type:"warn",msg:`Failed to end session.`,data:`The SessionID: ${sessionID} is not Valid`})
+  log.sendMSG({type:"info",msg:`Die Session wurde mit der ID: ${sessionID} wurde beendet`})
   await userSession.findByIdAndDelete(sessionID)
 }
 
@@ -53,7 +55,7 @@ function getAllSessionFromGame(white, black) {
   return [...connectedAccounts.entries()].filter(account => account[1].user_id == white || account[1].user_id == black)
 }
 
-module.exports = {
+export default {
   addUserSession,
   verifyUserSession,
   checkusersSession,

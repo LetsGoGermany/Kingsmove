@@ -1,41 +1,42 @@
 
-require("./mongoConncection");
+import "./lib/mongoConncection.js";
 
-const express = require("express");
-const http = require("http");
-const cors = require('cors');
-const { Server } = require("socket.io");
-const fs = require("fs")
-
+import express from "express";
+import http from "http";
+import cors from 'cors';
+import fs from "fs";
 
 const app = express();
 app.use(express.json())
 
 const server = http.createServer(app);
 
-const io = new Server(server, {
-  cors: {
-    origin: "*", // Erlaube alle Domains, nur für Testing. Später auf Frontend-Domain einschränken.
-  },
-});
-module.exports = {io}
-app.use(cors());
+import { Server } from "socket.io"
+import { setIO } from "./lib/socket.js"
 
-const generateBoard = require("./board/generateBoard")
+const io = new Server(server)
+setIO(io)
+
+import generateBoard from "./board/generateBoard.js"
+import log from "./lib/console.js"
+import sessionLoader from "./session/session.js";
+import gameLoader from "./board/gameLoader.js";
+import game from "./board/index.js";
+import db from './lib/database.js';
+import mail from './lib/mail.js';
+
+app.use(cors());
 
 server.listen(1887, () => {
   console.log("Server läuft auf Port 1887");
 });
 
-const log = require("./console")
+
+
 
 
 io.on('connection', onConnected);
 io.on("connection",(socket) => {log.consoleClient(socket,io)})
-
-const sessionLoader = require("./session/session");
-const gameLoader = require("./board/gameLoader");
-const game = require("./board/index")
 
 function onConnected(socket) {
 
@@ -45,7 +46,7 @@ socket.on("requestGameByID", (data) => {
   gameLoader.sendGame(data[1],data[0],socket)
 })
 
-socket.on("newUserSignUp",(data, callback) => addUser(data,socket,callback)) //Adds new User to the Database
+socket.on("newUserSignUp",(data, callback) => addUser(data,socket,callback || function(){})) //Adds new User to the Database
 
 socket.on("verifyAccount", (data) => handleVerificationFeedback(data,socket))
 
@@ -67,7 +68,6 @@ socket.on("checkSession",(data) => {
 socket.on("sessionEndet",(data) => sessionLoader.endSession(data))
 
 socket.on("userAttemptToLogIn",(data,callback) => {
-  console.log("new Login detected")
   db.userLogInAttempt(data,socket,callback)
 })
 
@@ -85,9 +85,6 @@ socket.on("sendProfileInfo", async (data, callback) => callback(await gameLoader
 }
 
 
-const db = require('./database');
-
-const mail = require('./mail');
 const letters = [
   "A", "B", "C", "D", "E", "F", "G", "H", "I",
   "J", "K", "L", "M", "N", "O", "P", "Q", "R",
@@ -114,19 +111,27 @@ async function addUser(data,socket,callback) {
 }
 
     async function handleVerificationFeedback(data,socket) {
+      try {
     const signUpSucessfull = await db.tryToVerifyeUser(data.verificationCode,data.user_id)
         socket.emit("accountVerified",signUpSucessfull)
+      } catch(err) {
+        log.sendMSG({
+          type:"error",
+          msg: log.errorMSG(err),
+          data: log.fullError(err)})
+      }
     }
+
 
 async function checkForChorrectInput(data) {
       if(JSON.stringify(Object.keys(data)) != JSON.stringify(["user_name","user_mail","user_password"])) return "Hacker detected"
-
+  
       if(typeof(data.user_password) != "string" || typeof(data.user_mail) != "string" || typeof(data.user_name) != "string") return "Invalid Input"
       if(data.user_name.length > 15 || data.user_name.length < 4) return "Username must be between 4 and 15 characters long"
       if(data.user_mail.length > 254 || data.user_mail.length <= 5) return "Invalid Input"
       if(data.user_password.length > 72 || data.user_mail.length <= 0) return "Invalid Input"
-      if(userExist = await db.doesUserExist(data.user_name,"name") == true) return "Username already exists"
-      if(userExist = await db.doesUserExist(data.user_mail,"email") == true) return "Email already exists"
+      if(await db.doesUserExist(data.user_name,"name") == true) return "Username already exists"
+      if(await db.doesUserExist(data.user_mail,"email") == true) return "Email already exists"
       return true
 }
 
@@ -157,17 +162,22 @@ app.get("/api/standartBoard", (req,res) => {
   res.json(generateBoard.loadBoard())
 })
 
+app.use("/api", express.static("board"));
+
 
 app.get("/",(req,res) => {
   res.send("Das ist der Server")
 })
 
-app.use(express.static(__dirname + "/console"))
+app.use(express.static(new URL("./console", import.meta.url).pathname));
 
 app.get("/console", (req,res) => {
 
   res.sendFile("console/index.html", {root:__dirname})
 })
 
-require("./todos/Todo")(app)
+
+
+import Todos from "./todos/Todo.js"
+Todos(app)
 

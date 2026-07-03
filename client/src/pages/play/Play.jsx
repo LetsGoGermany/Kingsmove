@@ -46,7 +46,7 @@ function PlayForm() {
     const [currentSetting, setCurrentSetting] = useState(null)
     function nextStep() {
         if(!currentColor || !currentSetting) return
-        window.location.href = `/play/select-oponent?color=${currentSetting},setting=${currentColor}`
+        window.location.href = `/play/select-oponent?color=${currentSetting}&setting=${currentColor}`
     }
     return (
         <div className="frame">

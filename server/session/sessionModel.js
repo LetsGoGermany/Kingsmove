@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const sessionSchema = new mongoose.Schema({
         user_id: String,
 })
 
-module.exports = mongoose.model("sessions", sessionSchema)
+export default mongoose.model("sessions", sessionSchema)

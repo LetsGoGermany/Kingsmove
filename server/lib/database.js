@@ -1,6 +1,6 @@
-const mysql = require('mysql2');
-const crypto = require('crypto');
-const sessionLoader = require('./session/session');
+import mysql from 'mysql2';
+import crypto from 'crypto';
+import sessionLoader from '../session/session.js';
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -35,7 +35,7 @@ function generateCode(n) {
 }
 
 
-const util = require('util');
+import util from 'util';
 const query = util.promisify(connection.query).bind(connection);
 
 
@@ -106,7 +106,7 @@ async function verifyAccount(data) {
 
 async function userLogInAttempt(data, socket, callback) {
 
-  const gameLoader = require("./board/gameLoader");
+  const gameLoader = require("../board/gameLoader");
 
   if (!correctLoginDetails(data)) return
   const sql = `SELECT * FROM users WHERE user_email = ?`
@@ -150,4 +150,4 @@ async function getNamesById(IDs) {
   const names = await query(sql, [IDs])
   return names
 }
-module.exports = { newUser, connection, doesUserExist, tryToVerifyeUser, deleteInactiveUsers, verifyAccount, userLogInAttempt, getNameById, getNamesById };
+export default { newUser, connection, doesUserExist, tryToVerifyeUser, deleteInactiveUsers, verifyAccount, userLogInAttempt, getNameById, getNamesById };

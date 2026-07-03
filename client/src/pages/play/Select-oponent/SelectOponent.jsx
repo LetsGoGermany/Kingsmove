@@ -9,18 +9,21 @@ export default function SelectOponent() {
         </>
     )
 }
+
+const params = window.location.search
+
 const options = {
     friend: {
         title: "Invite a Friend",
         src: "/startGame/friends.png",
         className: "or-display",
-        href: "test"
+        href: "friends" + params
     },
     link: {
         title: "Create a Link",
         src: "/startGame/create-link.png",
         className: "",
-        href: "test"
+        href: "create-link" + params
     },
 }
 
@@ -35,7 +38,7 @@ function Main() {
     )
 }
 
-function StartOption({ src, title, className,href }) {
+function StartOption({ src, title, className,href }) {  
     return (
         <div className="Option-element">
             <a href={href}>

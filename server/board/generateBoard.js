@@ -16,7 +16,7 @@ class Figure {
 }
 
 
-function loadBoard() {
+export default function loadBoard() {
 board = []
    for(y=0;y<8;y++) {
     board.push([])
@@ -48,4 +48,3 @@ function createFigure(figureName,x,y,color) {
 
 
 
-module.exports = {loadBoard};
