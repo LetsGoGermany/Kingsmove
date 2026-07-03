@@ -131,7 +131,7 @@ function calculatePossibleMoves(moves,figure) {
  
 function calculateFieldsByDirection(x,y,dirX,dirY,figure,moveLimiter) {
     const boardCopy = copy(gameBoard)
-    for(i=1;isPossibleField(x,y,dirX,dirY,i,moveLimiter);i++) {
+    for(let i=1;isPossibleField(x,y,dirX,dirY,i,moveLimiter);i++) {
         let posX = x + (dirX * i)
         let posY = y + (dirY * i)
         let currenField = boardCopy[posY][posX]

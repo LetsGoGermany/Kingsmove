@@ -76,7 +76,7 @@ function checkForCheckByDirection(moves,color,piece,gameBoard) {
 }
 
 function checkForCheckloop(x,y,dirX,dirY,moveLimiter,color,gameBoard) {
-    for(k=1;isPossibleField(x,y,dirX,dirY,k,moveLimiter);k++) {
+    for(let k=1;isPossibleField(x,y,dirX,dirY,k,moveLimiter);k++) {
         const newPosX = x + dirX * k
         const newPosY = y + dirY * k
         const field = gameBoard[newPosY][newPosX]

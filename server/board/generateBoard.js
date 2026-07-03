@@ -18,9 +18,9 @@ class Figure {
 
 export default function loadBoard() {
 board = []
-   for(y=0;y<8;y++) {
+   for(let y=0;y<8;y++) {
     board.push([])
-    for (x = 0; x < 8; x++) {
+    for (let x = 0; x < 8; x++) {
             board[y].push({fieldType:"empty",movableField:false,enPassentField:false})
     }
    }
@@ -36,7 +36,7 @@ function generateFigures() {
 
 function placeFigures(primaryRow, secondaryRow,color) {
     const figures = ["rook","knight","bishop","queen","king","bishop","knight","rook"]
-    for(x=0;x<8;x++) {
+    for(let x=0;x<8;x++) {
         createFigure(figures[x],x,primaryRow,color)
         createFigure("pawn",x,secondaryRow,color)
     }

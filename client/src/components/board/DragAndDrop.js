@@ -1,14 +1,15 @@
 import socket from "../../lib/socket"
+import touchPiece from "http://localhost:1887/api/figureMoves.js"
 
-export function dragStart(e,setCurrentFigure,color,lastFigureTouched) {
+export function dragStart(e,setCurrentFigure,color,lastFigureTouched,board) {
     const fig = e.target;
     if(fig.classList.contains("figure")) {
         setCurrentFigure(fig)
         fig.classList.add("current-figure-moving")
         setPositonOfFigure(e,fig)
-        handleFigureInput(fig.parentNode,color,lastFigureTouched)
+        handleFigureInput(fig.parentNode,color,lastFigureTouched,board)
     } else {
-        handleFigureInput(fig,color,lastFigureTouched)
+        handleFigureInput(fig,color,lastFigureTouched,board)
     }
     
 }
@@ -86,22 +87,24 @@ function makeSelectedField(field) {
 }
 
 
-function handleFigureInput(field,color,figure) {
+function handleFigureInput(field,color,figure,board) {
     if (field === null) return false
     if (field?.classList.contains("movable-field")) return sendPieceMove(field,color,figure)
-    if (field?.childElementCount > 0) return getPossibleMoves(field.firstChild,color)
+    if (field?.childElementCount > 0) return getPossibleMoves(field.firstChild,color,board)
 }
 
 
-function getPossibleMoves(figure,color) {
+function getPossibleMoves(figure,color,board) {
+    console.log(board)
     const x = parseInt(figure.parentNode.dataset.x)
     const y = parseInt(figure.parentNode.dataset.y)
     const [start, modifyer] = color === "white" ? [0, 1] : [7, -1]
     const realX = start + modifyer * x
     const realY = start + modifyer * y
-    socket.emit("askForLegalMoves",
-                 [realX, realY, localStorage.getItem("currentGameID"), localStorage.getItem("sessionid")],
-                 (data) => recievePossibleMoves(data,color,figure))
+    const copyBoard = board.map(row => row.map(field => ({...field})))
+    const possibleMoves = touchPiece.touchPiece(copyBoard,[realX,realY])
+    recievePossibleMoves(possibleMoves,color,figure)
+
 }
 
 function recievePossibleMoves(data, color) {

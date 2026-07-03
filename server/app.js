@@ -159,7 +159,7 @@ async function userTriedToVerifyAccount(data,socket) {
 
 
 app.get("/api/standartBoard", (req,res) => {
-  res.json(generateBoard.loadBoard())
+  res.json(generateBoard())
 })
 
 app.use("/api", express.static("board"));

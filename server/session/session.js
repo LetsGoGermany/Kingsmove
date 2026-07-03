@@ -1,6 +1,7 @@
 import userSession from './sessionModel.js';
 import mongoose from 'mongoose';
 import log from "../lib/console.js"
+import gameLoader from "../board/gameLoader.js"
 
 const connectedAccounts = new Map()
 
@@ -12,7 +13,7 @@ async function addUserSession(object) {
 }
 
 async function verifyUserSession(session, socket) {
-  const gameLoader = require("../board/gameLoader")
+  
 
   const object = await checkusersSession(session)
   if(object === undefined) return

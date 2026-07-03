@@ -4,8 +4,6 @@ import Figure from "./Figure";
 import ShowNamesOnBoard from "./GameInfoSection";
 import { dragMove, dragStart, dragEnd, clearFieldTags, makeFullMoveReal } from "./DragAndDrop";
 
-import { touchPiece } from "http://localhost:1887/api/figureMoves.js"
-
 export default function Board({ game, classname, color }) {
     const [index, setIndex] = useState(0)
     const [boardBuilder, setBoardBuilder] = useState([])
@@ -55,8 +53,8 @@ export default function Board({ game, classname, color }) {
             <ShowNamesOnBoard {...nameProps} top={false} len={length} />
         </div>
     )
-    const test = touchpiece(boardBuilder,[[0,3],[4,0]])
-    console.log(test)
+    
+   
 }
 
 
@@ -84,8 +82,8 @@ function MainBoard({ classname, boardBuilder, color, squares, move }) {
     return (
         <div
             className={`board board-small ${classname}`}
-            onMouseDown={(e) => dragStart(e, setCurrentFigure, color, lastFigureTouched)}
-            onTouchStart={(e) => dragStart(e, setCurrentFigure, color, lastFigureTouched)}
+            onMouseDown={(e) => dragStart(e, setCurrentFigure, color, lastFigureTouched,boardBuilder)}
+            onTouchStart={(e) => dragStart(e, setCurrentFigure, color, lastFigureTouched,boardBuilder)}
         >
             {squares.map(nr => <Field {...{ nr, classname, figures: boardBuilder, color, move }} key={nr} />)}
         </div>
